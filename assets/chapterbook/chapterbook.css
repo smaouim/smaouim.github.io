@@ -74,6 +74,9 @@ html {
     .book.with-summary .page-footer {
         width: calc(100% + 315px);
     }
+    .book-header h1 {
+        max-width: 70%;
+    }
 }
 @media (max-width: 1240px) {
     .book-body .body-inner {
