@@ -77,10 +77,9 @@ Beginner learners can quickly get started on an online IDE available on websites
 
 Here is our first IDE with a “Hello world!” Python program. Click the red "Execute" button and notice the effect.
 
-<div data-pym-src="https://www.jdoodle.com/plugin"
-data-language="python3"  data-version-index="3.11.5" data-libs="">
+{% JDoodle %}
 print("Hello, world! This is Python 3!")
-</div>
+{% endJDoodle %}
 
 
 * The program consists of a single `print` statement.
@@ -100,10 +99,9 @@ When something is wrong with the code, you get a message from the interpreter in
 
 Run the following program and notice the result:
 
-<div data-pym-src="https://www.jdoodle.com/plugin"
-data-language="python3"  data-version-index="3.11.5" data-libs="">
+{% JDoodle %}
 print("This is not a comment")
-</div>
+{% endJDoodle %}
 
 
 * Any line which starts with a # character is ignored by the interpreter: it will not check its syntax correctness, will not try to translate it into machine instructions and will not execute it

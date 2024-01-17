@@ -636,3 +636,36 @@ details[open] summary i {
 .book.color-theme-2 details[open] summary i {
     color: #FAEF9B
 }
+
+
+.tip:before {
+    font-family: FontAwesome; 
+    content: "\f005   Tip";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    margin-bottom: 1em !important;
+    color: white;
+}
+
+.tip {
+    padding: 1em 2em !important;
+    background-color: #2f7dcc;
+    color: white;
+    border-left: 5px solid #124981 !important;
+}
+
+.tip p {
+    color: white;
+}
+
+
+.book.color-theme-2 .tip {
+    background-color: rgb(131, 214, 247, 0.7);
+    color: white;
+}
+
+.book.color-theme-2 .tip p {
+    color: white;
+}
