@@ -1,11 +1,11 @@
 remote_theme: jasongrimes/jekyll-chapterbook
 
 title: CS201 - Introduction to Programming with Python
-longtitle: CS201 - Introduction to Programming with Python - KAUST Spring 2023
+longtitle: CS201 - Introduction to Programming with Python - KAUST Spring 2024
 author: Malek Smaoui
 email: Malek.Smaoui@kaust.edu.sa
 description: >
-  Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2023
+  Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 
 # If baseurl_canonical is set, 
 # a <link rel="canonical"> tag will be added to the head of each page,
