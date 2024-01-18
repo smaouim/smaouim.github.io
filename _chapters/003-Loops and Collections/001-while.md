@@ -121,7 +121,7 @@ Write a program which:
 > For simplicity, assume input validity (i.e. don’t validate the inputs).
 > 
 > Besides, if you use a Guess and Check approach, you don’t need to aggregate (collect) all the user entries in one object/variable.
-{: .tip }
+{: .block-tip }
 
 {% empty_jdoodle %}
 

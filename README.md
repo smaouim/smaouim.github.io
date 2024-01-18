@@ -56,13 +56,13 @@ Another solution
 {% endSolution %}
 ```
 
-### tip
+### tip, warning and dangers
 
 to add a one line tip
 
 ```
 > I'm a one line tip
-{: .tip }
+{: .block-tip }
 ```
 
 multiple line
@@ -71,5 +71,7 @@ multiple line
 > I'm the first paragraph
 > 
 > and I'm the second
-{: .tip }
+{: .block-tip }
 ```
+
+note: there's also `.block-warning` and `.block-danger`
