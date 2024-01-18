@@ -1,7 +1,7 @@
 ---
 slug: book
 title: Introduction
-abstract: Lecture materials for CS201 - Introduction to Programming with Python @ KAUST Spring 2023.
+abstract: Lecture materials for CS201 - Introduction to Programming with Python @ KAUST Spring 2024.
 ---
 
 By Malek Smaoui
