@@ -149,6 +149,11 @@ Write a program which:
 * validates the input format and range
 * prints the corresponding lower case letter
 
+> This problem can be solved using
+>   * string methods (not yet discussed)
+>   * the string operators `ord()` and `chr()` and the ASCII table discussed in the previous lesson
+{: .block-tip}
+
 {% empty_jdoodle %}
 
 {% Solution %}
