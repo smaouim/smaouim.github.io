@@ -24,7 +24,7 @@ abstract: Boolean expressions as conditions for the multiple variations of condi
 
 * Many algorithms require making decisions or executing steps based on the verification of some condition
 
-* Most of the times, conditions are Boolean expressions involving variables which value is only known at execution time
+* Most of the time, conditions are Boolean expressions involving variables which value is only known at execution time
 
 * A Boolean expression evaluates to True or False E.g. comparison expressions
 
