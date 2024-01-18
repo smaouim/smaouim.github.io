@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Getting started · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/basics.html" />
+      
+
+      
+        <link rel="next" href="/io.html" />
+      
     
 
   </head>
@@ -322,7 +330,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -331,7 +351,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/getting-started.html">
@@ -394,6 +416,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,293 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/basics.html">
+                
+                Part 1: Basics
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 1.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="getting-started"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Getting started</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
+    <div class="chapter-abstract color-callout-dark">
+      How does a computer work? What is programming? "Hello world!" and more.
+    </div>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#why-programming">Why programming?</a></li><li><a href="#the-language-gap">The language gap</a></li><li><a href="#bridging-the-gap-with-programming-languages">Bridging the gap with programming languages</a></li><li><a href="#compilation-vs-interpretation">Compilation vs Interpretation</a></li><li><a href="#programming-environment">Programming environment</a></li><li><a href="#hello-world">Hello world!</a></li><li><a href="#importance-of-correct-syntax">Importance of correct syntax</a></li><li><a href="#comments">Comments</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="why-programming">Why programming?</h2>
+
+<p>Computers are NOT intelligent machines:</p>
+
+<ul>
+  <li>They cannot solve (computational) problems independently</li>
+  <li>They can only execute instructions (orders) provided by humans</li>
+  <li>They do execute instructions very fast</li>
+</ul>
+
+<p><strong>Programming</strong> is specifying a sequence of instructions or steps for the computer to execute, in order to solve a problem. It has two major components:</p>
+
+<ul>
+  <li>Designing a step-by-step procedure to solve the problem: <strong>Algorithm</strong></li>
+  <li>Communicating the steps or instructions to the computer hardware: <strong>Coding</strong></li>
+</ul>
+
+<h2 id="the-language-gap">The language gap</h2>
+
+<ul>
+  <li>Humans communicate with each other using <strong>natural language</strong> (Arabic, English, French, …)</li>
+  <li>Natural language is <strong>ambiguous</strong>, not precise, prone to <strong>interpretation</strong> using external cues (tone, context, facial expressions, etc.): it requires <strong>intelligence</strong></li>
+  <li>Computers only understand and execute a <strong>limited</strong> and very <strong>specific</strong> set of arithmetic and logic <strong>instructions</strong> (additions, multiplications, comparisons, etc.)</li>
+  <li>Expressing an algorithm using the simple, fine-grained, computer hardware instructions is very <strong>tedious</strong> for humans</li>
+</ul>
+
+<h2 id="bridging-the-gap-with-programming-languages">Bridging the gap with programming languages</h2>
+
+<ul>
+  <li>The <strong>syntax</strong> of a language determines the valid ways of putting words and symbols together</li>
+  <li>The <strong>semantics</strong> of a language are the meanings expressed by putting words and symbols together</li>
+</ul>
+
+<p>High-level programming languages are designed such that:</p>
+
+<ul>
+  <li>they provide <strong>high-granularity</strong> constructs to express algorithms with <strong>short</strong> and <strong>human-friendly</strong> texts (though still called “codes”)</li>
+  <li>a <strong>syntactically</strong> valid statement has only one <strong>semantic</strong> interpretation</li>
+</ul>
+
+<p>Programmers can then easily express algorithms in a form that can be <strong>automatically converted</strong> into machine instructions: compilation or interpretation</p>
+
+<h2 id="compilation-vs-interpretation">Compilation vs Interpretation</h2>
+
+<ul>
+  <li>Compilers and interpreters are both software that <strong>translate source codes</strong> (programs expressed in high-level languages) into <strong>machine codes</strong> (AKA binary codes)</li>
+  <li>A compiler produces a standalone executable program (binary code), that is subsequently loaded by the operating system and runs on the hardware independently, without further intervention from the compiler</li>
+  <li>The (compiled) executable program can live and run on a computer that hosts neither the source code nor the compiler.</li>
+</ul>
+
+<p><img src="/assets/images/Lec1-1.png" alt="" /></p>
+
+<ul>
+  <li>An interpreter produces instructions corresponding to one high-level statement, which are then executed, before proceeding to the next statement.</li>
+  <li>An (interpreted) code is kept only in its original (source) form and can only be executed on a computer that hosts and runs the interpreter.</li>
+</ul>
+
+<p><img src="/assets/images/Lec1-2.png" alt="" /></p>
+
+<h2 id="programming-environment">Programming environment</h2>
+<p>In principle, a programmer needs only:</p>
+
+<ul>
+  <li>a text editor to create, open, modify and save source codes (which are actually text files with special extensions)</li>
+  <li>a compiler or interpreter to convert (and run) the source code, invoked from a command line shell</li>
+</ul>
+
+<p>An <strong>Integrated Development Environment (IDE)</strong> is a software with a Graphical User Interface, including tools like:</p>
+
+<ul>
+  <li>an advanced text editor with syntax highlighting, line numbering, autocompletion, etc.</li>
+  <li>a compiler and run utility or an interpreter</li>
+  <li>a debugger</li>
+  <li>a command line shell</li>
+  <li>a file system explorer</li>
+  <li>a package manager</li>
+  <li>and more …</li>
+</ul>
+
+<p>To develop multi-file codes for large applications, it is recommended to use a standalone (desktop application) IDE like Visual Studio Code, Spyder, PyCharm, etc.</p>
+
+<p>Beginner learners can quickly get started on an online IDE available on websites like programiz.com, replit.com, online-python.com, onlinegdb.com, etc. or the ones embedded in this course pages.</p>
+
+<h2 id="hello-world">Hello world!</h2>
+
+<ul>
+  <li>First program to write when learning a new programming language</li>
+  <li>Program simply prints to the screen (console) the phrase “Hello world!”</li>
+  <li>Best way to test a fresh installation of a standalone IDE</li>
+</ul>
+
+<p>Here is our first IDE with a “Hello world!” Python program. Click the “Execute” button and notice the effect.</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("Hello, world! This is Python 3!")</div>
+
+<ul>
+  <li>The program consists of a single <code class="language-plaintext highlighter-rouge">print</code> <strong>statement</strong>.</li>
+  <li>print is a built-in <strong>function</strong> that performs text <strong>output</strong> to the console</li>
+  <li>The text to be printed has to be specified between quotes and passed as <strong>argument</strong> to the function, using parenthesis.</li>
+</ul>
+
+<h2 id="importance-of-correct-syntax">Importance of correct syntax</h2>
+
+<p>In the above IDE, try running the code after</p>
+
+<ul>
+  <li>removing the double quotes after the phrase</li>
+  <li>removing the closing parenthesis</li>
+</ul>
+
+<p>When something is wrong with the code, you get a message from the interpreter indicating what went wrong. 
+In these cases, it’s a <code class="language-plaintext highlighter-rouge">SyntaxError</code>, indicating that the code was not written in the proper format (missing closing quotes or parenthesis).</p>
+
+<h2 id="comments">Comments</h2>
+
+<p>Run the following program and notice the result:</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">#print("This is a comment")
+print("This is not a comment")</div>
+
+<ul>
+  <li>Any line which starts with a # character is a <strong>comment</strong> and is ignored by the interpreter: it will not check its syntax correctness, will not try to translate it into machine instructions and will not execute it</li>
+  <li>Comments are destined for code readers including the code writer himself/herself, collaborators, etc.</li>
+  <li>Their main purpose is to <strong>inform about</strong> the source code
+    <ul>
+      <li>commenting is also heavily used in <strong>debugging</strong> code, mainly disabling few lines to exclude potential error sources</li>
+    </ul>
+  </li>
+</ul>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/io.html"
+        class="chapter-next "
+        aria-label="Next page: Input and Output, variables and expressions"
+        data-level="1.1"
+        data-path="/io.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Basics
+                 &#8250;
+              
+              Chapter 2.
+            
+          </div>
+          <div class="chapter-label">
+            Input and Output, variables and expressions
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/basics.html"
+        class="chapter-prev "
+        aria-label="Previous page: Basics"
+        data-level="1.1"
+        data-path="/basics.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              Part 1.
+            
+          </div>
+          <div class="chapter-label">
+            Basics
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2188,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/001-Basics/001-getting-started.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {

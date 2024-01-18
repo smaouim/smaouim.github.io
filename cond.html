@@ -1,0 +1,2553 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Conditional statements · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/control.html" />
+      
+
+      
+        <link rel="next" href="/inp-vld.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Input and Output, variables and expressions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/types.html">
+              
+                3.
+              
+              Basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/file-access.html">
+              
+                12.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/read-write.html">
+              
+                13.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/control.html">
+                
+                Part 2: Control flow
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 4.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="cond"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Conditional statements</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+    <div class="chapter-abstract color-callout-dark">
+      Boolean expressions as conditions for the multiple variations of conditional statements
+    </div>
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#input-validation">Input validation</a></li><li><a href="#making-choices-or-decisions">Making choices or decisions</a></li><li><a href="#comparison-operators">Comparison operators</a></li><li><a href="#making-a-choice-with-the-if-statement">Making a choice with the if statement</a></li><li><a href="#if-statement-syntax"><code class="language-plaintext highlighter-rouge">if</code> statement syntax</a><ul><li><a href="#examples">Examples</a></li></ul></li><li><a href="#exercise-roots-of-a-quadratic-polynomial">Exercise: roots of a quadratic polynomial</a></li><li><a href="#ternary-operator">Ternary operator</a></li><li><a href="#problem-maximum-of-three-values">Problem: maximum of three values</a></li><li><a href="#nested-if-statements">Nested if statements</a></li><li><a href="#choosing-from-a-list-of-alternatives">Choosing from a list of alternatives</a><ul><li><a href="#with-nested-if-statements">With nested if statements</a></li><li><a href="#with-elif-construct">With <code class="language-plaintext highlighter-rouge">elif</code> construct</a></li></ul></li><li><a href="#exercise-club-access-eligibility">Exercise: Club access eligibility</a></li><li><a href="#compound-boolean-expressions">Compound Boolean expressions</a><ul><li><a href="#solution-to-club-eligibility-with-compound-conditions">Solution to Club Eligibility with compound conditions</a></li></ul></li><li><a href="#maximum-of-three-values-with-compound-conditions-and-elif">Maximum of three values with compound conditions and elif</a></li><li><a href="#short-circuit-logic">Short circuit logic</a></li><li><a href="#non-boolean-expressions-as-conditions">Non-Boolean expressions as conditions</a></li><li><a href="#comparison-of-floating-point-expressions">Comparison of floating point expressions</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="input-validation">Input validation</h2>
+
+<ul>
+  <li>
+    <p>Usually an algorithm works on some specific input type and range of values</p>
+  </li>
+  <li>
+    <p>If the prompt is not specific enough or the user is careless or malicious, his/her input may be of the wrong type or in the wrong range of values</p>
+  </li>
+  <li>
+    <p>The output then would be wrong or the program can error-out</p>
+  </li>
+  <li>
+    <p>Input validation is testing whether the input is in the right format and range</p>
+
+    <ul>
+      <li>important part of a program to avoid malfunction</li>
+    </ul>
+  </li>
+  <li>
+    <p>Based on input validity test , the program decides or chooses to solve the program or handle the wrong input</p>
+  </li>
+</ul>
+
+<h2 id="making-choices-or-decisions">Making choices or decisions</h2>
+
+<ul>
+  <li>
+    <p>Making choices is essential for more than just validating input</p>
+  </li>
+  <li>
+    <p>Many algorithms require making decisions or executing steps based on the verification of some condition</p>
+  </li>
+  <li>
+    <p>Most of the time, conditions are Boolean expressions involving variables which value is only known at execution time</p>
+  </li>
+  <li>
+    <p>A Boolean expression evaluates to True or False E.g. comparison expressions</p>
+  </li>
+</ul>
+
+<h2 id="comparison-operators">Comparison operators</h2>
+<p><img src="assets/images/Lec4-1.png" alt="" /></p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">A = True
+print("A=", A)
+userEntry = int(input("Please enter an integer: "))
+print(userEntry, "&gt; 14 ? =&gt;", userEntry &gt; 14)
+B = (userEntry % 7) == 0
+print("B=", B)</div>
+
+<ul>
+  <li>
+    <p>In the statement <code class="language-plaintext highlighter-rouge">A = True</code>, the variable A has a Boolean type</p>
+  </li>
+  <li>
+    <p>The expression, <code class="language-plaintext highlighter-rouge">userEntry &gt; 14</code> evaluates to a Boolean. it is printed as:</p>
+
+    <ul>
+      <li>
+        <p>True, if <code class="language-plaintext highlighter-rouge">userEntry</code> is greater than 14</p>
+      </li>
+      <li>
+        <p>False, if <code class="language-plaintext highlighter-rouge">userEntry</code> is less or equal to 14</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In the statement, <code class="language-plaintext highlighter-rouge">B = (userEntry % 7) == 0</code>, the variable B also has a Boolean type, outcome of a comparison expression</p>
+  </li>
+  <li>
+    <p>B is True, if <code class="language-plaintext highlighter-rouge">userEntry</code> is a multiple of 7.</p>
+  </li>
+  <li>
+    <p>B is false if <code class="language-plaintext highlighter-rouge">userEntry</code> is not a multiple of 7</p>
+  </li>
+</ul>
+
+<h2 id="making-a-choice-with-the-if-statement">Making a choice with the if statement</h2>
+
+<ul>
+  <li>An if construct evaluates a condition (Boolean variable or expression) and allows to specify a set of statements to be executed when the condition evaluates to True.</li>
+</ul>
+
+<p><img src="assets/images/Lec4-2.png" alt="" /></p>
+
+<ul>
+  <li>An  optional  companion <code class="language-plaintext highlighter-rouge">else</code> construct specifies another set of statements to be executed when it evaluates to False</li>
+</ul>
+
+<p><img src="assets/images/Lec4-3.png" alt="" /></p>
+
+<h2 id="if-statement-syntax"><code class="language-plaintext highlighter-rouge">if</code> statement syntax</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statements before if statement&gt;
+ if &lt;condition &gt;:
+    &lt;then statements &gt;
+&lt;statements after if statement &gt;
+</code></pre></div></div>
+<ul>
+  <li>Here, <code class="language-plaintext highlighter-rouge">&lt;then statements&gt;</code> are executed if the condition is <code class="language-plaintext highlighter-rouge">True</code> and skipped if it is <code class="language-plaintext highlighter-rouge">False</code></li>
+</ul>
+
+<p>Besides, <code class="language-plaintext highlighter-rouge">&lt;then statements&gt;</code> <strong>must be indented</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statements before if statement &gt;
+ if   &lt;condition &gt;:
+    &lt;then statements &gt;
+ else: 
+    &lt;else statements &gt;
+&lt;statements after if statement &gt;
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>Here, <code class="language-plaintext highlighter-rouge">&lt;then statements&gt;</code> are executed if the condition is <code class="language-plaintext highlighter-rouge">True</code> and the <code class="language-plaintext highlighter-rouge">&lt;else statements&gt;</code> are executed if it is <code class="language-plaintext highlighter-rouge">False</code></p>
+  </li>
+  <li>
+    <p>Besides, <code class="language-plaintext highlighter-rouge">&lt;then statements&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;else statements&gt;</code> must be  indented</p>
+  </li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">userEntry = int(input("Please enter an integer:"))
+if userEntry &gt;= 0:
+  print("positive")
+else:
+  print("negative")
+print(2 * userEntry)</div>
+
+<h2 id="exercise-roots-of-a-quadratic-polynomial">Exercise: roots of a quadratic polynomial</h2>
+<p>Write a program which</p>
+
+<ul>
+  <li>prompts the user for the coefficients of a quadratic equation</li>
+  <li>computes and prints its real roots, if they exist. If real roots don’t exist print a message.</li>
+</ul>
+
+<p>If we denote by</p>
+
+<ul>
+  <li>a : the coefficient of the quadratic term</li>
+  <li>b : the coefficient of the linear term</li>
+  <li>c : the coefficient of constant term</li>
+</ul>
+
+<p>Then, the roots are computed as:
+\(x_1 = \frac{-b-\sqrt{b^2-4ac}}{2a}\)
+and
+\(x_2=\frac{-b+\sqrt{b^2-4ac}}{2a}\)</p>
+
+<p>Real roots exist if the discriminant $b^2-4ac$ is greater or equal to 0.</p>
+
+<ul>
+  <li>Note: the case where discriminant is equal to 0 will simply result in the same value for both roots, and should not be treated differently.</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<h2 id="ternary-operator">Ternary operator</h2>
+
+<p>When there is only one expression to select on a <code class="language-plaintext highlighter-rouge">True</code> condition or a <code class="language-plaintext highlighter-rouge">False</code> condition, it is possible to express the same logic of the <code class="language-plaintext highlighter-rouge">if</code> statement using the ternary operator</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statements before conditional statement &gt;
+&lt;then statement&gt; if   &lt;condition&gt; else &lt;else statement&gt;
+&lt;statements after conditional statement &gt;
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">userEntry = int(input("Please enter an integer:"))
+print("positive") if userEntry &gt;= 0 else print("negative")
+# similarly
+print("positive" if userEntry &gt;= 0 else "negative")</div>
+
+<h2 id="problem-maximum-of-three-values">Problem: maximum of three values</h2>
+
+<p>Consider a program which</p>
+
+<ul>
+  <li>
+    <p>prompts the user for three integer values x, y, and z</p>
+  </li>
+  <li>
+    <p>finds and prints the maximum out of the three values</p>
+  </li>
+</ul>
+
+<p>Solving this problem requires a logic that cannot be expressed with a single if statement and a single simple comparison, since two conditions have to be verified.</p>
+
+<h2 id="nested-if-statements">Nested if statements</h2>
+
+<ul>
+  <li>
+    <p>The simplistic approach to solve the “maximum of three” problem is to use <em>nested</em> <code class="language-plaintext highlighter-rouge">if</code> statements</p>
+  </li>
+  <li>
+    <p>Many times nested <code class="language-plaintext highlighter-rouge">if</code> statements are inherent of the algorithm and cannot be avoided</p>
+  </li>
+  <li>
+    <p>Many other times it is possible to avoid nested statements <em>algorithmically</em> or/and <em>syntactically</em> (like in this max of three example)</p>
+  </li>
+</ul>
+
+<p><img src="assets/images/Lec4-4.png" alt="" /></p>
+
+<p>Let’s start with nested if statements conditions</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># get the user input
+print("This program finds the maximum of three integers")
+x = int(input("Please provide the first integer: "))
+y = int(input("Please provide the second integer: "))
+z = int(input("Please provide the third integer: "))
+# find and print the maximum of the three input values</div>
+
+<h2 id="choosing-from-a-list-of-alternatives">Choosing from a list of alternatives</h2>
+
+<p>Consider a program which:</p>
+
+<ul>
+  <li>
+    <p>prompts the user for two numeric operands and an operation symbol</p>
+  </li>
+  <li>
+    <p>prints the operation and its result</p>
+  </li>
+</ul>
+
+<p>The program reads the operation symbol as a string then determines the expression to be evaluated based on the value of that symbol string.</p>
+
+<p>Assuming that the program allows only the basic operations +, -, * and /, the program has to compare the input symbol, potentially, against all these symbols.</p>
+
+<h3 id="with-nested-if-statements">With nested if statements</h3>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("This program is a basic calculator (performs a two-operand arithmetic operation)")
+x = float(input("Please enter the first operand: "))
+op = input("Please enter the operation symbol (+ or - or * or /):")
+y = float(input("Please enter the second operand: "))
+
+if op == '+':
+  print(x, op, y, "=", x+y)
+else:
+  if op == '-':
+    print(x, op, y, "=", x-y)
+  else:
+    if op == '*':
+      print(x, op, y, "=", x*y)
+    else:
+      if op == '/':
+        print(x, op, y, "=", x/y)
+      else:
+        print("Not a valid operation")</div>
+
+<h3 id="with-elif-construct">With <code class="language-plaintext highlighter-rouge">elif</code> construct</h3>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("This program is a basic calculator (performs a two-operand arithmetic operation)")
+x = float(input("Please enter the first operand: "))
+op = input("Please enter the operation symbol (+ or - or * or /):")
+y = float(input("Please enter the second operand: "))
+
+if op == '+':
+  print(x, op, y, "=", x+y)
+elif op == '-':
+  print(x, op, y, "=", x-y)
+elif op == '*':
+  print(x, op, y, "=", x*y)
+elif op == '/':
+  print(x, op, y, "=", x/y)
+else:
+  print("Not a valid operation")</div>
+
+<h2 id="exercise-club-access-eligibility">Exercise: Club access eligibility</h2>
+
+<p>Write a program that checks if a person is eligible to enter a club based on her age. The person has to be between 15  and 18 years old (bounds included) to be eligible. The program</p>
+
+<ul>
+  <li>
+    <p>prompts the user for the age</p>
+  </li>
+  <li>
+    <p>prints either “eligible” or “not eligible”</p>
+  </li>
+</ul>
+
+<p>Note: use simple comparison expressions and the <code class="language-plaintext highlighter-rouge">if-elif-else</code> constructs.</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<h2 id="compound-boolean-expressions">Compound Boolean expressions</h2>
+
+<ul>
+  <li>
+    <p>A Boolean expression is an expression that evaluates to a Boolean and has a Boolean type</p>
+  </li>
+  <li>
+    <p>The simplest Boolean expressions are comparison expressions</p>
+  </li>
+  <li>
+    <p>Any Boolean expression can be combined with another using the logical operators <code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code> and <code class="language-plaintext highlighter-rouge">not</code>.</p>
+  </li>
+  <li>
+    <p>De Morgan’s law:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">not (A and B) = (not A) or (not B)</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">not (A or B) = (not A) and (not B)</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="solution-to-club-eligibility-with-compound-conditions">Solution to Club Eligibility with compound conditions</h3>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">age = int(input("Please enter your age: "))
+
+if age &gt;= 15 and age &lt;= 18:
+  print("eligible")
+else:
+  print("not eligible")
+
+# same as
+if 15 &lt;= age &lt;= 18:
+  print("eligible")
+else:
+  print("not eligible")
+
+# in the following, the condition is the negation of the previous ones
+#  so the "then" and "else" statements are inverted
+if age &lt; 15 or age &gt; 18:
+  print("not eligible")
+else:
+  print("eligible")</div>
+
+<h2 id="maximum-of-three-values-with-compound-conditions-and-elif">Maximum of three values with compound conditions and elif</h2>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = int(input("Please enter the first integer: "))
+y = int(input("Please enter the second integer: "))
+z = int(input("Please enter the third integer: "))
+
+if x &gt;= y and x &gt;= z:
+  print(x, "is the maximum")
+elif y &gt;= z:
+  print(y, "is the maximum")
+else:
+  print(z, "is the maximum")
+
+# other implementation (multiple prints in case of equality)
+if x &gt;= y and x &gt;= z:
+  print(x)
+if y &gt;= x and y &gt;= z:
+  print(y)
+if z &gt;= x and z &gt;= y:
+  print(z)
+
+# the following is a (semantically) wrong code
+# be careful of using non-boolean as operands to "and" and "or"
+if x &gt;= (y and z):  # correct syntax, wrong semantic
+  print(x)
+elif y &gt;= z:
+  print(y)
+else:
+  print(z)</div>
+</details>
+
+<h2 id="short-circuit-logic">Short circuit logic</h2>
+
+<p>The second operand of a Boolean expression is not evaluated if:</p>
+
+<ul>
+  <li>
+    <p>the operation is <code class="language-plaintext highlighter-rouge">and</code> and the first operand evaluates to <code class="language-plaintext highlighter-rouge">False</code> : the result is inevitably <code class="language-plaintext highlighter-rouge">False</code></p>
+  </li>
+  <li>
+    <p>the operation is <code class="language-plaintext highlighter-rouge">or</code> and the first operand evaluates to <code class="language-plaintext highlighter-rouge">True</code>: the result is inevitably <code class="language-plaintext highlighter-rouge">True</code></p>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">numerator = int(input("Please enter the numerator:"))
+denominator = int(input("Please enter the denominator: "))
+
+# In the following if statement, the % operation is not executed,
+# when the divisor (denominator) is found to be 0.
+if denominator != 0 and numerator % denominator == 0:
+  print("The numerator is evenly divided by the denominator.")
+else:
+  print("The fraction is not a whole number")</div>
+
+<h2 id="non-boolean-expressions-as-conditions">Non-Boolean expressions as conditions</h2>
+
+<ul>
+  <li>
+    <p>If a variable or expression of non-Boolean type is used as a conditional expression, it is expended to a Boolean expression that compares against the null value of the type: 0 for <code class="language-plaintext highlighter-rouge">int</code>, 0.0 for <code class="language-plaintext highlighter-rouge">float</code> and empty string for <code class="language-plaintext highlighter-rouge">string</code></p>
+  </li>
+  <li>
+    <p>However, operands for <code class="language-plaintext highlighter-rouge">and</code> and <code class="language-plaintext highlighter-rouge">or</code> operators must not be non-Boolean;</p>
+    <ul>
+      <li>logical operators always return one of their operands and always use short-circuit logic</li>
+      <li>syntactically, the expressions will be correct but may give a result different from what beginner programmers would have intended</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 4
+if x: # translates to if x != 0
+  print("x is not null")
+else:
+  print("x is null")
+
+y = 0
+if not y: # translate to if not (y != 0) i.e. if y == 0
+  print("y is null")
+else:
+  print("y is not null")
+
+m = 2.5
+if m:
+  print("m is not null")
+else:
+  print("m is null")
+
+n = 0.0
+if n:
+  print("n is not null")
+else:
+  print("n is null")
+
+a = "False"
+if a:
+  print("a is not null")
+else:
+  print("a is null")
+
+b = ""
+if b:
+  print("b is not null")
+else:
+  print("b is null")
+
+# and and or short-circuit logic
+print(2 and 3)     # returns 3      because it's the last operand evaluated to "true"
+print(5 and 3)     # returns 3      because it's the last operand evaluated to "true"
+print(0 and 3)     # returns 0      because it's the first operand evaluated to "false" and no need to check further
+print(False and 3) # returns False  because it's the first operand evaluated to "false" and no need to check further
+print(None and 3)  # returns None   because it's the first operand evaluated to "false" and no need to check further
+print("" and 3)    # returns ""     because it's the first operand evaluated to "false" and no need to check further
+
+print(2 or 3)     # returns 2  because it's the first operand evaluated to "true" and no need to check further
+print(5 or 3)     # returns 5  because it's the first operand evaluated to "true" and no need to check further
+print(0 or 3)     # returns 3  because it's the only operand evaluated to "true"
+print(False or 3) # returns 3  because it's the only operand evaluated to "true"
+print(None or 3)  # returns 3  because it's the only operand evaluated to "true"
+print("" or 3)    # returns 3  because it's the only operand evaluated to "true"</div>
+
+<h2 id="comparison-of-floating-point-expressions">Comparison of floating point expressions</h2>
+
+<ul>
+  <li>
+    <p>Exact comparisons of floating point values sometimes turn out wrong due to precision loss during assignment or arithmetic operations</p>
+  </li>
+  <li>
+    <p>Comparisons of floating point expressions should be done within a certain margin</p>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># example of a numerical discrepancy
+a = 2.8
+b = 2.4
+diff = 0.4
+if a - b != diff:
+  print("A numerical discrepancy was detected: {} - {} = {}".format(a, b, a - b))
+
+# example of comparison within a margin
+if abs(((a - b) - diff) / diff) &lt;= 0.001:
+  print("{} - {} == {} : Comparison performed within 0.1% error".format(a, b, diff))</div>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/inp-vld.html"
+        class="chapter-next "
+        aria-label="Next page: Input validation"
+        data-level="1.1"
+        data-path="/inp-vld.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Control flow
+                 &#8250;
+              
+              Chapter 5.
+            
+          </div>
+          <div class="chapter-label">
+            Input validation
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/control.html"
+        class="chapter-prev "
+        aria-label="Previous page: Control flow"
+        data-level="1.1"
+        data-path="/control.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              Part 2.
+            
+          </div>
+          <div class="chapter-label">
+            Control flow
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/002-Control Flow/001-cond-stmt.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-18 14:44:21 +0300"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>

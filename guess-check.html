@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Guess and check · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/inp-vld.html" />
+      
+
+      
+        <link rel="next" href="/loops.html" />
+      
     
 
   </head>
@@ -755,7 +763,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -764,7 +784,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/guess-check.html">
@@ -827,6 +849,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,283 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/control.html">
+                
+                Part 2: Control flow
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 6.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="guess check"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Guess and check</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
+    <div class="chapter-abstract color-callout-dark">
+      An algorithmic approach to simplify complex compound conditional expression
+    </div>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#problem-maximum-of-ten-integer-values">Problem: maximum of ten integer values</a></li><li><a href="#maximum-of-ten-integer-values-with-guess-and-check">“Maximum of ten integer values” with Guess and Check</a></li><li><a href="#problem-maximum-of-an-arbitrary-set-of-integers">Problem: Maximum of an arbitrary set of integers</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="problem-maximum-of-ten-integer-values">Problem: maximum of ten integer values</h2>
+
+<p>Below is a program template containing ten different integer variables. Using conditional statements with compound Boolean expressions, find and print the maximum out of the ten values.</p>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">v1 = 35
+v2 = -4
+v3 = 108
+v4 = 21
+v5 = 93
+v6 = -43
+v7 = 13
+v8 = 62
+v9 = -26
+v10 = 78</div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">v1 = 35
+v2 = -4
+v3 = 13
+v4 = 21
+v5 = 93
+v6 = -43
+v7 = 108
+v8 = 62
+v9 = -26
+v10 = 78
+
+if v1 &gt;= v2 and v1 &gt;= v3 and v1 &gt;= v4 and v1 &gt;= v5 and v1 &gt;= v6 and v1 &gt;= v7 and v1 &gt;= v8 and v1 &gt;= v9 and v1 &gt;= v10:
+    print(v1)
+if v2 &gt;= v1 and v2 &gt;= v3 and v2 &gt;= v4 and v2 &gt;= v5 and v2 &gt;= v6 and v2 &gt;= v7 and v2 &gt;= v8 and v2 &gt;= v9 and v2 &gt;= v10:
+    print(v2)
+if v3 &gt;= v1 and v3 &gt;= v2 and v3 &gt;= v4 and v3 &gt;= v5 and v3 &gt;= v6 and v3 &gt;= v7 and v3 &gt;= v8 and v3 &gt;= v9 and v3 &gt;= v10:
+    print(v3)
+if v4 &gt;= v1 and v4 &gt;= v2 and v4 &gt;= v3 and v4 &gt;= v5 and v4 &gt;= v6 and v4 &gt;= v7 and v4 &gt;= v8 and v4 &gt;= v9 and v4 &gt;= v10:
+    print(v4)
+if v5 &gt;= v1 and v5 &gt;= v2 and v5 &gt;= v3 and v5 &gt;= v4 and v5 &gt;= v6 and v5 &gt;= v7 and v5 &gt;= v8 and v5 &gt;= v9 and v5 &gt;= v10:
+    print(v5)
+if v6 &gt;= v1 and v6 &gt;= v2 and v6 &gt;= v3 and v6 &gt;= v4 and v6 &gt;= v5 and v6 &gt;= v7 and v6 &gt;= v8 and v6 &gt;= v9 and v6 &gt;= v10:
+    print(v6)
+if v7 &gt;= v1 and v7 &gt;= v2 and v7 &gt;= v3 and v7 &gt;= v4 and v7 &gt;= v5 and v7 &gt;= v6 and v7 &gt;= v8 and v7 &gt;= v9 and v7 &gt;= v10:
+    print(v7)
+if v8 &gt;= v1 and v8 &gt;= v2 and v8 &gt;= v3 and v8 &gt;= v4 and v8 &gt;= v5 and v8 &gt;= v6 and v8 &gt;= v7 and v8 &gt;= v9 and v8 &gt;= v10:
+    print(v8)
+if v9 &gt;= v1 and v9 &gt;= v2 and v9 &gt;= v3 and v9 &gt;= v4 and v9 &gt;= v5 and v9 &gt;= v6 and v9 &gt;= v7 and v9 &gt;= v9 and v9 &gt;= v10:
+    print(v9)
+if v10 &gt;= v1 and v10 &gt;= v2 and v10 &gt;= v3 and v10 &gt;= v4 and v10 &gt;= v5 and v10 &gt;= v6 and v10 &gt;= v7 and v10 &gt;= v8 and v10 &gt;= v9:
+    print(v10)</div>
+</details>
+
+<ul>
+  <li>Due to the large number of conditions needed, any solution relying on compounding them with the logical and operator will be complex and long and thus error-prone.</li>
+  <li>Simplifying such program can be done:
+    <ul>
+      <li>algorithmically: via the Guess and Check approach</li>
+      <li>syntactically: via the use of collections and loops (next lesson)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="maximum-of-ten-integer-values-with-guess-and-check">“Maximum of ten integer values” with Guess and Check</h2>
+
+<p>The Guess and Check approach consists in the following steps:</p>
+
+<ul>
+  <li>Initialize a variable that <strong>would</strong> store the final result with a candidate value i.e. a value that may potentially be the final result, if it verifies the necessary conditions</li>
+  <li>Using multiple conditional statements (with simple conditions), update the result variable with a new one, at each statement the condition is not valid on the current value</li>
+  <li>The variable will contain the correct result at the end of all the necessary conditional statements.</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">v1 = 35
+v2 = -4
+v3 = 13
+v4 = 21
+v5 = 93
+v6 = -43
+v7 = 108
+v8 = 62
+v9 = -26
+v10 = 78
+
+maximum = v1
+if v2 &gt;= maximum:
+    maximum = v2
+if v3 &gt;= maximum:
+    maximum = v3
+if v4 &gt;= maximum:
+    maximum = v4
+if v5 &gt;= maximum:
+    maximum = v5
+if v6 &gt;= maximum:
+    maximum = v6
+if v7 &gt;= maximum:
+    maximum = v7
+if v8 &gt;= maximum:
+    maximum = v8
+if v9 &gt;= maximum:
+    maximum = v9
+if v10 &gt;= maximum:
+    maximum = v10
+print(maximum)</div>
+
+<ul>
+  <li>Though the code still contains many conditional statements, the conditions are simple so the code is more readable, easier to understand and errors are less likely.</li>
+</ul>
+
+<h2 id="problem-maximum-of-an-arbitrary-set-of-integers">Problem: Maximum of an arbitrary set of integers</h2>
+
+<ul>
+  <li>One can make the above code generic by acquiring the values (problem instance) from the user. However, the count of these numbers will always be fixed at 10.</li>
+  <li>
+    <p>When the problem input is a set of values, genericity can be introduced at another level/dimension which is the <strong>size</strong> of the set.</p>
+  </li>
+  <li>This requires:
+    <ul>
+      <li>objects/variables able to store an arbitrary count of values : collections or data structures</li>
+      <li>constructs for repeating operations an arbitrary number of times</li>
+    </ul>
+  </li>
+  <li>Guess and Check and more generally Accumulators is a very common approach to solve problems where an arbitrary number of operations (loop) is required.</li>
+</ul>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/loops.html"
+        class="chapter-next "
+        aria-label="Next page: Loops and collections"
+        data-level="1.1"
+        data-path="/loops.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              Part 3.
+            
+          </div>
+          <div class="chapter-label">
+            Loops and collections
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/inp-vld.html"
+        class="chapter-prev "
+        aria-label="Previous page: Input validation"
+        data-level="1.1"
+        data-path="/inp-vld.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Control flow
+                &#8250;
+              
+              Chapter 5.
+            
+          </div>
+          <div class="chapter-label">
+            Input validation
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2178,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/002-Control Flow/003-guess-check.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {

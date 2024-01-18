@@ -1,0 +1,2339 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Reading, writing and repositioning · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/file-access.html" />
+      
+
+      
+        <link rel="next" href="/oop.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Input and Output, variables and expressions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/types.html">
+              
+                3.
+              
+              Basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/file-access.html">
+              
+                12.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/read-write.html">
+              
+                13.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/files.html">
+                
+                Part 5: File handling
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 13.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="read-write"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Reading, writing and repositioning</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#controlling-the-stream-position">Controlling the stream position</a><ul><li><a href="#exercise">Exercise:</a></li></ul></li><li><a href="#reading-methods">Reading methods</a></li><li><a href="#writing-methods">Writing methods</a><ul><li><a href="#exercise-1">Exercise:</a></li></ul></li><li><a href="#file-and-functions">File and functions</a></li><li><a href="#other-useful-methods">Other useful methods</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="controlling-the-stream-position">Controlling the stream position</h2>
+
+<ul>
+  <li>The stream position determines at which character the next read or write operation will start</li>
+  <li>It is set initially to
+    <ul>
+      <li>0 (beginning of the file) when the file is opened in <code class="language-plaintext highlighter-rouge">'r'</code> or <code class="language-plaintext highlighter-rouge">'w'</code> modes</li>
+      <li>the end of the file when the file is opened in <code class="language-plaintext highlighter-rouge">'a'</code> mode</li>
+    </ul>
+  </li>
+  <li>It is updated after each read/write operation to the position at which the operation has ended</li>
+  <li><code class="language-plaintext highlighter-rouge">file.tell()</code>:  returns the current stream position</li>
+  <li><code class="language-plaintext highlighter-rouge">file.seek(offset [, ref])</code>  changes the stream position by <code class="language-plaintext highlighter-rouge">offset</code> from <code class="language-plaintext highlighter-rouge">ref</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 0 (default) for the beginning of the file</li>
+      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 1 for the current position, <code class="language-plaintext highlighter-rouge">offset</code> has to be 0 for text files thus resulting in no-operation</li>
+      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 2 for the end-of-file, <code class="language-plaintext highlighter-rouge">offset</code> has to be 0</li>
+    </ul>
+  </li>
+</ul>
+
+<p>out.txt</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test writing le I/O is not hard but requires more patience. test writing again test writing
+</code></pre></div></div>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "w") as myfile:
+    print("Stream position when opening in 'w' mode:", myfile.tell())
+    content = "Learning file I/O is not hard but requires patience."
+    print("Length of text to be written:", len(content))
+    myfile.write(content)
+    print("Stream position after writing:", myfile.tell())
+    myfile.write("writing again.")
+    print("Stream position after writing:", myfile.tell())</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "w+") as myfile:
+    print("Stream position when opening in 'w+' mode:", myfile.tell())
+    content = myfile.read()
+    print("Initial file content:", content)
+    print("Stream position after read:", myfile.tell())
+    content = "Learning myfile I/O is not hard but requires more patience. "
+    print("Writing to file:", content)
+    myfile.write(content)
+    print("Stream position after writing:", myfile.tell())
+    myfile.seek(0)
+    print("Stream position after seek(0):", myfile.tell())
+    print("text read from file:", myfile.read())
+    print("Stream position after read:", myfile.tell())</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "r") as myfile:
+    print("Stream position when opening in 'r' mode:", myfile.tell())
+    content = myfile.read()
+    print("Length of text read from file:", len(content))
+    print("Stream position after reading:", myfile.tell())</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "a+") as myfile:
+    print("Stream position when opening in 'a+' mode:", myfile.tell())
+    print("text read at current position:", myfile.read())
+    print("Stream position after read:", myfile.tell())
+    content = "test writing "
+    print("Writing to file at current position:", content)
+    myfile.write(content)
+    print("Stream position after writing: ", myfile.tell())
+    myfile.seek(0)
+    print("Stream position after seek(0)", myfile.tell())
+    content = "again test writing"
+    print("Writing to file at current position:", content)
+    myfile.write(content)
+    print("Stream position after writing: ", myfile.tell())</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "a") as myfile:
+    print("Stream position when opening in 'a' mode:", myfile.tell())
+    content = "Showing how tell() works."
+    print("Length of text to be written:", len(content))
+    myfile.write(content)
+    print("Stream position after writing:", myfile.tell())</div>
+
+<h3 id="exercise">Exercise:</h3>
+
+<p>Write a program where you print to the screen the second half of the text in the provided file twinkle.txt, <strong>without reading the first half</strong>.</p>
+
+<p>twinkle.txt</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Twinkle, twinkle, little bat!
+How I wonder what you're at!
+Up above the world you fly,
+Like a teatray in the sky.
+</code></pre></div></div>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">file = open("twinkle.txt")
+file.seek(0, 2)
+nChar = file.tell()
+file.seek(nChar//2)
+s = file.read()
+print(s)
+file.close()</div>
+</details>
+
+<h2 id="reading-methods">Reading methods</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">s = file.read([size])</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">size</code> specifies the number of characters to read</li>
+      <li>If <code class="language-plaintext highlighter-rouge">size</code> is not specified or negative, returns a string with all the characters in the file until the end-of-file (EOF)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">s = file.readline([size])</code>
+    <ul>
+      <li>Returns a string containing the characters up to the next new line character from the file</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">L = file.readlines([size])</code>
+    <ul>
+      <li>Returns a list of strings where each is a line from the file</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">size</code> <em>always represents the maximum number of characters to be read. If less characters are left till the end of line or end of file, then shorter strings are returned.</em></li>
+  <li><code class="language-plaintext highlighter-rouge">for line in file:</code>
+    <ul>
+      <li>Iterate through lines of the file using a for loop</li>
+    </ul>
+  </li>
+  <li>All read operations start from the current stream position.</li>
+  <li>The stream position is incremented by the number of characters read</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("twinkle.txt") as infile:
+    print(len(infile.read(10))) # reading the first 10 charcters
+    infile.seek(0)
+    print(len(infile.read(500))) # the file has less than 500 characters
+    infile.seek(0)
+    print(infile.readline()) # reading the first line
+    infile.seek(0)
+    line = infile.readline(15) # reading up until the end of the first line or 15 characters
+    print(line, len(line)) 
+    infile.seek(0)
+    line = infile.readline(100) # reading up until the end of the first line or 100 characters
+    print(line, len(line)) 
+    infile.seek(0)
+    print(infile.readlines())
+    infile.seek(0)
+    print(infile.readlines(10))
+    infile.seek(0)
+    print(infile.readlines(50))
+    infile.seek(0)
+    print(infile.readlines(200))
+    infile.seek(0)
+    for line in infile:
+        print(line)</div>
+
+<h2 id="writing-methods">Writing methods</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">file.write(content)</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">content</code>  must be a string</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">file.writelines(list_of_content)</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">list_of_content</code>  must be a list of strings</li>
+      <li>the function does <strong>NOT</strong> add new line characters at the end of each string in the list</li>
+    </ul>
+  </li>
+  <li>All write operations start from the current stream position (in <code class="language-plaintext highlighter-rouge">"w"</code> and <code class="language-plaintext highlighter-rouge">"w+"</code> modes)</li>
+  <li>The stream position is incremented by the number of characters written</li>
+  <li>If the stream position is not at the end-of-file, the write operation <strong>overwrites</strong> the bytes at the current position, when in <code class="language-plaintext highlighter-rouge">'w'</code> and <code class="language-plaintext highlighter-rouge">'w+'</code> mode.</li>
+  <li>Regardless of the current stream position, write operations will always happen at the end of file, if in <code class="language-plaintext highlighter-rouge">'a'</code> or <code class="language-plaintext highlighter-rouge">'a+'</code> mode.</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">text = ["Twinkle, twinkle, little bat!", "How I wonder what you're at!\n", "Up above the world you fly,", "Like a teatray in the sky."]
+with open("Twinkle.txt", "w") as outfile:
+    outfile.write("The twinkle poem\n")
+    outfile.writelines(text)</div>
+
+<h3 id="exercise-1">Exercise:</h3>
+
+<p>Write a program which rewrites the file Twinkle.txt while reversing the characters of each line.</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># preferred approach
+with open("Twinkle.txt") as infile:
+    lines = infile.readlines()
+
+with open("Twinkle.txt", "w") as outfile:
+    for line in lines:
+        if line[-1] == "\n":
+            line = line.rstrip("\n")
+            line = line[::-1]
+            line += "\n"
+        else:
+            line = line[::-1]
+        outfile.write(line)
+        
+
+
+# alternate approach
+with open("Twinkle.txt", "r+") as infile:
+    position = infile.tell()
+    for line in infile:
+        if line[-1] == "\n":
+            line = line.rstrip("\n")
+            line = line[::-1]
+            line += "\n"
+        else:
+            line = line[::-1]
+        infile.seek(position)
+        infile.write(line)
+        position = infile.tell()</div>
+</details>
+
+<h2 id="file-and-functions">File and functions</h2>
+
+<ul>
+  <li>A file can be opened, read or written, then closed within a function
+    <ul>
+      <li>The file object is a local variable</li>
+      <li>The function can obtain the file path as an argument, or eventually generate it , depending on the need</li>
+    </ul>
+  </li>
+  <li>A function can also perform operations on a <strong>file object/stream</strong> provided as argument
+    <ul>
+      <li>The file object/stream is mutable</li>
+      <li>any read/write operation performed in the function will take effect on the file</li>
+      <li>modifications to the stream position due to such operations should be taken into consideration in the calling code</li>
+      <li>It is possible to check whether the file is readable or writable before attempting the corresponding operation or use try-except to catch potential exceptions</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def createListFile(L, filename):
+    outfile = open(filename, "w")
+    outfile.write(str(L))
+    outfile.close()
+
+
+
+def appendListToFile(L, outfile):
+    try:
+        outfile.seek(0, 2)
+        outfile.write(str(L))
+    except:
+        print("Could not write to file")
+
+
+L1 = [1, 2, 3, 4]
+L2 = [5, 6, 7, 8]
+
+createListFile(L1, "listFile.txt")
+
+myfile = open("listFile.txt", "r+")
+appendListToFile(L2, myfile)
+myfile.close()</div>
+
+<h2 id="other-useful-methods">Other useful methods</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">file.readable()</code>: returns True, if the file can be read</li>
+  <li><code class="language-plaintext highlighter-rouge">file.writable()</code>: returns True, if the file can be written to</li>
+  <li><code class="language-plaintext highlighter-rouge">file.truncate([size])</code>: resizes the file to the given size in bytes (or the current position if size is not specified). The current stream position isn’t changed. This resizing can extend or reduce the current file size. In case of extension, the contents of the new file area depend on the platform (on most systems, additional bytes are zero-filled). The new file size is returned.</li>
+</ul>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/oop.html"
+        class="chapter-next "
+        aria-label="Next page: Object oriented programming"
+        data-level="1.1"
+        data-path="/oop.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              Part 6.
+            
+          </div>
+          <div class="chapter-label">
+            Object oriented programming
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/file-access.html"
+        class="chapter-prev "
+        aria-label="Previous page: Accessing files"
+        data-level="1.1"
+        data-path="/file-access.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                File handling
+                &#8250;
+              
+              Chapter 12.
+            
+          </div>
+          <div class="chapter-label">
+            Accessing files
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/005-File Handling/002-read-write.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-18 14:44:21 +0300"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>

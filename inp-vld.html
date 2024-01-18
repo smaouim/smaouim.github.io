@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Input validation · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/cond.html" />
+      
+
+      
+        <link rel="next" href="/guess-check.html" />
+      
     
 
   </head>
@@ -682,7 +690,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -691,7 +711,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/inp-vld.html">
@@ -754,6 +776,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,355 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/control.html">
+                
+                Part 2: Control flow
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 5.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="inp vld"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Input validation</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
+    <div class="chapter-abstract color-callout-dark">
+      Validating program input with conditional statements and exceptions
+    </div>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#input-validation">Input validation</a></li><li><a href="#try-except">Try-except</a></li><li><a href="#exercise-validating-integer-input">Exercise: Validating integer input</a></li><li><a href="#exercise-validating-floating-point-input">Exercise: Validating floating point input</a></li><li><a href="#exercise-validating-string-input">Exercise: Validating string input</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="input-validation">Input validation</h2>
+<ul>
+  <li>
+    <p>In many computational problems, the input has very specific type and range of values</p>
+
+    <ul>
+      <li>Example: a 6-letters string, a 3-digits positive integer, etc.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Inappropriate user input can lead to runtime errors</p>
+  </li>
+  <li>
+    <p>Some input properties can be checked using simple if statements</p>
+
+    <ul>
+      <li>Example: checking that an input string has exactly 6 characters</li>
+    </ul>
+  </li>
+  <li>
+    <p>Some runtime errors cannot be avoided by simple <code class="language-plaintext highlighter-rouge">if</code> statements</p>
+
+    <ul>
+      <li>Conversion of a string containing non-digit characters to an <code class="language-plaintext highlighter-rouge">int</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>A <code class="language-plaintext highlighter-rouge">try-except</code> statement allows to detect and handle such runtime errors AKA <strong>exceptions</strong></p>
+  </li>
+</ul>
+
+<h2 id="try-except">Try-except</h2>
+
+<p>Syntax:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statements before try-except&gt;
+try:
+&lt;try-block statements&gt;
+except [Exception]:
+&lt;except-block statements&gt;
+&lt;statements after the try-except code&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>If a runtime error happens in the <code class="language-plaintext highlighter-rouge">&lt;try-block statements&gt;</code>, the <code class="language-plaintext highlighter-rouge">&lt;except-block statements&gt;</code> are executed, otherwise they are skipped</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">[Exception]</code> specifies which type of error to lookout for. It is optional, if not specified, any exception will be detected</p>
+  </li>
+  <li>
+    <p>Multiple <code class="language-plaintext highlighter-rouge">except</code> blocks can be defined for a <code class="language-plaintext highlighter-rouge">try</code> block, based on the type of exception and how to handle them</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">[Exception]</code> can be <strong>thrown</strong> by built-in operations and functions, from a set of built-in exceptions (not only relative to type conversion)</p>
+  </li>
+  <li>
+    <p>Application code can also <code class="language-plaintext highlighter-rouge">throw</code> built-in or user-defined exceptions, in different scopes like functions or class methods. (discussed later)</p>
+  </li>
+  <li>
+    <p>Runtime errors can happen for many reasons and not only at input: e.g. division by zero: a <code class="language-plaintext highlighter-rouge">try-except</code> statement should be used whenever there is a chance of runtime error that should be properly handled</p>
+  </li>
+  <li>
+    <p>The way to handle errors is part of the application design and depends on the severity of the error e.g. if the error results in <strong>undefined</strong> user input that is crucial for computation, then handling the error should be either re-prompting or terminating the program.</p>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">try:
+    numerator = int(input("Please enter the fraction numerator: "))
+except ValueError: # detecting a ValueError exception that might have been raised by the try block, more specifically, the int() operator when it receives an unsuitable string argument
+    print("You did not enter an integer value")
+# at this point, numerator was not defined because int() conversion failed
+# Subsequent computations with numerator will result in another runtime error
+# so we need either re-prompt or just terminate the program
+exit(1)
+
+try:
+    denominator = int(input("Please enter the fraction denominator: "))
+except: # detecting any exception that might have been raised in the try block
+    print("An error happened at data input")
+exit(2)
+
+try:
+    if numerator % denominator == 0:
+        print("The numerator is a multiple of the denominator.")
+    else:
+        print("The fraction is not a whole number.")
+        print("{} / {}".format(numerator, denominator))
+except ZeroDivisionError:
+    print("The denominator cannot be 0")
+
+# print("{} / {}".format(numerator, denominator)) # if uncommented, this would execute even if a division by zero happens since no exit statement appear in the except block</div>
+
+<h2 id="exercise-validating-integer-input">Exercise: Validating integer input</h2>
+
+<p>Write a program which</p>
+
+<ul>
+  <li>prompts the user for an integer in the range [0..255]</li>
+  <li>validates that the user input is in the correct format and range</li>
+  <li>prints its binary and hexadecimal representations using built-in operators (<code class="language-plaintext highlighter-rouge">bin()</code> and <code class="language-plaintext highlighter-rouge">hex()</code>)</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">try:
+    intEntry = int(input("Please enter an integer between 0 and 255: "))
+    if  intEntry &gt;= 0 and intEntry &lt;= 255:
+        print("the binary representation of", intEntry, "is", bin(intEntry))
+        print("The hexadecimal representation of", intEntry, "is", hex(intEntry))
+    else:
+        print("This integer is out of range.")
+
+except ValueError:
+    print("This is not an integer.")
+
+print("Done")
+
+# other code structure
+try:
+    intEntry = int(input("Please enter an integer between 0 and 255: "))  
+except ValueError:
+    print("This is not an integer.")
+exit(1)
+
+if intEntry &lt; 0 or intEntry &gt; 255:
+    print("This integer is out of range.")
+else:
+    print("the binary representation of", intEntry, "is", bin(intEntry))
+    print("The hexadecimal representation of", intEntry, "is", hex(intEntry))
+
+print("Done")</div>
+</details>
+
+<h2 id="exercise-validating-floating-point-input">Exercise: Validating floating point input</h2>
+
+<p>Write a program which</p>
+
+<ul>
+  <li>prompts the user for a positive floating point number</li>
+  <li>validates the input format and range</li>
+  <li>prints its floor (corresponding also to the integral part) and its fractional part rounded to the 1000’th, separately</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">try:
+    userEntry = float(input("Enter a positive floating point number: "))
+    if userEntry &gt;= 0:
+        print("The floor of {} is {}.".format(userEntry, int(userEntry // 1)))
+        print("The decimal part of {} is {:.3f}.".format(userEntry, userEntry % 1))
+    else:
+        print("This is a negative number.")
+except ValueError:
+    print("This is not a floating point number.")</div>
+</details>
+
+<h2 id="exercise-validating-string-input">Exercise: Validating string input</h2>
+
+<p>Write a program which:</p>
+
+<ul>
+  <li>prompts the user for a single upper-case letter</li>
+  <li>validates the input format and range</li>
+  <li>prints the corresponding lower case letter</li>
+</ul>
+
+<blockquote class="block-tip">
+  <p>This problem can be solved using</p>
+  <ul>
+    <li>string methods (not yet discussed)</li>
+    <li>the string operators <code class="language-plaintext highlighter-rouge">ord()</code> and <code class="language-plaintext highlighter-rouge">chr()</code> and the ASCII table discussed in the previous lesson</li>
+  </ul>
+</blockquote>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">userInput = input("Please enter a single upper-case letter: ")
+if len(userInput) &gt; 1:
+    print("You entered more than one character")
+elif ord(userInput) &lt; 65 or ord(userInput) &gt; 90: # userIput &lt; 'A' or userInput &gt; 'Z'
+    print("This is not an upper-case letter")
+else:
+    print("The corresponding lower-case letter is", chr(ord(userInput)+32))</div>
+</details>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/guess-check.html"
+        class="chapter-next "
+        aria-label="Next page: Guess and check"
+        data-level="1.1"
+        data-path="/guess-check.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Control flow
+                 &#8250;
+              
+              Chapter 6.
+            
+          </div>
+          <div class="chapter-label">
+            Guess and check
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/cond.html"
+        class="chapter-prev "
+        aria-label="Previous page: Conditional statements"
+        data-level="1.1"
+        data-path="/cond.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Control flow
+                &#8250;
+              
+              Chapter 4.
+            
+          </div>
+          <div class="chapter-label">
+            Conditional statements
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2250,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/002-Control Flow/002-input-vld.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {

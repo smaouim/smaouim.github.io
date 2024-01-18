@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Basic built-in data types · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/io.html" />
+      
+
+      
+        <link rel="next" href="/control.html" />
+      
     
 
   </head>
@@ -468,7 +476,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -477,7 +497,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/types.html">
@@ -540,6 +562,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,290 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/basics.html">
+                
+                Part 1: Basics
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 3.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="types"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Basic built-in data types</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
+    <div class="chapter-abstract color-callout-dark">
+      Integer, floating points and strings: objects, operations and expressions.
+    </div>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#arithmetic-expressions">Arithmetic expressions</a></li><li><a href="#exercise-hypotenuse">Exercise: hypotenuse</a></li><li><a href="#exercise-weight-conversion">Exercise: weight conversion</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="arithmetic-expressions">Arithmetic expressions</h2>
+
+<ul>
+  <li>Write a program that displays your name in the console</li>
+  <li>Solving computational problems (even the simplest) requires performing arithmetic computation using the input data, constant values and more</li>
+  <li>An arithmetic expression is a combination of arithmetic operators (+, -, /, etc.) and numerical operands used to perform such computations</li>
+  <li>An expression is evaluated at execution time and its result assigned to a variable, printed, etc. depending on the statement it appears in</li>
+  <li>Operands can be literal numeric values or variables of type <code class="language-plaintext highlighter-rouge">int</code> or <code class="language-plaintext highlighter-rouge">float</code></li>
+</ul>
+
+<p><img src="assets/images/Lec2-2.png" alt="" /></p>
+
+<ul>
+  <li>Expressions can have mixed types operands (some <code class="language-plaintext highlighter-rouge">int</code> and some <code class="language-plaintext highlighter-rouge">float</code>); they are evaluated using float arithmetic and the result is always a float
+    <ul>
+      <li>Check the behavior of floor division with floats</li>
+    </ul>
+  </li>
+  <li>Conversion from floating point to integer via truncation of decimal part</li>
+  <li>Conversion from integer to floating point by adding a 0 decimal part</li>
+  <li>Conversion operators within expressions produce operands in the intended data type but do not alter the object’s original type
+    <ul>
+      <li>Try expressions that combine conversion and arithmetic operators</li>
+    </ul>
+  </li>
+  <li>Arithmetic operators precedence is similar to that of calculators including parentheses</li>
+  <li>More advanced mathematical operations and functions (square root, trigonometric, etc.) require invoking the math library (to be discussed later)</li>
+</ul>
+
+<p>Run the code below to check the behavior of the above operators:</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 22.4
+y = 5.1
+print("x = ", x)
+print("y = ", y)
+print("Operations on floats ...")
+print("x+y = ", x + y)
+print("x-y = ", x - y)
+print("x*y = ", x * y)
+print("x/y = ", x / y)
+print("x//y = ", x // y)
+print("x%y = ", x % y)  # meaningless
+print("x**y = ", x ** y)
+print("int(x) = ", int(x))
+print("x is still ", x)
+print("Converting and overwriting ...")
+x = int(x)
+y = int(y)
+print("x = ", x)
+print("y = ", y)
+print('Operations of ints ...')
+print("x+y = ", x + y)
+print("x-y = ", x - y)
+print("x*y = ", x * y)
+print("x/y = ", x / y)
+print("x//y = ", x // y)
+print("x%y = ", x % y)
+print("x**y = ", x ** y)
+
+print("converting to float without overwriting")
+print("float(x) = ", float(x))
+print("float(y) = ", float(y))
+
+print("rounding")
+x = 10
+y = 3
+print("x = ", x)
+print("y = ", y)
+print("x / y = ", x / y)
+print("round(x / y) = ", round(x / y))
+print("round(x / y, 2) = ", round(x / y, 2))</div>
+
+<h2 id="exercise-hypotenuse">Exercise: hypotenuse</h2>
+
+<ul>
+  <li>Write a short program that computes the length of the hypotenuse of a right triangle given the two legs. The program should:
+    <ul>
+      <li>initializes two variables <code class="language-plaintext highlighter-rouge">sideA</code> , <code class="language-plaintext highlighter-rouge">sideB</code> with the lengths of the two legs of a right triangle</li>
+      <li>using the Pythagorean theorem, computes the length of the hypotenuse of the triangle and stores it in a variable <code class="language-plaintext highlighter-rouge">sideC</code></li>
+      <li>prints the result</li>
+    </ul>
+  </li>
+  <li>Notes:
+    <ul>
+      <li>The Pythagorean theorem states that the sum of the squares of the two legs of the triangle equals the square of the hypotenuse.</li>
+      <li>You can obtain the square root by raising to the power 0.5</li>
+      <li>Try values 6 and 8 for <code class="language-plaintext highlighter-rouge">sideA</code> and <code class="language-plaintext highlighter-rouge">sideB</code></li>
+      <li>Try floating point values like 2.6 and 3.1</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+  <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sideA = 4
+    sideB = 3
+    sideC = (sideA ** 2 + sideB ** 2) ** 0.5
+    print(sideC)</div>
+</details>
+
+<h2 id="exercise-weight-conversion">Exercise: weight conversion</h2>
+
+<ul>
+  <li>Write a program which:
+    <ul>
+      <li>Initializes a <strong>float</strong> variable <code class="language-plaintext highlighter-rouge">Kg</code> with a value corresponding to a weight in Kilograms</li>
+      <li>computes the equivalent weight in pounds and ounces and stores the result in two <strong>integer</strong> variables <code class="language-plaintext highlighter-rouge">Lb</code> and <code class="language-plaintext highlighter-rouge">Oz</code></li>
+      <li>print the result following the example below</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.89  Kg =  6  Lbs and  5  Oz
+</code></pre></div>    </div>
+  </li>
+  <li>Notes:
+    <ul>
+      <li>1 Lb = 453.592 g = 0.453592 kg</li>
+      <li>1 Oz = 28.3495 g = 0.0283495 kg</li>
+      <li>The number of ounces is the number of whole ounces remaining after counting the number of whole pounds. It must be less than the number of ounces in a pound i.e. less than 16.
+        <ul>
+          <li>e.g: 0.9 Kg = 1 Lbs and 15 Oz and 0.91 Kg = 2 Lbs and 0 Oz</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/control.html"
+        class="chapter-next "
+        aria-label="Next page: Control flow"
+        data-level="1.1"
+        data-path="/control.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              Part 2.
+            
+          </div>
+          <div class="chapter-label">
+            Control flow
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/io.html"
+        class="chapter-prev "
+        aria-label="Previous page: Input and Output, variables and expressions"
+        data-level="1.1"
+        data-path="/io.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Basics
+                &#8250;
+              
+              Chapter 2.
+            
+          </div>
+          <div class="chapter-label">
+            Input and Output, variables and expressions
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2185,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/001-Basics/003.types.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {

@@ -1,0 +1,2423 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Accessing files · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/files.html" />
+      
+
+      
+        <link rel="next" href="/read-write.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Input and Output, variables and expressions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/types.html">
+              
+                3.
+              
+              Basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/file-access.html">
+              
+                12.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/read-write.html">
+              
+                13.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/files.html">
+                
+                Part 5: File handling
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 12.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="file-access"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Accessing files</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#console-applications">Console applications</a></li><li><a href="#computational-applications">Computational applications</a></li><li><a href="#files">Files</a></li><li><a href="#operations-on-files">Operations on files</a></li><li><a href="#file-access">File access</a></li><li><a href="#reading-from-text-files">Reading from text files</a></li><li><a href="#writing-to-files">Writing to files</a></li><li><a href="#practice-copying-a-file">Practice: copying a file</a></li><li><a href="#practice-numerical-input-from-text-file">Practice: numerical input from text file</a></li><li><a href="#specifying-files-in-the-file-system">Specifying files in the file system</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="console-applications">Console applications</h2>
+
+<ul>
+  <li>All <em><strong>input</strong></em> is entered by a user in the keyboard
+    <ul>
+      <li>Using <code class="language-plaintext highlighter-rouge">input()</code> function</li>
+    </ul>
+  </li>
+  <li>All <em><strong>output</strong></em> is displayed on the screen and can only be read by the user at that point
+    <ul>
+      <li>Using <code class="language-plaintext highlighter-rouge">print()</code> function</li>
+    </ul>
+  </li>
+  <li>Implications:
+    <ul>
+      <li>Human-application interaction is significant</li>
+      <li>Long term storage of results is not straight forward</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="computational-applications">Computational applications</h2>
+
+<ul>
+  <li>Consider, as an example, an application performing geophysical simulation to detect the presence of oil in the ground
+    <ul>
+      <li>The application requires as input, “imagery” data of multiple ground layers over large areas</li>
+      <li>The application will produce an estimation of the distribution of oil in the different portions</li>
+    </ul>
+  </li>
+  <li>The console Input / Output (I/O) mode is not sustainable for such applications, that are requiring significant amount of input data and producing significant amount of outputs
+    <ul>
+      <li>Entering input data to the keyboard can take a very long time or impossible due to tricky format</li>
+      <li>The data may already exist on the computer as a digital file</li>
+      <li>The user may not be able to consult and use all output as soon as they are on screen in one sitting</li>
+      <li>It is important to keep records of multiple outputs for comparison, archiving, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="files">Files</h2>
+
+<ul>
+  <li>Data can be stored “permanently” on <em><strong>secondary storage</strong></em> of computer systems</li>
+  <li>The basic unit of long term data storage is the <em><strong>file</strong></em></li>
+  <li>The file system is the component of the computer’s operating system, responsible for managing files on the different secondary storage devices (local hard drive, network drive, removable drive, etc.)</li>
+</ul>
+
+<h2 id="operations-on-files">Operations on files</h2>
+
+<ul>
+  <li>Programs can send requests to the file system to:
+    <ul>
+      <li>Create new files on a drive</li>
+      <li>Read from existing files</li>
+      <li>Modify existing files</li>
+    </ul>
+  </li>
+  <li>As such, a program can:
+    <ul>
+      <li>read input from one or multiple files</li>
+      <li>Write output to one or multiple files</li>
+      <li>Write data to and read data from temporary files, at different stages of solving the problem.</li>
+    </ul>
+  </li>
+  <li>Programming languages offer a set of objects and functions are to perform these operations in programs</li>
+  <li>From a program’s point of view a file can be abstracted as a sequence of bytes</li>
+  <li>The simplest files are (raw) <strong>text</strong> files where each byte is interpreted as a <strong>character</strong>
+    <ul>
+      <li>The content of such files can be examined by a human user, when opened using a simple text editor like notepad, gedit, etc.</li>
+    </ul>
+  </li>
+  <li>Byte sequences corresponding to files like printable documents (pdf) or worksheets (xlsx), which contain formatted text, images, etc. are not necessarily human-readable if interpreted as characters. Each byte may represent either content or formatting information, according to the file format. Special programs, like word processors, interpret the sequence of byte according to the file format and generate the human-readable content of such file, which is then displayed via a graphical interface.</li>
+</ul>
+
+<h2 id="file-access">File access</h2>
+
+<ul>
+  <li>In order to read or write to a file, the program needs to <code class="language-plaintext highlighter-rouge">open()</code> the file.</li>
+  <li>Opening the file consists in creating a <strong>“file object”</strong>, associated with the file location in the file system (hard drive, network drive , etc.)</li>
+  <li>The file is designated by its <strong>name</strong> (if it is in the working directory) or <strong>path</strong> only at opening.</li>
+  <li><code class="language-plaintext highlighter-rouge">read()</code> and <code class="language-plaintext highlighter-rouge">write()</code> operations can only be done on a file object obtained by an <code class="language-plaintext highlighter-rouge">open</code> operation.</li>
+  <li>When opening a file, few parameters have to be specified:
+    <ul>
+      <li><strong>file name</strong> (more generally, path): a string containing the name or path of the file</li>
+      <li><strong>mode</strong>: an optional string specifying whether the file is to be opened for reading, writing or appending. The default mode is reading. Multiple modes can be specified.</li>
+      <li><strong>multiple other optional arguments</strong>: <a href="https://docs.python.org/3/library/functions.html#open">see documentation</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="open-modes">Open modes:</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“r” or “rb”</td>
+      <td>Reading: OK, at the current read position<br />Writing: error<br />File exists: open as-is <br />File does not exist: error<br />Initial read position: 0 i.e. beginning of the file</td>
+    </tr>
+    <tr>
+      <td>“w” or “wb”</td>
+      <td>Reading: error<br />Writing: OK, at the current write position<br />File exists: open and erase/empty<br />File does not exist: create new empty<br />Initial write position: 0 i.e. beginning (file is empty anyway)</td>
+    </tr>
+    <tr>
+      <td>“a” or “ab”</td>
+      <td>Reading: error<br />Writing: OK, always at the end of file (append)<br />File exists: open as-is<br />File does not exist: create new empty<br />Initial write position: end-of-file</td>
+    </tr>
+    <tr>
+      <td>“[m]+” or “[m]+b”</td>
+      <td>Reading: OK<br />Writing: OK<br />File existence and initial read/write position apply as above depending on [m]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>“[m]b” : for reading and writing bytes (binary sequences), instead of strings</p>
+
+<ul>
+  <li>After completing the needed reading and/or writing, the file <em><strong>must</strong></em> be closed.
+    <ul>
+      <li>guarantees that (buffered/delayed) modifications to files complete before needed data is erased from program memory</li>
+    </ul>
+  </li>
+  <li>Once closed, the file object cannot be used for read/write operations on the previously opened file.</li>
+  <li>Like other identifiers, file object identifiers can be reused to open other files or designate other objects
+    <ul>
+      <li>if the file object was closed, reuse is safe</li>
+      <li>if the file object was not closed, access to the file is lost and previous file modifications may not complete safely.</li>
+    </ul>
+  </li>
+  <li><strong>File access sequence:</strong>
+    <ul>
+      <li>open</li>
+      <li>(multiple) read/write/reposition</li>
+      <li>close</li>
+    </ul>
+  </li>
+  <li>Alternatively, use <code class="language-plaintext highlighter-rouge">with</code> keyword (see example)</li>
+</ul>
+
+<h2 id="reading-from-text-files">Reading from text files</h2>
+
+<ul>
+  <li>The file has to be opened in read mode.</li>
+  <li>The file object method <code class="language-plaintext highlighter-rouge">read()</code> returns a string object.
+    <ul>
+      <li>when called without arguments, the string corresponds to the whole content of the file</li>
+      <li>optional arguments and their effects, other reading and repositioning functions will be discussed later.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>input.txt</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a sample input file.
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inputfile1 = open("input.txt", "r")
+content = inputfile1.read()
+print(content)
+#inputfile1.write("Hello")  # errors out
+inputfile1.close()
+#inputfile1.read() # errors out</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inputfile2 = open("test.txt") # errors out because the file does not exist
+print(inputfile2.read())
+inputfile2.close()</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># alternatively
+with open("input.txt") as inputfile1:
+    print(inputfile1.read())
+
+print(inputfile1.closed)</div>
+
+<h2 id="writing-to-files">Writing to files</h2>
+
+<ul>
+  <li>The file has to be opened in write or append mode.</li>
+  <li>The file object method <code class="language-plaintext highlighter-rouge">write()</code> takes as argument a string object.
+    <ul>
+      <li>other writing and repositioning functions will be discussed later.</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">outputfile1 = open("output.txt", "w")
+outputfile1.write("This is a sample output file. ")
+outputfile1.close()</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">outputfile2 = open("output.txt", "a")
+outputfile2.write("Appending text to the sample output file.")
+outputfile2.close()</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("other_output.txt", "a") as ofile:
+    ofile.write("File did not exist. Creating and appending.")</div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("existing.txt", "w") as ofile:
+    ofile.write("erasing and writing again.")</div>
+
+<h2 id="practice-copying-a-file">Practice: copying a file</h2>
+
+<p>write a program where you</p>
+
+<ul>
+  <li>prompts the user for an existing file name</li>
+  <li>if the file exists, creates a copy of the file. The name of the copy is the given file name prefixed with “copy_of_”</li>
+  <li>if the file does not exist, print the message “File does not exist”</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inFilename = input("Please enter the name of the file to copy: ")
+
+try:
+    infile = open(inFilename)
+    content = infile.read()
+    infile.close()
+    outFilename = "copy_of_" + inFilename
+    outfile = open(outFilename, "w")
+    outfile.write(content)
+    outfile.close()
+except FileNotFoundError:
+    print("File does not exist")</div>
+</details>
+
+<h2 id="practice-numerical-input-from-text-file">Practice: numerical input from text file</h2>
+
+<p>Write a program which:</p>
+
+<ul>
+  <li>reads from the file matrix.dat a sequence of space-separated floating point numbers, assumably representing the elements of a square matrix.
+    <ul>
+      <li>if any of the elements is not a floating point number or the number of elements is not a perfect square, print the message “Cannot be formatted as a square matrix”</li>
+    </ul>
+  </li>
+  <li>rewrites the file matrix.dat with the elements of the matrix aligned in rows and (left-justified) columns. The elements of a row must be spaced by at least 2 spaces.</li>
+</ul>
+
+<blockquote class="block-tip">
+  <ul>
+    <li>Just like console input, a program has some expectation on the contents of a file. Thus, it should, <strong>eventually</strong>, include handling of cases where the expectation is not met i.e. invalid input.</li>
+    <li>When a given file is going to be overwritten, make a copy of the original file, for debugging purposes.</li>
+  </ul>
+</blockquote>
+
+<p>matrix.dat:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2.6 196.475 78.8954 10 91.6 0.52 7854 85.147 62 45
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># reading data from file
+infile = open("matrix.dat")
+matrixData = infile.read()
+infile.close()
+# if data were to be read from the keyborad then we would use:
+# matrixData = input("Please enter a sequence of space-separated floating point numbers: ")
+
+matrixData = matrixData.split()
+matrixFloats = []
+try:
+    # validating the input
+    for element in matrixData:
+       matrixFloats.append(float(element)) # if this fails for any element it will raise ValueError exception
+    nbrElem = len(matrixData)
+    if ((nbrElem ** 0.5) % 1) != 0.0:
+        raise ValueError  # ValueError exception is raised if the number of elements if not a perfect square
+    # generating the matrix new format (as a multi-line string)
+    width = max([len(elem) for elem in matrixData]) + 2
+    size = int(nbrElem ** 0.5)
+    output = ""
+    k = 0
+    for i in range(size):
+        for j in range(size):
+            output += matrixData[k].ljust(width)
+            k += 1
+        output +="\n"
+    # if output were to be written to the screen then we would use
+    # print(output)
+    # writing the new format to the file
+    with open("matrix.dat", "w") as outfile:
+        outfile.write(output)
+except ValueError:
+    print("Cannot be formatted as a square matrix")</div>
+</details>
+
+<h2 id="specifying-files-in-the-file-system">Specifying files in the file system</h2>
+
+<ul>
+  <li>When specifying a file for opening:
+    <ul>
+      <li>Only files in the working directory (same directory as the module) can be designated by their file name alone</li>
+      <li>Files in any other directory in the file system need to be specified using an <em>absolute</em> or <em>relative</em> path</li>
+    </ul>
+  </li>
+  <li>Most file systems organize files in a hierarchy or tree
+    <ul>
+      <li>The root directory of the tree is the storage device</li>
+      <li>Many branches / internal nodes represent the different subdirectories</li>
+      <li>Files are the leaves of the tree</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/Lec15-1.jpg" alt="" /></p>
+
+<ul>
+  <li>The location of a file is specified via its absolute path or relative path</li>
+  <li>An **absolute path **is a sequence of directory names, starting at the root of the file system and ending at the specific file (or directory), following the relationship: “is subdirectory of”
+    <ul>
+      <li>e.g. in the above example file system the absolute path of <code class="language-plaintext highlighter-rouge">first</code> is: <code class="language-plaintext highlighter-rouge">root/spell/mail/prt/first</code></li>
+      <li>paths are typically stored as strings</li>
+      <li>directory names are separated using “/” or “", depending on the operating system</li>
+      <li>In Python programs, paths can always be specified using “/”, regardless of the operating system</li>
+    </ul>
+  </li>
+  <li>A <strong>relative path</strong> is a sequence of directory names starting at the current directory and ending at the specific file, following the relationships: “is subdirectory of” or “is parent directory”
+    <ul>
+      <li>”../” is used to specify the parent directory, as needed to travel up the tree</li>
+      <li>e.g. in the above example, the path to <code class="language-plaintext highlighter-rouge">spell</code> relative to <code class="language-plaintext highlighter-rouge">first</code> is: <code class="language-plaintext highlighter-rouge">../../prog/spell</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("myfiles/input1.txt") as infile:
+    print("accessing file with relative path")
+    print(infile.read())
+
+with open("/usercode/myfiles/input1.txt") as infile:
+    print ("accessing file with absolute path")
+    print(infile.read())
+
+with open("input2.txt") as infile:
+    print("accessing file with relative path")
+    print(infile.read())
+
+with open("/usercode/input2.txt") as infile:
+    print ("accessing file with absolute path")
+    print(infile.read())</div>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/read-write.html"
+        class="chapter-next "
+        aria-label="Next page: Reading, writing and repositioning"
+        data-level="1.1"
+        data-path="/read-write.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                File handling
+                 &#8250;
+              
+              Chapter 13.
+            
+          </div>
+          <div class="chapter-label">
+            Reading, writing and repositioning
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/files.html"
+        class="chapter-prev "
+        aria-label="Previous page: File handling"
+        data-level="1.1"
+        data-path="/files.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              Part 5.
+            
+          </div>
+          <div class="chapter-label">
+            File handling
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/005-File Handling/001-access.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-18 14:44:21 +0300"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>

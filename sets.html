@@ -1,0 +1,2360 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Sets and Dictionaries · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/nedted-loops.html" />
+      
+
+      
+        <link rel="next" href="/functions.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Input and Output, variables and expressions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/types.html">
+              
+                3.
+              
+              Basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/file-access.html">
+              
+                12.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/read-write.html">
+              
+                13.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/loops.html">
+                
+                Part 3: Loops and collections
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 11.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="sets"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Sets and Dictionaries</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#sets">Sets</a><ul><li><a href="#initialization">Initialization</a></li><li><a href="#operators-functions-and-methods">Operators, functions and methods</a></li><li><a href="#exercise-remove-duplicates">Exercise: remove duplicates</a></li></ul></li><li><a href="#dictionaries">Dictionaries</a><ul><li><a href="#initialization-1">Initialization</a></li><li><a href="#operators-functions-and-methods-1">Operators, functions and methods</a></li><li><a href="#exercise-word-count">Exercise: word count</a></li></ul></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="sets">Sets</h2>
+
+<ul>
+  <li>Aggregate data of different types</li>
+  <li>unordered and unindexable</li>
+  <li>do not allow duplicates</li>
+  <li>are mutable i.e. allow insertion and deletion of elements after creation</li>
+  <li>elements should be hashable; immutable built-in data types are hashable but mutable types like lists and sets are not.</li>
+  <li>typical uses are: membership testing, removing duplicates from a sequence, and (mathematical) set operations such as intersection, union, difference, and symmetric difference</li>
+</ul>
+
+<h3 id="initialization">Initialization</h3>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">s0 = set()
+print(f"{s0 = }")
+s1 = {"hello", 25, 3.2, (3, 4, 5)}
+print(f"{s1 = }")
+
+s2 = {1, 2, 3, 4, 3, 5, 6}
+print(f"{s2 = }") # notice that duplicates are removed
+
+#s3 = {1, 2, [3, 4]} # errors out, since [3, 4] is mutable so not hashable
+s3 = {1 ,2 , (3, 4)}
+print(f"{s3 = }")
+
+l1 = ['a', 'b' , 'c', 'd']
+s4 = set(l1)
+print(f"{s4 = }")
+
+t1 = ('a', 'b' , 'c', 'd')
+s5 = set(t1)
+print(f"{s5 = }")
+
+str1 = "abcd"
+s6 = set(str1)
+print(f"{s6 = }")
+
+l2 = list(s3)
+print(f"{l2 = }")
+
+t2 = tuple(s3)
+print(f"{t2 = }")
+
+str2 = str(s3)
+print(f"{str2 = }")</div>
+
+<h3 id="operators-functions-and-methods">Operators, functions and methods</h3>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">s1 = {1, 2, 3, 4, 5, 6, 7, 8}
+print("s1 = ", s1)
+s2 = {2, 4, 6, 8}
+print("s2 = ", s2)
+print("s2 issubset s1 : ", s2.issubset(s1))
+print("s2 &lt;= s1 : ", s2 &lt;= s1)
+print("s2 &lt; s1 : ", s2 &lt; s1)
+print("s1.issuperset(s2) : ", s1.issuperset(s2))
+print("s1 &gt;= s2 :", s1 &gt;= s2)
+print("s1 &gt; s2 : ", s1 &gt; s2)
+s3 = {'a', 'b', 'c', 'd', 'e'}
+print("s3 = ", s3)
+print("s3.isdisjoint(s1) = ", s3.isdisjoint(s1))
+print("s3.union(s2) = ", s3.union(s2))
+s4 = {5, 6, 7, 8, 9, 10, 11, 12}
+print("s4 = ", s4)
+print("s4.intersection(s1) = ", s4.intersection(s1))
+print("s4 &amp; s1 = ", s4 &amp; s1)
+print("s4.difference(s1) = ", s4.difference(s1))
+print("s4 - s1 = ", s4 - s1)
+print("s4.symmetric_difference(s1) = ", s4.symmetric_difference(s1))
+print("s4 ^ s1 = ", s4 ^ s1)
+print("modifier methods: ")
+s4.update(s3)
+print("after s4.update(s3), s4 = ", s4)
+s4 |= {1.2, 3.4, 5.6}
+print("after s4 |= {1.2, 3.4, 5.6}, s4 = ", s4)
+s4.intersection_update(s3)
+print("after s4.intersection_update(s3), s4 = ", s4)
+s4 &amp;= {"c", "d", "e", "f", "g", "h", "i", "j"}
+print('after s4 &amp;= {"c", "d", "e", "f", "g", "h", "i", "j"}, s4 = ', s4)
+s4.difference_update({'d', 'x', 'y', 'z'})
+print("after s4.difference_update({'d', 'x', 'y', 'z'}), s4 = ", s4)
+s4 -= {'e', 'l', 'p', 'q'}
+print("after s4 -= {'e', 'l', 'p', 'q'}, s4 = ", s4)
+s4.symmetric_difference_update({'x', 'y', 'z'})
+print("after s4.symmetric_difference_update({'x', 'y', 'z'}), s4 = ", s4)
+s4 ^= {"c", "p", "q"}
+print('after s4 ^= {"c", "p", "q"}, s4 = ', s4)
+s4.add(13)
+print("after s4.add(13), s4 = ", s4)
+s4.remove('p')
+print("after s4.remove('p'), s4 = ", s4)
+# s4.remove('a') # raises error
+s4.discard('q')
+print("after s4.discard('q'), s4 = ", s4)
+s4.discard('a')
+print("after s4.discard('a'), s4 = ", s4)
+s4.pop()
+print("after s4.pop(), s4 = ", s4)
+s4.clear()
+print("after s4.clear(), s4 = ", s4)
+print("Assignment and copy")
+s5 = s3
+print("s5 = s3 = ", s5)
+s3.add("x")
+print("after s3.add('x'), s3 = ", s3, "and" , "s5 = ", s5)
+s5 = s3.copy()
+print("s5 = s3.copy()")
+s3.add('y')
+print("after s3.add('y'), s3 = ", s3, "and", "s5 = ", s5)</div>
+
+<h3 id="exercise-remove-duplicates">Exercise: remove duplicates</h3>
+
+<p>Write a program which</p>
+
+<ul>
+  <li>reads in a sequence of space-separated words from the user</li>
+  <li>prints out a list of the user entries while removing any duplicates</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">userInput = input("enter a set of space separated words: ")
+userInput = userInput.split()
+
+noDuplicates = list(set(userInput))
+print(noDuplicates)</div>
+</details>
+
+<h2 id="dictionaries">Dictionaries</h2>
+
+<ul>
+  <li>Dictionaries</li>
+  <li>mapping or associative data structure i.e. elements are pairs</li>
+  <li>keys can have different data types, but must be hashable (e.g. immutable built-in types).</li>
+  <li>values also can have different data types and can be mutable</li>
+  <li>no duplicate keys are allowed which allows dictionaries to be indexable by keys</li>
+  <li>element are ordered by insertion time</li>
+</ul>
+
+<h3 id="initialization-1">Initialization</h3>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">o = dict()
+print(f"{o = }")
+o = {}
+print(f"{o = }")
+a = dict(one=1, two=2, three=3)
+print(f"{a = }")
+b = {'one': 1, 'two': 2, 'three': 3}
+print(f"{b = }")
+c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+print(f"{c = }")
+d = dict([('two', 2), ('one', 1), ('three', 3)])
+print(f"{d = }")
+e = dict({'three': 3, 'one': 1, 'two': 2})
+print(f"{e = }")
+f = dict({'one': 1, 'three': 3}, two=2)
+print(f"{f = }")
+print(a == b == c == d == e == f)</div>
+
+<h3 id="operators-functions-and-methods-1">Operators, functions and methods</h3>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">d1 = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(f"{d1 = }")
+print(f"{len(d1) = }")
+print(f"{'model' in d1 = }")
+print("=============================================================")
+# element access
+print(f"{d1['brand'] = }")
+d1['year'] = 2022
+print(f"after d1['year'] = 2022, {d1 =} ")
+#print(f"{d1['power'] = }") # KeyError
+print(f"{d1.get('model') = }")
+print(f"{d1.get('power') = }") # no error
+print("=============================================================")
+# add and remove element
+d1['power'] = 204
+print(f"after d1['power'] = 204, {d1 = }")
+# d1.pop('color') # KeyError
+# del d1['color'] # KeyError
+d1.pop('power')
+print(f"after d1.pop('power'), {d1 = }")
+del d1['model']
+print(f"after del d1['model'], {d1 = }")
+d1.popitem()
+print(f"after d1.popitem(), {d1 = }") # delete in LIFO order
+d1.update(color = 'red', trim = 'xyz')
+print(f"after d1.update(color = 'red', trim = 'xyz'), {d1 = }")
+# d2 = d1 | {'brand' : 'ford', 'model' : 'mustang'} # requires Python 3.9 and up
+# print("d2 = d1 | {'brand' : 'ford', 'model' : 'mustang'} =  ", d2)
+# d2 |= {'brand' : 'chevy', 'model' : 'camaro', 'title' : 'blue'}
+# print("after d2 |= {'brand' : 'chevy', 'model' : 'camaro', 'title' : 'blue'}, d2 = ", d2)
+print("=============================================================")
+# copying and clearing
+d1 = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 2022
+}
+print(f"restored d1 to {d1}")
+d2 = d1
+print("d2 = d1 = ", d2)
+d1['year'] = 1964
+print("after d1['year'] = 1964, d1 = ", d1, 'and d2 = ', d2)
+d2 = d1.copy()
+print("after d2 = d1.copy(), d2 = ", d2)
+d2['year'] = 2022
+print("after d2['year'] = 2022, d2 = ", d2 , 'and d1 = ', d1)
+d2.clear()
+print("after d2.clear(), d2 = ", d2)
+print("=============================================================")
+# extracting data
+print("list(d1) = ", list(d1))
+print("list(d1.keys()) = ", list(d1.keys()))
+print("list(d1.values() = ", list(d1.values()))
+print("list(d1.items()) = ", list(d1.items()))</div>
+
+<h3 id="exercise-word-count">Exercise: word count</h3>
+
+<p>Write a program which:</p>
+
+<ul>
+  <li>reads in a text from standard input</li>
+  <li>prints out the frequency of each word in the text</li>
+</ul>
+
+<blockquote class="block-tip">
+  <p>Use a dictionary to register each word and its frequency.</p>
+</blockquote>
+
+<p>Sample text:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Once upon a time, there was a beautiful girl named Cinderella. She lived with her wicked stepmother and two stepsisters. They treated Cinderella very badly. One day, they were invited for a grand ball in the king's palace. But Cinderella's stepmother would not let her go. Cinderella was made to sew new party gowns for her stepmother and stepsisters, and curl their hair. They then went to the ball, leaving Cinderella alone at home. Cinderella felt very sad and began to cry. Suddenly, a fairy godmother appeared and said, "Don't cry, Cinderella! I will send you to the ball!". But Cinderella was sad. She said, "I don't have a gown to wear for the ball!". The fairy godmother waved her magic wand and changed Cinderella's old clothes into a beautiful new gown! The fairy godmother then touched Cinderella's feet with the magic wand. And lo! She had beautiful glass slippers! "How will I go to the grand ball?", asked Cinderella. The fairy godmother found six mice playing near a pumpkin, in the kitchen. She touched them with her magic wand and the mice became four shiny black horses and two coachmen and the pumpkin turned into a golden coach. Cinderella was overjoyed and set off for the ball in the coach drawn by the six black horses. Before leaving, the fairy godmother said, "Cinderella, this magic will only last until midnight! You must reach home by then!". When Cinderella entered the palace, everybody was struck by her beauty. Nobody, not even Cinderella's stepmother or stepsisters, knew who she really was in her pretty clothes and shoes. The handsome prince also saw her and fell in love with Cinderella. He went to her and asked, "Do you want to dance?" And Cinderella said, "Yes!". The prince danced with her all night and nobody recognized the beautiful dancer. Cinderella was so happy dancing with the prince that she almost forgot what the fairy godmother had said. At the last moment, Cinderella remembered her fairy godmother's words and she rushed to go home. "Oh! I must go!", she cried and ran out of the palace. One of her glass slippers came off but Cinderella did not turn back for it. She reached home just as the clock struck twelve. Her coach turned back into a pumpkin, the horses into mice and her fine ball gown into rags. Her stepmother and stepsisters reached home shortly after that. They were talking about the beautiful lady who had been dancing with the prince. The prince had fallen in love with Cinderella and wanted to find out who the beautiful girl was, but he did not even know her name. He found the glass slipper that had come off Cinderella's foot as she ran home. The prince said, "I will find her. The lady whose foot fits this slipper will be the one I marry!". The next day, the prince and his servants took the glass slipper and went to all the houses in the kingdom. They wanted to find the lady whose feet would fit in the slipper. All the women in the kingdom tried the slipper but it would not fit any of them. Cinderella's stepsisters also tried on the little glass slipper. They tried to squeeze their feet and push hard into the slipper, but the servant was afraid the slipper would break. Cinderella's stepmother would not let her try the slipper on, but the prince saw her and said, "Let her also try on the slipper!". The slipper fit her perfectly. The prince recognized her from the ball. He married Cinderella and together they lived happily ever after.
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">text = input("Please enter a text: ")
+text = text.split()
+text = [word.strip('.,"!?;:').lower() for word in text]
+
+frequency = {}
+for word in text:
+    if word in frequency:
+        frequency[word] += 1
+    else:
+        frequency[word] = 1
+
+#print(frequency)
+for word in frequency:
+    print(word, ":",frequency[word])</div>
+
+Another solution
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">words = input("Insert text: ").split()
+
+words = [w.strip('.,?!;:"').rstrip("'s").lower() for w in words]
+
+unique_words = set(words)
+
+word_frequency1 = {}
+for w in unique_words:
+    word_frequency1[w] = words.count(w)
+
+for key in word_frequency1:
+    print(key, ":", word_frequency1[key])
+
+print("=================================")
+word_frequency2 = {}
+for w in words:
+    if w not in word_frequency2:
+        word_frequency2[w] = 1
+    else:
+        word_frequency2[w] += 1
+for key in word_frequency2:
+    print(key, ":", word_frequency2[key])
+
+print(word_frequency1 == word_frequency2)</div>
+</details>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/functions.html"
+        class="chapter-next "
+        aria-label="Next page: Functions"
+        data-level="1.1"
+        data-path="/functions.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              Part 4.
+            
+          </div>
+          <div class="chapter-label">
+            Functions
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/nedted-loops.html"
+        class="chapter-prev "
+        aria-label="Previous page: Nested loops, multidimentional lists"
+        data-level="1.1"
+        data-path="/nedted-loops.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Loops and collections
+                &#8250;
+              
+              Chapter 10.
+            
+          </div>
+          <div class="chapter-label">
+            Nested loops, multidimentional lists
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/003-Loops and Collections/005-sets.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-18 14:44:21 +0300"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>

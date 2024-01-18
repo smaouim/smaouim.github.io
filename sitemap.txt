@@ -1,3 +1,21 @@
----
-layout: sitemap
----
+/book.html
+/contents.html
+/basics.html
+/getting-started.html
+/io.html
+/types.html
+/control.html
+/cond.html
+/inp-vld.html
+/guess-check.html
+/loops.html
+/while.html
+/for.html
+/sequence.html
+/nedted-loops.html
+/sets.html
+/functions.html
+/files.html
+/file-access.html
+/read-write.html
+/oop.html

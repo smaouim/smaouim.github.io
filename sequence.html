@@ -1,0 +1,2416 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Sequences: string, tuples, lists and ranges · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/for.html" />
+      
+
+      
+        <link rel="next" href="/nedted-loops.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Input and Output, variables and expressions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/types.html">
+              
+                3.
+              
+              Basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/file-access.html">
+              
+                12.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/read-write.html">
+              
+                13.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/loops.html">
+                
+                Part 3: Loops and collections
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 9.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="sequence"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Sequences: string, tuples, lists and ranges</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#initialization">Initialization</a></li><li><a href="#basic-operations">Basic operations</a></li><li><a href="#exercise-standard-deviation-of-a-sequence-of-numbers">Exercise: Standard deviation of a sequence of numbers</a></li><li><a href="#iterating-with-for-and-range">Iterating with <code class="language-plaintext highlighter-rouge">for</code> and <code class="language-plaintext highlighter-rouge">range()</code></a></li><li><a href="#built-in-functions-for-sequences">Built-in functions for sequences</a><ul><li><a href="#exercise-sum-of-multiples-of-3">Exercise: sum of multiples of 3</a></li></ul></li><li><a href="#methods">Methods</a></li><li><a href="#strings-lists-and-tuples-reference">Strings, Lists and Tuples reference</a><ul><li><a href="#exercise-sequence-input">Exercise: Sequence input</a></li></ul></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <ul>
+  <li>Repetition in computing does not involve only actions but also data</li>
+  <li>It is not always possible to work with an arbitrary (runtime defined) amount of data while relying only on “scalar” variables.</li>
+  <li>Python offers to aggregate an arbitrary number of pieces of data into one object (data structure, collection) under the same identifier (name)</li>
+  <li>Strings, tuples and lists are <strong>sequence</strong> data structures</li>
+  <li>The term <strong>sequence</strong> implies order; elements are <strong>indexable</strong> (accessible) by their <strong>position</strong> in the sequence.</li>
+  <li>Indexes range from 0 to the number of elements -1</li>
+  <li>Strings are sequences of characters while elements of tuples and lists can be of any type</li>
+  <li>Strings and tuples are immutable while lists are mutable</li>
+</ul>
+
+<h2 id="initialization">Initialization</h2>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sampleList = [23, 4.2, "hi", "abc"]
+print(f"{sampleList =}")
+sampleTuple = (23, 4.2, "hi", "abc")
+print(f"{sampleTuple =}")
+x = 15
+y = "CS290"
+z = 2.6
+myList = [y, "y", 2, x, 6.3, z]
+print(myList, "is a", type(myList))
+x = 5
+y = "CS207"
+z = 0.9
+print(f"{myList =}")
+
+myTuple = (3, 5, x)
+print(myTuple, "is a", type(myTuple))
+x = 10
+print(f"{myTuple =}")
+
+myList = [[x, 12], 0, (y, 12, z)]
+print(f"{myList=}")
+
+myTuple = ([x, 12], 0, (y, 12, z))
+print(f"{myTuple =}")</div>
+
+<h2 id="basic-operations">Basic operations</h2>
+
+<ul>
+  <li>Number of elements with operator <code class="language-plaintext highlighter-rouge">len()</code></li>
+  <li>Element access with operator <code class="language-plaintext highlighter-rouge">[ ]</code>, negative index possible for inverted order</li>
+  <li>Concatenation with operator <code class="language-plaintext highlighter-rouge">+</code></li>
+  <li>Comparison <code class="language-plaintext highlighter-rouge">==, != , &gt; , &gt;=, &lt;, &lt;=</code></li>
+  <li>Iterating with <code class="language-plaintext highlighter-rouge">for</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">e in x</code>: return <code class="language-plaintext highlighter-rouge">True</code>, if object / substring <code class="language-plaintext highlighter-rouge">e</code> is present in list / string <code class="language-plaintext highlighter-rouge">x</code>, and <code class="language-plaintext highlighter-rouge">False</code> otherwise.</li>
+      <li><code class="language-plaintext highlighter-rouge">x[i : j : k]</code>: returns the slice of sequence <code class="language-plaintext highlighter-rouge">x</code> composed of the objects from index <code class="language-plaintext highlighter-rouge">i</code> to <code class="language-plaintext highlighter-rouge">j-1</code>, skipping by <code class="language-plaintext highlighter-rouge">k</code> steps. If <code class="language-plaintext highlighter-rouge">i</code> is omitted, 0 is used. If <code class="language-plaintext highlighter-rouge">j</code> is omitted, the length of the sequence is used. If <code class="language-plaintext highlighter-rouge">k</code> is omitted, 1 is the default. Negative values can be used
+  *<code class="language-plaintext highlighter-rouge"> x * i</code> : generate a new list / string where the list / string <code class="language-plaintext highlighter-rouge">x</code> is repeated <code class="language-plaintext highlighter-rouge">i</code> (integer) times</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">list1 = [5, 6 , 9, 4, 10, 3]
+print(f"list1 has {len(list1)} elements")
+print(f"{list1 =}")
+print(f"{list1[1] =}")
+# print(f"{list1[6] =}") # out of range error 
+print(f"{list1[-3] =}") # eq to list1[len(list1) - 3]
+# print(f"{list1[-7] =}")  # out of range error 
+
+list2 = ['a', 'f', 'c']
+print(f"{list2 =}")
+list2[0] = 1  # element modification of a list using subscript operator
+print(f"{list2 =}")
+
+list3 = list2 + list1 # concatenation with +
+print(f"{list3 =} = list1 + list2 and has {len(list3)} elements")
+x = 3.5
+print(f"{x =}")
+list3 += [x] # rhs has to be a list. Its content will be appended
+print(f"{list3 =} = list3 + [x]")
+
+tuple1 = (1, 2, 3)
+print(f"{tuple1 =}")
+print(f"{tuple1[0] =}")
+#tuple1[1] = 4  # element modification of a tuple not permitted
+
+tuple2 = tuple(list1) # conversion from list ot tuple, opposite is also possible
+print(f"{tuple2 =}")
+
+tuple3 = tuple1 + tuple2 # concatenation
+print(f"{tuple3 =} = tuple1 + tuple2")
+
+
+if tuple1 &gt;= tuple2: 
+    print("tuple 1 is greater that tuple 2")
+else:
+    print("tuple 2 is greater than tuple 1")
+
+tuple4 = tuple(list3)
+# if tuple1 &gt;= tuple4: # errors out: elements of tuples don't have the same type
+#     print("tuple 1 is greater that tuple 3")
+# else:
+#     print("tuple 3 is greater than tuple 1")
+
+if 'c' in list3:
+    print("Found 'c' in ", list3)
+
+if 6 in tuple1:
+    print("found 6 in ", tuple1)
+
+str1 = "Hello world!"
+if 'o w' in str1:
+    print("'o w' is a substring of ", str1)
+
+str2 = str1[2:10:2] # slicing
+print(f"{str2 =} = str1[2:10:2]")
+
+list4 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+print(f"{list4 =}")
+print(f"{list4[::-1] =}") # reversing
+
+str3 = str2 * 3
+print(f"{str3 =} = str2 * 3")
+
+list2 *= 2 # list2 = list2 * 2
+print(f"{list2 =}  after list2 *= 2")</div>
+
+<h2 id="exercise-standard-deviation-of-a-sequence-of-numbers">Exercise: Standard deviation of a sequence of numbers</h2>
+
+<p>Complete the below scaffold, to compute and display the standard deviation $\sigma$ of a user-prompted sequence of floating point numbers, <em>ignoring any non-numerical entry</em>.</p>
+
+<p>The user needs to enter the string “q” or “Q” to signal the end of the sequence of numbers.</p>
+
+\[\sigma=\sqrt{\frac{\sum{(x_i - \mu)^2}}{N-1}}\]
+
+<p>where: $x_i$ are the numbers of the sequence, $\mu$ is their mean (average) and $N$ their count (size of the sequence).</p>
+
+<blockquote class="block-tip">
+  <ul>
+    <li>The mean computation can be done using accumulation but not the standard deviation</li>
+    <li>All $x_i$ have to be stored in a list to compute all $(x_i - \mu)$</li>
+    <li>The list is compiled by appending to an initially empty list [ ], one user entry at each iteration</li>
+  </ul>
+</blockquote>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("This program computes the average and standard deviation of a set of numbers")
+print("Please enter the one number at each prompt. Enter q or Q to stop prompting and get the result")
+
+inputValues = []
+while True:
+    userEntry = input("? ")
+    if userEntry == 'q' or userEntry == 'Q':
+        break
+    try:
+        numEntry = float(userEntry)
+    except:
+        print("You entered a non numerical value. This entry will be ignored")
+        continue
+    # at this point we have a valid floating point value
+    # any of the following statements would append the current number to the list of numbers
+    inputValues += [numEntry]
+
+# The following condition is not input validation, as entering q in the first iteration
+# can be considered as a valid input.
+# this is a special/edge case that has to be handled separately
+# not to cause a ZeroDivisionError exception/error
+if len(inputValues) == 0:
+    print("list is empty")
+else:
+    average = 0
+    for val in inputValues:
+        average += val
+    average /= len(inputValues) # average = average / len(inputValues)
+    stdDev = 0
+    for val in inputValues:
+        stdDev += (val - average)**2
+    stdDev = (stdDev / len(inputValues))**0.5
+    print("The average of this set of values is:", average)
+    print("The standard deviation of this set of values is:", stdDev)</div>
+</details>
+
+<h2 id="iterating-with-for-and-range">Iterating with <code class="language-plaintext highlighter-rouge">for</code> and <code class="language-plaintext highlighter-rouge">range()</code></h2>
+
+<ul>
+  <li>In order to modify individual elements of a list, one needs to access them by their index</li>
+  <li>Iterating using a basic <code class="language-plaintext highlighter-rouge">for</code> loop does not allow to access list elements using their indexes</li>
+  <li>Using a <code class="language-plaintext highlighter-rouge">while</code> loop remains the most general approach but requires explicitly handling an index variable</li>
+  <li><code class="language-plaintext highlighter-rouge">range  ([i,] j [, k])</code>  allows you to generate a <strong>sequence of integers</strong> (not a list) starting with <code class="language-plaintext highlighter-rouge">i</code>, ending at <code class="language-plaintext highlighter-rouge">j</code> and with a step <code class="language-plaintext highlighter-rouge">k</code>. These can be <strong>used as indexes</strong> for iterating through sequences with a <code class="language-plaintext highlighter-rouge">for</code> loop</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">list2 = ['a', 1.2, 'f', 13, 'c', 43, "hello"]
+print("elements of list2")
+for val in list2:
+    print(val)
+    val = "123"
+print("list2 =", list2)
+
+print("range(0, 10) = ", range(0, 10))
+print("list(range(0, 10)) = ", list(range(0, 10)))
+print("list(range(2, 20, 5)) = ", list(range(2, 20, 5)))
+
+print("elements of list2")
+for i in range(len(list2)): # same as range(0, len(list2), 1)
+    print(list2[i])
+    list2[i] *= 2
+print("list2 =", list2)
+
+print("every other element of list2")
+for val in list2[1:len(list2):2]:
+    print(val)
+
+print("every other element of list2")
+for i in range(1,len(list2),2):
+    print(list2[i])
+
+# generating lists with list comprehensions
+pattern = [i for i in range(10)] # list(range(10))
+print(f"{pattern = }")
+# same as
+pattern = []
+for i in range(10):
+    pattern += [i]
+print(f"{pattern = }")
+
+# double of every other element of list2
+list3 = [value * 2 for value in list2[1::2]]
+print(f"{list3 =}")
+list3 = []
+for value in list2[1::2]:
+    list3 += [value * 2]
+print(f"{list3 =}")</div>
+</details>
+
+<h2 id="built-in-functions-for-sequences">Built-in functions for sequences</h2>
+
+<ul>
+  <li>The Python Standard Library offers a set of utility (free) functions.</li>
+  <li>Few of these function are useful operations on sequences (and most generally iterables), namely <code class="language-plaintext highlighter-rouge">min()</code>, <code class="language-plaintext highlighter-rouge">max()</code>, <code class="language-plaintext highlighter-rouge">sum()</code>, <code class="language-plaintext highlighter-rouge">sorted()</code>, <code class="language-plaintext highlighter-rouge">reversed()</code>, <code class="language-plaintext highlighter-rouge">zip()</code> etc.</li>
+</ul>
+
+<p>For the full documentation of these functions refer to <a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a></p>
+
+<h3 id="exercise-sum-of-multiples-of-3">Exercise: sum of multiples of 3</h3>
+
+<p>Write ONE line of code that prints the sum of the multiples of 3 smaller than 100.</p>
+
+<p>The expected output is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1683
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print(sum([i for i in range(3, 100, 3)]))
+print(sum(list(range(3, 100, 3))))</div>
+</details>
+
+<h2 id="methods">Methods</h2>
+
+<ul>
+  <li>Python is an Object Oriented Programming (OOP) language</li>
+  <li>Objects can be as simple as a single integer or float or more elaborate like strings (sequence of characters) or lists and tuples (sequence of arbitrary objects)</li>
+  <li>Objects with the same <strong>properties</strong> have the same <code class="language-plaintext highlighter-rouge">type</code> or belong to the same <code class="language-plaintext highlighter-rouge">class</code> (OOP terminology)</li>
+  <li>Properties include <strong>operations</strong> that can be performed with (or on) these objects</li>
+  <li>Syntactically, few operations are expressed with <strong>operators</strong>, few others with (free) <strong>functions</strong> and others with <strong>methods</strong></li>
+  <li>Methods are called upon some object using the selection operator <code class="language-plaintext highlighter-rouge">ObjectName.methodName(arguments)</code></li>
+  <li>No one is supposed to recall all methods of the built-in sequences (or any class)</li>
+  <li>Everyone is supposed to know how to <strong>find out</strong> <em>whether some method exists</em> and <em>how to use it</em>, by looking up the proper <strong>documentation</strong></li>
+  <li>Some of the previous problems in this course can be solved more elegantly, if some of these methods are used</li>
+  <li>In subsequent problems and examples, use of these methods is <strong>recommended</strong> and <strong>expected</strong></li>
+</ul>
+
+<h2 id="strings-lists-and-tuples-reference">Strings, Lists and Tuples reference</h2>
+
+<ul>
+  <li>The exhaustive reference to sequence operations and methods is the Python Standard Library documentation</li>
+</ul>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range</a></p>
+
+<p><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str</a></p>
+
+<ul>
+  <li>The documentation is sometimes confusing for beginners (contains terminology known only to advanced programmers)</li>
+  <li>A beginner-friendly reference:</li>
+</ul>
+
+<p><a href="https://link.springer.com/content/pdf/bbm:978-1-84996-537-8/1?pdf=chapter toc">https://link.springer.com/content/pdf/bbm:978-1-84996-537-8/1?pdf=chapter toc</a></p>
+
+<h3 id="exercise-sequence-input">Exercise: Sequence input</h3>
+
+<p>In the standard deviation exercise, the elements of the sequence are prompted for one-at-a-time, making the interface tedious. For a better interface, we would like the user to enter all elements of the sequence in one prompt, space-separated.</p>
+
+<p>Write a program which:</p>
+
+<ul>
+  <li>prompts the user for a space-separated sequence of numbers</li>
+  <li>generates and prints a list of all the numerical entries (ignoring non-numerical ones). Note that the elements of the list are expected to be floats.</li>
+</ul>
+
+<p>Sample run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please enter the numbers separated by spaces: 1 2.4  6.3        12 q.6 7.5 9.1
+[1.0, 2.4, 6.3, 12.0, 7.5, 9.1]
+</code></pre></div></div>
+
+<blockquote class="block-tip">
+  <p>Look for the semantics of string method <code class="language-plaintext highlighter-rouge">split()</code> and use it to process the user (raw string) input.</p>
+</blockquote>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inputString = input("Please enter the numbers separated by spaces: ")
+listOfStrings = inputString.split()  # this uses any white spaces as separators: multiple single spaces, tabs, new line, etc
+# print(listOfStrings)  # this is not enough. The list contains strings now, and they may not be convertible to numbers
+
+# listOfStrings = inputString.split(" ")   # this uses exactly one space as a separator. the above is more general
+# print(listOfStrings)
+
+# one can prompt and specify another separator, commas for instance
+# inputString = input("Please enter the numbers separated by commas")
+# listOfStrings = inputString.split(",")
+# print(listOfStrings)
+
+listOfFloats = []
+for s in listOfStrings:
+    try:
+        s = float(s)
+        listOfFloats.append(s)  # listOfFloats += [s]
+    except ValueError:
+        pass  # also continue should work
+
+print(listOfFloats)</div>
+</details>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/nedted-loops.html"
+        class="chapter-next "
+        aria-label="Next page: Nested loops, multidimentional lists"
+        data-level="1.1"
+        data-path="/nedted-loops.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Loops and collections
+                 &#8250;
+              
+              Chapter 10.
+            
+          </div>
+          <div class="chapter-label">
+            Nested loops, multidimentional lists
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/for.html"
+        class="chapter-prev "
+        aria-label="Previous page: Iterating with &quot;for&quot;"
+        data-level="1.1"
+        data-path="/for.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Loops and collections
+                &#8250;
+              
+              Chapter 8.
+            
+          </div>
+          <div class="chapter-label">
+            Iterating with &quot;for&quot;
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/003-Loops and Collections/003-sequence.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-18 14:44:21 +0300"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Input and Output, variables and expressions · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/getting-started.html" />
+      
+
+      
+        <link rel="next" href="/types.html" />
+      
     
 
   </head>
@@ -395,7 +403,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -404,7 +424,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/io.html">
@@ -467,6 +489,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,385 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/basics.html">
+                
+                Part 1: Basics
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 2.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="io"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Input and Output, variables and expressions</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
+    <div class="chapter-abstract color-callout-dark">
+      What you need to write non-trivial code.
+    </div>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#warmup-refresher-output-your-name">Warmup refresher: output your name</a></li><li><a href="#problem-vs-problem-instance">Problem vs Problem instance</a></li><li><a href="#solving-problems-with-algorithms">Solving problems with algorithms</a></li><li><a href="#algorithm-vs-program">Algorithm vs Program</a></li><li><a href="#standard-input-and-output">Standard Input and Output</a></li><li><a href="#greetings">Greetings</a></li><li><a href="#objects-or-variables">Objects or variables</a></li><li><a href="#types">Types</a></li><li><a href="#initializing-and-printing-variables">Initializing and printing variables</a></li><li><a href="#choosing-identifiers">Choosing identifiers</a></li><li><a href="#objects-and-their-references">Objects and their references</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="warmup-refresher-output-your-name">Warmup refresher: output your name</h2>
+
+<p>Write a program that displays your name in the console</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("Malek Smaoui")</div>
+
+<ul>
+  <li>The “Hello world!” program always outputs the same text</li>
+  <li>To print a different text, we need to modify the argument of the print statement
+    <ul>
+      <li>Modifying the code means obtaining a different program</li>
+      <li>Fundamentally, both programs perform the same <strong>action</strong> only on different <strong>data</strong></li>
+    </ul>
+  </li>
+  <li>More useful programs should solve a <strong>generic problem</strong> where the <strong>problem instance</strong> is specified at <strong>runtime</strong></li>
+</ul>
+
+<h2 id="problem-vs-problem-instance">Problem vs Problem instance</h2>
+
+<ul>
+  <li>Example of a computational <strong>problem</strong>: “Sorting in increasing order a set of integers”</li>
+  <li>Example of an instance of the above problem: “Sorting in increasing order the set {9, 5, 2, 7, 3}”</li>
+  <li>When a computational problem has multiple instances, the algorithm requires input
+    <ul>
+      <li>The <strong>input</strong> of the algorithm is the <strong>problem instance</strong></li>
+      <li>The <strong>output</strong> of the algorithm is the <strong>solution</strong> of the problem instance</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="assets/images/Lec2-1.png" alt="" /></p>
+
+<h2 id="solving-problems-with-algorithms">Solving problems with algorithms</h2>
+
+<ul>
+  <li><strong>Algorithm</strong> : sequence of <em>steps</em>, expressed in a certain <em>language</em>, followed by a <em>processor</em>, to solve a <em>problem</em>
+    <ul>
+      <li><em>Processor</em>: not necessarily a computer; can be a human being</li>
+      <li><em>Problem</em>: not necessarily computational; can be making a meal</li>
+      <li><em>Language</em>: not necessarily a programming language; could be natural language</li>
+      <li><em>Steps</em>: not necessarily machine instructions; could be physical actions</li>
+    </ul>
+  </li>
+  <li>With this definition, a cake recipe is an algorithm</li>
+  <li>Some conditions to be verified:
+    <ul>
+      <li>Processor understands the language</li>
+      <li>Steps are within the capabilities of the processor</li>
+      <li>Problem is solvable by the processor</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="algorithm-vs-program">Algorithm vs Program</h2>
+
+<ul>
+  <li>An algorithm (of a computational problem) can be expressed in multiple ways:
+    <ul>
+      <li>Using natural language, e.g. English</li>
+      <li>Using a chart</li>
+      <li>Using pseudocode: mix of natural language and programming constructs</li>
+      <li>Using a specific programming language</li>
+    </ul>
+  </li>
+  <li>A program is one form of an algorithm</li>
+  <li>Since an algorithm expects input and produces output, a programming language need to provide constructs to exchange this data  with its user.</li>
+</ul>
+
+<h2 id="standard-input-and-output">Standard Input and Output</h2>
+
+<ul>
+  <li>Users interacts with programs via an interface
+    <ul>
+      <li><em>Console</em>: basic multi-line text display and typing</li>
+      <li><em>Graphic</em>: one or more windows with text, graphics and more.</li>
+    </ul>
+  </li>
+  <li>Programming languages provide constructs to:
+    <ul>
+      <li>Acquire or get text from the Console: input</li>
+      <li>Display or print text to the Console: output</li>
+    </ul>
+  </li>
+  <li>The “Hello world” program illustrates basic <strong>text</strong> output via the <code class="language-plaintext highlighter-rouge">print</code> statement</li>
+  <li>Obtaining <strong>text</strong> typed by the user on the console is achieved by the <code class="language-plaintext highlighter-rouge">input</code> function</li>
+  <li><code class="language-plaintext highlighter-rouge">print</code> and <code class="language-plaintext highlighter-rouge">input</code> are functions, part of the Python Standard Library
+    <ul>
+      <li>Other forms and means of I/O require other constructs from the Python Standard Library (like files, discussed later) or even different libraries</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="greetings">Greetings</h2>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">user = input("What is your name?")
+print("Hello", user, ", nice to meet you.")</div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">input</code>: function which
+    <ul>
+      <li>prints the text argument AKA prompt</li>
+      <li>acquires (and returns) whatever text the user will type to the console</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">user</code>: <strong>object</strong> (AKA  <strong>variable</strong>)  that will receive and store the user input.</li>
+  <li>Simplest program with
+    <ul>
+      <li>input and output</li>
+      <li>problem instance and solution</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="objects-or-variables">Objects or variables</h2>
+
+<ul>
+  <li>User input, program output and intermediary data used to solve a problem need to be stored in <strong>memory</strong> to be accessed and used as needed</li>
+  <li>A program needs to designate a memory <strong>container</strong> to store a specific piece of data</li>
+  <li>A program uses <strong>aliases or names</strong> to designate specific pieces of data</li>
+  <li>The interpreter (and the Operating System) maps these aliases to actual addresses (locations) in the memory hardware, where the data is written (stored)</li>
+  <li>An object (variable) is a programming abstraction used to represent (name) a memory location where some specific data is stored</li>
+  <li>It has:
+    <ul>
+      <li>An identifier</li>
+      <li>A value</li>
+      <li>A type;  <em>inferred from the initial value assigned to it</em></li>
+    </ul>
+  </li>
+  <li>E.g.: the statement <code class="language-plaintext highlighter-rouge">x = 10</code> initializes an object with <strong>identifier</strong> <code class="language-plaintext highlighter-rouge">x</code> to the <strong>value</strong> <code class="language-plaintext highlighter-rouge">10</code> , so its <strong>type</strong> will be <em>integer</em></li>
+</ul>
+
+<h2 id="types">Types</h2>
+
+<ul>
+  <li>The basic built-in types are:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int</code>  for integer</li>
+      <li><code class="language-plaintext highlighter-rouge">float</code>  for floating point  which is an approximation of real numbers</li>
+      <li><code class="language-plaintext highlighter-rouge">str</code>  for string which is a sequence of characters (text)</li>
+      <li><code class="language-plaintext highlighter-rouge">bool</code>  for Boolean</li>
+    </ul>
+  </li>
+  <li>Other compound / advanced data types will be discussed later</li>
+</ul>
+
+<h2 id="initializing-and-printing-variables">Initializing and printing variables</h2>
+
+<ul>
+  <li>Create a string, an integer, a Boolean and a floating point number objects.
+    <ul>
+      <li>The string should be named  <code class="language-plaintext highlighter-rouge">sampleString</code> and should contain the word <code class="language-plaintext highlighter-rouge">"hello"</code>.</li>
+      <li>The floating point number should be named <code class="language-plaintext highlighter-rouge">sampleFloat</code> and should contain the number <code class="language-plaintext highlighter-rouge">10.5</code></li>
+      <li>The Boolean should be named <code class="language-plaintext highlighter-rouge">sampleBoolean</code> and should contain the value <code class="language-plaintext highlighter-rouge">True</code>.</li>
+      <li>The integer should be named <code class="language-plaintext highlighter-rouge">sampleInt</code> and should contain the number <code class="language-plaintext highlighter-rouge">20</code>.</li>
+    </ul>
+  </li>
+  <li>Write the necessary output statements to obtain the following output.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sampleString = hello
+sampleInt = 20
+sampleFloat = 10.5
+sampleBoolean = True
+</code></pre></div></div>
+
+<p>Make sure that if you change the initial value of a variable, the displayed value changes automatically, without editing the corresponding output statement</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sampleString = "Hello"
+sampleInt = 25
+sampleFloat = 10.5
+sampleBool = False
+
+print("sampleString =", sampleString)
+print("sampleInt =", sampleInt)
+print(sampleFloat)
+print(sampleBool)</div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">print</code>  function can take variables as arguments and outputs the <strong>value</strong> of the variable</li>
+  <li><code class="language-plaintext highlighter-rouge">print</code>  function can take multiple comma-separated arguments:
+    <ul>
+      <li>Arguments can be literal text, variables, expressions, etc.</li>
+      <li>By default, consecutive arguments are separated by a single space (see customization later)</li>
+      <li>By default, every print statement outputs its arguments to a new line (see customization later)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="choosing-identifiers">Choosing identifiers</h2>
+
+<ul>
+  <li>Naming identifiers sensibly makes code more readable and easily understandable</li>
+  <li>Sensible identifiers are those describing the concepts their objects represent</li>
+  <li>Multi-word identifiers can be used separated with underscores or inter-capitalization</li>
+  <li>First character can only be a letter or the underscore</li>
+  <li>Identifiers are case sensitive</li>
+  <li>Avoid keywords or reserved words</li>
+</ul>
+
+<p><img src="assets/images/Lec3-3.png" alt="" /></p>
+
+<h2 id="objects-and-their-references">Objects and their references</h2>
+
+<ul>
+  <li>With an assignment statement, an object identifier is mapped to a memory address, AKA reference, where the value of the right-hand-side of the statement is stored</li>
+  <li>A subsequent assignment is a different identifier-to-reference mapping i.e. a reference to a different memory location where the new value is stored
+    <ul>
+      <li>The memory location no longer mapped to the identifier is reclaimed by the garbage collector to be used for other objects (subsequent mappings)</li>
+    </ul>
+  </li>
+  <li>This is why a variable (object) can change types during the execution of a program</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 10
+print(type(x))
+x = "hello"
+print(type(x))</div>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/types.html"
+        class="chapter-next "
+        aria-label="Next page: Basic built-in data types"
+        data-level="1.1"
+        data-path="/types.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Basics
+                 &#8250;
+              
+              Chapter 3.
+            
+          </div>
+          <div class="chapter-label">
+            Basic built-in data types
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/getting-started.html"
+        class="chapter-prev "
+        aria-label="Previous page: Getting started"
+        data-level="1.1"
+        data-path="/getting-started.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Basics
+                &#8250;
+              
+              Chapter 1.
+            
+          </div>
+          <div class="chapter-label">
+            Getting started
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2280,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/001-Basics/002-io.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {

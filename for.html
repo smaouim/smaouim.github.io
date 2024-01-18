@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Iterating with &quot;for&quot; · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/while.html" />
+      
+
+      
+        <link rel="next" href="/sequence.html" />
+      
     
 
   </head>
@@ -969,7 +977,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -978,7 +998,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/for.html">
@@ -1041,6 +1063,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1605,20 +1643,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1698,30 +1722,255 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/loops.html">
+                
+                Part 3: Loops and collections
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 8.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="for"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Iterating with &quot;for&quot;</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#problem-characters-of-a-string">Problem: Characters of a string</a></li><li><a href="#iterating-over-a-string-with-for">Iterating over a string with “for”</a></li><li><a href="#exercise-dna-strand">Exercise: DNA strand</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="problem-characters-of-a-string">Problem: Characters of a string</h2>
+
+<p>Write a program which :</p>
+
+<ul>
+  <li>prompts the user for a string  of arbitrary length .</li>
+  <li>prints each character of the string on a separate line, using a <code class="language-plaintext highlighter-rouge">while</code> loop.</li>
+</ul>
+
+<p>Sample run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please type in some text: ab cd
+a
+b
+
+c
+d
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">userEntry = input("Please type in some text: ")
+i = 0
+while i &lt; len(userEntry):
+    print(userEntry[i])
+    i += 1</div>
+</details>
+
+<h2 id="iterating-over-a-string-with-for">Iterating over a string with “for”</h2>
+
+<p>Iterating through a string, more generally a sequence, is feasible <code class="language-plaintext highlighter-rouge">with</code> a while loop but is more elegant using the <code class="language-plaintext highlighter-rouge">for</code> construct.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for variable in iterable_sequence:
+    &lt;loop_body&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>At each iteration, the <code class="language-plaintext highlighter-rouge">variable</code> is assigned a value from the <code class="language-plaintext highlighter-rouge">iterable_sequence</code> in order (i.e. first iteration → first element, second iteration → second element, etc.)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">break</code> and <code class="language-plaintext highlighter-rouge">continue</code> constructs can be used in for loops, with the same semantics defined previously</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inputString = input("Please type in some text: ")
+for character in inputString:
+    print(character)</div>
+
+<h2 id="exercise-dna-strand">Exercise: DNA strand</h2>
+
+<p>Write a program which:</p>
+
+<ul>
+  <li>prompts the user for a string representing a DNA strand (validate input).</li>
+  <li>prints the string representing the corresponding strand according to base pairing rules.</li>
+</ul>
+
+<p>A string representing a DNA strand is a sequence of the characters “A”, “T”, “C” and “G”. Base pairing rules bond “A” to “T” and “C” to “G”.</p>
+
+<blockquote class="block-tip">
+  <ul>
+    <li>Input validation and output computation can be done in the same loop.</li>
+    <li>Strings do not support individual element modification: they are “immutable”</li>
+    <li>Use an accumulator to generate the output string</li>
+  </ul>
+</blockquote>
+
+<p>Sample run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a DNA strand: ACCTGACGT
+The correspnding strand is: TGGACTGCA
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">inStrand = input("Enter a DNA strand: ")
+outStrand =""
+for character in inStrand:
+    if character == "A":
+        outStrand += "T"
+    elif character == "T":
+        outStrand += "A"
+    elif character == "C":
+        outStrand += "G"
+    elif character == "G":
+        outStrand += "C"
+    else:
+        print("Not a valid DNA strand")
+        break
+if len(inStrand) == len(outStrand):
+    print("The corresponding strand is:", outStrand)</div>
+</details>
 
 
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/sequence.html"
+        class="chapter-next "
+        aria-label="Next page: Sequences: string, tuples, lists and ranges"
+        data-level="1.1"
+        data-path="/sequence.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Loops and collections
+                 &#8250;
+              
+              Chapter 9.
+            
+          </div>
+          <div class="chapter-label">
+            Sequences: string, tuples, lists and ranges
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/while.html"
+        class="chapter-prev "
+        aria-label="Previous page: Iterating with &quot;while&quot;"
+        data-level="1.1"
+        data-path="/while.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              
+                Loops and collections
+                &#8250;
+              
+              Chapter 7.
+            
+          </div>
+          <div class="chapter-label">
+            Iterating with &quot;while&quot;
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -1901,8 +2150,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/003-Loops and Collections/002-for.md",
+    "mtime": "2024-01-18 14:44:21 +0300",
     "type": "markdown"
   },
   "gitbook": {
