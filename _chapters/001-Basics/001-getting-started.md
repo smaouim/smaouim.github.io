@@ -20,7 +20,7 @@ Computers are NOT intelligent machines:
 ## The language gap
 
 * Humans communicate with each other using **natural language** (Arabic, English, French, …)
-* Natural language is **ambiguous**, not precise, prone to **interpretation** using external cues (tone, context, facial expressions, etc.): it requires **intelligence**
+* Natural language is **ambiguous**, not precise, prone to **interpretation** using external cues (tone, context, facial expressions, etc.): it **requires intelligence**
 * Computers only understand and execute a **limited** and very **specific** set of arithmetic and logic **instructions** (additions, multiplications, comparisons, etc.)
 * Expressing an algorithm using the simple, fine-grained, computer hardware instructions is very **tedious** for humans
 
@@ -34,7 +34,7 @@ High-level programming languages are designed such that:
 * they provide **high-granularity** constructs to express algorithms with **short** and **human-friendly** texts (though still called “codes”)
 * a **syntactically** valid statement has only one **semantic** interpretation
 
-Programmers can then easily express algorithms in a form that can be **automatically converted** into machine instructions: compilation or interpretation
+Programmers can then easily express algorithms in a form that can be **automatically converted** into machine instructionsvia **compilation or interpretation**
 
 ## Compilation vs Interpretation
 
@@ -67,7 +67,7 @@ An **Integrated Development Environment (IDE)** is a software with a Graphical U
 
 To develop multi-file codes for large applications, it is recommended to use a standalone (desktop application) IDE like Visual Studio Code, Spyder, PyCharm, etc. 
 
-Beginner learners can quickly get started on an online IDE available on websites like programiz.com, replit.com, online-python.com, onlinegdb.com, etc. or the ones embedded in this course pages. 
+Beginner learners can quickly get started on an online IDE available on websites like [[programiz.com](https://www.programiz.com/python-programming/online-compiler/)](programiz.com), [replit.com](https://replit.com/site/ide), [online-python.com](https://www.online-python.com/), [onlinegdb.com](https://www.onlinegdb.com/), etc. or the ones embedded in this course pages. 
 
 ## Hello world!
 
@@ -81,19 +81,25 @@ Here is our first IDE with a “Hello world!” Python program. Click the "Execu
 print("Hello, world! This is Python 3!")
 {% endJDoodle %}
 
+#### About the 'Hello world' program
+
 * The program consists of a single `print` **statement**.
 * print is a built-in **function** that performs text **output** to the console
 * The text to be printed has to be specified between quotes and passed as **argument** to the function, using parenthesis.
 
 ## Importance of correct syntax
 
-In the above IDE, try running the code after
+In the IDE below, try running the code after
 
 * removing the double quotes after the phrase
 * removing the closing parenthesis
 
 When something is wrong with the code, you get a message from the interpreter indicating what went wrong. 
 In these cases, it's a `SyntaxError`, indicating that the code was not written in the proper format (missing closing quotes or parenthesis).
+
+{% JDoodle %}
+print("Hello, world! This is Python 3!")
+{% endJDoodle %}
 
 ## Comments
 
