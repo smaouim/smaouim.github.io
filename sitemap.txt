@@ -3,7 +3,7 @@
 /basics.html
 /getting-started.html
 /io.html
-/types.html
+/variables.html
 /control.html
 /cond.html
 /inp-vld.html
@@ -18,3 +18,4 @@
 /files.html
 /file-access.html
 /oop.html
+/outline

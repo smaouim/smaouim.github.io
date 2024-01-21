@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Basic built-in data types · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Objects of basic built-in data types · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -419,7 +419,7 @@
               
                 2.
               
-              Input and Output, variables and expressions
+              Console Input and Output
             </a>
 
             
@@ -502,11 +502,11 @@
             <li class="chapter active">
           
 
-            <a href="/types.html">
+            <a href="/variables.html">
               
                 3.
               
-              Basic built-in data types
+              Objects of basic built-in data types
             </a>
 
             
@@ -1766,18 +1766,14 @@
 
   
     <h1
-      id="types"
+      id="variables"
       data-level="1.1"
-      class="heading-chapter-title no_toc">Basic built-in data types</h1>
+      class="heading-chapter-title no_toc">Objects of basic built-in data types</h1>
   
 
 
 <section class="normal markdown-section">
 
-  
-    <div class="chapter-abstract color-callout-dark">
-      Integer, floating points and strings: objects, operations and expressions.
-    </div>
   
 
   
@@ -1788,14 +1784,129 @@
       <div class="page-toc">
         <div class="page-toc-heading">
           In this chapter:
-          <ul><li><a href="#arithmetic-expressions">Arithmetic expressions</a></li><li><a href="#exercise-hypotenuse">Exercise: hypotenuse</a></li><li><a href="#exercise-weight-conversion">Exercise: weight conversion</a></li></ul>
+          <ul><li><a href="#objects-or-variables">Objects or variables</a></li><li><a href="#types">Types</a></li><li><a href="#initializing-and-printing-variables">Initializing and printing variables</a></li><li><a href="#choosing-identifiers">Choosing identifiers</a></li><li><a href="#objects-and-their-references">Objects and their references</a></li><li><a href="#arithmetic-expressions">Arithmetic expressions</a></li><li><a href="#exercise-hypotenuse">Exercise: hypotenuse</a></li><li><a href="#exercise-weight-conversion">Exercise: weight conversion</a></li><li><a href="#integer-representation">Integer representation</a></li><li><a href="#operations-on-strings">Operations on strings</a></li><li><a href="#output-string-formatting">Output string formatting</a></li><li><a href="#exercise-hypotenuse-with-user-input-and-output-formatting">Exercise: hypotenuse with user input and output formatting</a></li><li><a href="#exercise-arithmetic-sum">Exercise: Arithmetic sum</a></li></ul>
         </div>
       </div>
       <hr/>
     
   
 
-  <h2 id="arithmetic-expressions">Arithmetic expressions</h2>
+  <h2 id="objects-or-variables">Objects or variables</h2>
+
+<ul>
+  <li>User input, program output and intermediary data used to solve a problem need to be stored in <strong>memory</strong> to be accessed and used as needed</li>
+  <li>A program needs to designate a memory <strong>container</strong> to store a specific piece of data</li>
+  <li>A program uses <strong>aliases or names</strong> to designate specific pieces of data</li>
+  <li>The interpreter (and the Operating System) maps these aliases to actual addresses (locations) in the memory hardware, where the data is written (stored)</li>
+  <li>An object (variable) is a programming abstraction used to represent (name) a memory location where some specific data is stored</li>
+  <li>It has:
+    <ul>
+      <li>An identifier</li>
+      <li>A value</li>
+      <li>A type;  <em>inferred from the initial value assigned to it</em></li>
+    </ul>
+  </li>
+  <li>E.g.: the statement <code class="language-plaintext highlighter-rouge">x = 10</code> initializes an object with <strong>identifier</strong> <code class="language-plaintext highlighter-rouge">x</code> to the <strong>value</strong> <code class="language-plaintext highlighter-rouge">10</code> , so its <strong>type</strong> will be <em>integer</em></li>
+</ul>
+
+<h2 id="types">Types</h2>
+
+<ul>
+  <li>The basic built-in types are:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">int</code>  for integer</li>
+      <li><code class="language-plaintext highlighter-rouge">float</code>  for floating point  which is an approximation of real numbers</li>
+      <li><code class="language-plaintext highlighter-rouge">str</code>  for string which is a sequence of characters (text)</li>
+      <li><code class="language-plaintext highlighter-rouge">bool</code>  for Boolean</li>
+    </ul>
+  </li>
+  <li>Other compound / advanced data types will be discussed later</li>
+</ul>
+
+<h2 id="initializing-and-printing-variables">Initializing and printing variables</h2>
+
+<ul>
+  <li>Create a string, an integer, a Boolean and a floating point number objects.
+    <ul>
+      <li>The string should be named  <code class="language-plaintext highlighter-rouge">sampleString</code> and should contain the word <code class="language-plaintext highlighter-rouge">"hello"</code>.</li>
+      <li>The floating point number should be named <code class="language-plaintext highlighter-rouge">sampleFloat</code> and should contain the number <code class="language-plaintext highlighter-rouge">10.5</code></li>
+      <li>The Boolean should be named <code class="language-plaintext highlighter-rouge">sampleBoolean</code> and should contain the value <code class="language-plaintext highlighter-rouge">True</code>.</li>
+      <li>The integer should be named <code class="language-plaintext highlighter-rouge">sampleInt</code> and should contain the number <code class="language-plaintext highlighter-rouge">20</code>.</li>
+    </ul>
+  </li>
+  <li>Write the necessary output statements to obtain the following output.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sampleString = hello
+sampleInt = 20
+sampleFloat = 10.5
+sampleBoolean = True
+</code></pre></div></div>
+
+<blockquote class="block-tip">
+  <p>Make sure that if you change the initial value of a variable, the displayed value changes automatically, without editing the corresponding output statement</p>
+</blockquote>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sampleString = "Hello"
+sampleInt = 25
+sampleFloat = 10.5
+sampleBoolean = False
+print("sampleString =", sampleString)
+print("sampleInt =", sampleInt)
+print("sampleFloat =", sampleFloat)
+print("sampleBoolean =", sampleBoolean)</div>
+</details>
+
+<h4 id="notes">Notes</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">print</code>  function can take variables as arguments and outputs the <strong>value</strong> of the variable</li>
+  <li><code class="language-plaintext highlighter-rouge">print</code>  function can take multiple comma-separated arguments:
+    <ul>
+      <li>Arguments can be literal text, variables, expressions, etc.</li>
+      <li>By default, consecutive arguments are separated by a single space (see customization later)</li>
+      <li>By default, every print statement outputs its arguments to a new line (see customization later)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="choosing-identifiers">Choosing identifiers</h2>
+
+<ul>
+  <li>Naming identifiers sensibly makes code more readable and easily understandable</li>
+  <li>Sensible identifiers are those describing the concepts their objects represent</li>
+  <li>Multi-word identifiers can be used separated with underscores or inter-capitalization</li>
+  <li>First character can only be a letter or the underscore</li>
+  <li>Identifiers are case sensitive</li>
+  <li>Avoid keywords or reserved words</li>
+</ul>
+
+<p><img src="assets/images/Lec3-3.png" alt="" /></p>
+
+<h2 id="objects-and-their-references">Objects and their references</h2>
+
+<ul>
+  <li>With an assignment statement, an object identifier is mapped to a memory address, AKA reference, where the value of the right-hand-side of the statement is stored</li>
+  <li>A subsequent assignment is a different identifier-to-reference mapping i.e. a reference to a different memory location where the new value is stored
+    <ul>
+      <li>The memory location no longer mapped to the identifier is reclaimed by the <em>garbage collector</em> to be used for other objects (subsequent mappings)</li>
+    </ul>
+  </li>
+  <li>This is why a variable (object) can change types during the execution of a program
+    <ul>
+      <li>can use the <code class="language-plaintext highlighter-rouge">type()</code> function to get the data type of an objects</li>
+    </ul>
+  </li>
+</ul>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 5
+print(type(x))
+x = "hello"
+print(type(x))</div>
+
+<h2 id="arithmetic-expressions">Arithmetic expressions</h2>
 
 <ul>
   <li>Write a program that displays your name in the console</li>
@@ -1808,26 +1919,22 @@
 <p><img src="assets/images/Lec2-2.png" alt="" /></p>
 
 <ul>
-  <li>Expressions can have mixed types operands (some <code class="language-plaintext highlighter-rouge">int</code> and some <code class="language-plaintext highlighter-rouge">float</code>); they are evaluated using float arithmetic and the result is always a float
-    <ul>
-      <li>Check the behavior of floor division with floats</li>
-    </ul>
-  </li>
+  <li>Expressions can have mixed types operands (some <code class="language-plaintext highlighter-rouge">int</code> and some <code class="language-plaintext highlighter-rouge">float</code>); in such case, they are evaluated using float arithmetic and the result is always a float</li>
   <li>Conversion from floating point to integer via truncation of decimal part</li>
-  <li>Conversion from integer to floating point by adding a 0 decimal part</li>
-  <li>Conversion operators within expressions produce operands in the intended data type but do not alter the object’s original type
+  <li>Conversion from integer to floating point by adding a 0 decimal (fractional) part</li>
+  <li>Conversion operators within expressions produce operands in the intended data type but <em><strong>do not alter</strong></em> the object’s original type
     <ul>
       <li>Try expressions that combine conversion and arithmetic operators</li>
     </ul>
   </li>
-  <li>Arithmetic operators precedence is similar to that of calculators including parentheses</li>
+  <li>Arithmetic operators precedence is similar to that of calculators including parentheses (PEDMAS)</li>
   <li>More advanced mathematical operations and functions (square root, trigonometric, etc.) require invoking the math library (to be discussed later)</li>
 </ul>
 
 <p>Run the code below to check the behavior of the above operators:</p>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 22.4
-y = 5.1
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">x = 22.7
+y = 5.2
 print("x = ", x)
 print("y = ", y)
 print("Operations on floats ...")
@@ -1836,7 +1943,7 @@ print("x-y = ", x - y)
 print("x*y = ", x * y)
 print("x/y = ", x / y)
 print("x//y = ", x // y)
-print("x%y = ", x % y)  # meaningless
+print("x%y = ", x % y) 
 print("x**y = ", x ** y)
 print("int(x) = ", int(x))
 print("x is still ", x)
@@ -1854,18 +1961,20 @@ print("x//y = ", x // y)
 print("x%y = ", x % y)
 print("x**y = ", x ** y)
 
-print("converting to float without overwriting")
+print("converting to float: ")
 print("float(x) = ", float(x))
 print("float(y) = ", float(y))
 
-print("rounding")
-x = 10
-y = 3
-print("x = ", x)
-print("y = ", y)
-print("x / y = ", x / y)
-print("round(x / y) = ", round(x / y))
-print("round(x / y, 2) = ", round(x / y, 2))</div>
+print("rounding: ")
+print("10 / 3 = ", 10 / 3)
+print("round(10 / 3) = ", round(10 / 3))
+print("round(10 / 3, 2) = ", round(10 / 3, 2))
+print("10 / 4 = ", 10 / 4)
+print("round(10 / 4) = ", round(10 / 4))
+print("round(10 / 4, 2) = ", round(10 / 4, 2))
+print("10 / 6 = ", 10 / 6)
+print("round(10 / 6) = ", round(10 / 6))
+print("round(10 / 6, 2) = ", round(10 / 6, 2))</div>
 
 <h2 id="exercise-hypotenuse">Exercise: hypotenuse</h2>
 
@@ -1890,8 +1999,8 @@ print("round(x / y, 2) = ", round(x / y, 2))</div>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
 
 <details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
-  <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sideA = 4
-    sideB = 3
+  <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sideA = 6
+    sideB = 8
     sideC = (sideA ** 2 + sideB ** 2) ** 0.5
     print(sideC)</div>
 </details>
@@ -1915,12 +2024,241 @@ print("round(x / y, 2) = ", round(x / y, 2))</div>
       <li>1 Oz = 28.3495 g = 0.0283495 kg</li>
       <li>The number of ounces is the number of whole ounces remaining after counting the number of whole pounds. It must be less than the number of ounces in a pound i.e. less than 16.
         <ul>
-          <li>e.g: 0.9 Kg = 1 Lbs and 15 Oz and 0.91 Kg = 2 Lbs and 0 Oz</li>
+          <li>e.g: <code class="language-plaintext highlighter-rouge">0.9 Kg = 1 Lbs and 15 Oz</code> and <code class="language-plaintext highlighter-rouge">0.91 Kg = 2 Lbs and 0 Oz</code></li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+  <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">Kg = 2.89
+Lb = Kg // 0.453592
+Lb = int(Lb)
+remainderKg = Kg % 0.453592
+Oz = remainderKg // 0.0283495
+Oz = int(Oz)
+print(Kg, "Kg =", Lb, "Lbs and", Oz, "Oz")
+
+# other solution
+# Lb = Kg / 0.453592
+# fracLb = Lb - int(Lb)  # get the fraction of a pound
+# Lb = int(Lb)   # get whole number of pounds
+# Oz = fracLb * 16  #convert a fraction of a pound to Ounces
+# Oz = int(Oz)  # round to the closest integer
+# print(Kg, "Kg =", Lb, "Lbs and", Oz, "Oz")
+
+# other solution
+# allInOz = Kg / 0.0283495  # total number of Ounces, with fraction
+# Lb = int(allInOz // 16)      # get multiple of 16 ounces as number of pounds
+# Oz = int(allInOz % 16)    # remainder of ounces (less than 16)
+# print(Kg, "Kg =", Lb, "Lbs and", Oz, "Oz")</div>
+</details>
+
+<h2 id="integer-representation">Integer representation</h2>
+
+<ul>
+  <li>Integers are commonly initialized and by default printed in their base 10 form</li>
+  <li>Integers can be initialized and printed in hexadecimal, octal or binary form
+    <ul>
+      <li>Use <code class="language-plaintext highlighter-rouge">0x</code>, <code class="language-plaintext highlighter-rouge">0o</code> and <code class="language-plaintext highlighter-rouge">0b</code> prefixes</li>
+      <li>Use <code class="language-plaintext highlighter-rouge">hex()</code>, <code class="language-plaintext highlighter-rouge">oct()</code> and <code class="language-plaintext highlighter-rouge">bin()</code> operators</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">a = 145
+print("a =", a)
+binary_a = bin(a)
+print("bin(a) =", binary_a)
+print("hex(a) =", hex(a))
+print("oct(a) =", oct(a))
+
+b = 0b10010001
+print("b= ", b)
+c = 0x91
+print("c= ", c)
+d = 0o221
+print("d =", d)
+
+s = "0b10010001"
+print("s = ", s)
+e = int(s, 2)
+print("e = ", e)
+
+s = "0x91"
+print("s = ", s)
+e = int(s, 16)
+print("e = ", e)</div>
+
+<h2 id="operations-on-strings">Operations on strings</h2>
+
+<ul>
+  <li>Many computational problems involve text manipulation</li>
+  <li>String objects store text as a sequences of characters and undergo a different set of operations than numerical objects</li>
+  <li><code class="language-plaintext highlighter-rouge">input</code> function returns (generates) by default a string value.</li>
+  <li>If the desired input is numerical, a type conversion is needed</li>
+  <li>Literal strings are specified via single quote or double quote  (and other, to be discussed later)</li>
+  <li>Characters are internally stored as numbers following the ASCII mapping</li>
+</ul>
+
+<p><img src="assets/images/Lec3-2.png" alt="" /></p>
+
+<p><img src="assets/images/ASCII+table.PNG" alt="" /></p>
+
+<p>Checkout the following code to understand the behavior of some of the operations</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">s1 = "Hello world!"
+print("The string '", s1 , "' contains", len(s1), "characters.")
+print("The first character of '", s1, "' is", s1[0])
+print("The fifth character of '", s1, "' is", s1[4])
+print("The ASCII value of the second character is", ord(s1[1]))
+print("The string made of the 4th, 6th and second character of s1 is", s1[3] + s1[5] + s1[1])
+userName = input("What is your name? ")
+greeting = "Hello " + userName
+print(greeting)
+
+numericInput = input("Please enter a number: ")
+#print("The square of your number is", numericInput**2)
+print(type(numericInput))
+numericInput = float(numericInput)
+print("The square of your number is", numericInput**2)</div>
+
+<h2 id="output-string-formatting">Output string formatting</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">print</code> has a default formatting of its arguments:
+    <ul>
+      <li>each statement prints to one line</li>
+      <li>multiple arguments are separated by single space</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For more control over the program output:</p>
+<ul>
+  <li>Add special arguments to the print statement:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">sep</code>: specify the character separating multiple arguments, defaults to a single space</li>
+      <li><code class="language-plaintext highlighter-rouge">end</code> : specify the character appended to the end of the output, defaults to <code class="language-plaintext highlighter-rouge">\n</code> (new line)</li>
+    </ul>
+  </li>
+  <li>Convert numeric values to strings using <code class="language-plaintext highlighter-rouge">str()</code>, then concatenate strings before printing them</li>
+  <li>Use printf-style string formatting
+    <ul>
+      <li><a href="https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting">https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting</a></li>
+    </ul>
+  </li>
+  <li>Use the format() function on literal strings
+    <ul>
+      <li><a href="https://docs.python.org/3/library/string.html#format-examples">https://docs.python.org/3/library/string.html#format-examples</a></li>
+    </ul>
+  </li>
+  <li>Use f-strings</li>
+  <li><a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">https://docs.python.org/3/reference/lexical_analysis.html#f-strings</a></li>
+</ul>
+
+<p>The following is an example of the use of the above approaches</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">base = input("Please enter a number:")
+base = float(base)
+exponent = float(input("Please enter an exponent:"))
+
+answer = base ** exponent
+
+# print sep argument
+print(base, "^", exponent, " = ", round(answer, 2), sep="")
+
+# Printing a single formatted output string
+# solution 1: convert then concatenate
+output1 = str(base) + "^" + str(exponent) + " = " + str(answer)
+print(output1)
+# or simply
+# print(str(base)+"^"+str(exponent)+" = "+str(round(answer, 2)))
+
+# solution 2: C-style formatting
+output2 = "%.2f^%.2f = %.2f" % (base, exponent, answer)
+print(output2)
+# or simply
+# print("%.2f^%.2f = %.4f"%(base, exponent, answer))
+
+# solution 3: format() method
+output3 = "{0:.2f}^{1:.2f} = {2:.2f}".format(base, exponent, answer)
+print(output3)
+# or simply
+# print("{0:.2f}^{1:.2f} = {2:.2f}".format(base, exponent, answer))
+
+# solution 4: f-string
+output3 = f"{base:.2f}^{exponent:.2f} = {answer:.2f}"
+print(output3)
+# or simply
+# print(f"{base:.2f}^{exponent:.2f} = {answer:.2f}")
+# or also
+print(f"{base:.2f}^{exponent:.2f} = {base ** exponent:.2f}")
+
+# using sep and end
+print("Hello", "everyone")
+print("Welcome", "to", "CS201", sep="", end="!")
+print("just go to the next line already")
+print("finally!!")
+print("...")</div>
+
+<h2 id="exercise-hypotenuse-with-user-input-and-output-formatting">Exercise: hypotenuse with user input and output formatting</h2>
+
+<ul>
+  <li>Modify the code of the hypotenuse exercise by adding user prompts to get the values of <code class="language-plaintext highlighter-rouge">sideA</code> and <code class="language-plaintext highlighter-rouge">sideB</code> from the user.
+    <ul>
+      <li>Test what happens if the user enters non numeric values</li>
+    </ul>
+  </li>
+  <li>Enhance the output by printing a whole phrase about the triangle measurements, where side lengths are printed with a maximum of two decimals</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sideA = float(input("Please enter the length of the first side: "))
+sideB = float(input("Please enter the length of the second side: "))
+sideC = (sideA ** 2 + sideB ** 2) ** 0.5
+print(f"The hypotenuse of the triangle with sides {sideA:.2f} and {sideB:.2f} has a length of {(sideA ** 2 + sideB ** 2) ** 0.5:.2f}")
+# print("The hypotenuse of the triangle with sides {0:.2f} and {1:.2f} has a length of {2:.2f}".format(sideA, sideB, sideC))</div>
+</details>
+
+<h2 id="exercise-arithmetic-sum">Exercise: Arithmetic sum</h2>
+
+<p>Write a program which</p>
+
+<ul>
+  <li>prompts the user for a positive integer, say <code class="language-plaintext highlighter-rouge">n</code></li>
+  <li>computes the sum of the first integers up to <code class="language-plaintext highlighter-rouge">n</code> using the formula <code class="language-plaintext highlighter-rouge">n*(n+1)/2</code></li>
+  <li>prints the result as in this sample run below, <strong>using a single string argument to the print function</strong></li>
+</ul>
+
+<p>Sample run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This program computes the sum of the first N integers.
+Please enter a positive integer N: 100
+sum(1..100)=5050
+</code></pre></div></div>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">print("This program computes the sum of the first N integers.")
+N = int(input("Please enter a positive integer N: "))
+sumToN = int(N * (N+1) / 2) # convert to int because the result of / is always float
+                            # while this sum is always a whole number
+#sumToN = N * (N+1) // 2     # or use floor division 
+print(f"sum(1..{N})={sumToN}")
+# print(f"sum(1..{N})={N * (N+1) // 2}") # Or, no need for the sumToN variable, 
+                                          # use the expression in the placeholder
+# or any of the below
+# print("sum(1.." + str(N) + ")=" + str(sumToN))
+# print("sum(1..%d)=%d" % (N, sumToN))
+# print("sum(1..{})={}".format(N, sumToN))</div>
+</details>
 
 
   
@@ -1959,7 +2297,7 @@ print("round(x / y, 2) = ", round(x / y, 2))</div>
       <a
         href="/io.html"
         class="chapter-prev "
-        aria-label="Previous page: Input and Output, variables and expressions"
+        aria-label="Previous page: Console Input and Output"
         data-level="1.1"
         data-path="/io.html">
         <div class="pager-arrow">
@@ -1977,7 +2315,7 @@ print("round(x / y, 2) = ", round(x / y, 2))</div>
             
           </div>
           <div class="chapter-label">
-            Input and Output, variables and expressions
+            Console Input and Output
           </div>
         </div>
       </a>
@@ -2166,13 +2504,13 @@ print("round(x / y, 2) = ", round(x / y, 2))</div>
     "gitbook": "*"
   },
   "file": {
-    "path": "_chapters/001-Basics/003.types.md",
-    "mtime": "2024-01-21 08:25:43 +0000",
+    "path": "_chapters/001-Basics/003.variables.md",
+    "mtime": "2024-01-21 09:55:09 +0000",
     "type": "markdown"
   },
   "gitbook": {
     "version": "",
-    "time": "2024-01-21 08:25:43 +0000"
+    "time": "2024-01-21 09:55:09 +0000"
   },
   "basePath": "",
   "book": {

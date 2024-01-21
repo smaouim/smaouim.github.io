@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Nested loops, multidimentional lists · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Draft outline · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,14 +49,6 @@
   };
 </script>
 
-    
-      
-        <link rel="prev" href="/sequence.html" />
-      
-
-      
-        <link rel="next" href="/sets.html" />
-      
     
 
   </head>
@@ -1123,20 +1115,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1146,7 +1124,7 @@
           
 
           
-            <li class="chapter active">
+            <li class="chapter ">
           
 
             <a href="/nedted-loops.html">
@@ -1209,22 +1187,6 @@
 
           
           
-            
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
           
 
@@ -1701,387 +1663,1740 @@
               
 
               
+  <h1 id="/draft-outline" data-level="1.1" class="no_toc">Draft outline</h1>
 
-
-
-
-  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
-    <ul>
-      
-        
-          <li>
-              
-              <a href="/book.html">
-            
-              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
-              Book
-            
-              </a>
-            
-          </li>
-      
-
-      
-        
-        <li >
-          
-            <a href="/contents.html">
-          
-            Contents
-          
-            </a>
-          
-        </li>
-      
-
-      
-
-      
-        
-
-          
-            
-              <li class="breadcrumb-part">
-                
-                  <a href="/loops.html">
-                
-                Part 3: Loops and collections
-                
-                  </a>
-                
-              </li>
-            
-          
-
-          
-            <li class="no-arrow">
-              Chapter 10.
-            </li>
-          
-
-        
-      
-    </ul>
-  </nav>
-
-  
-    <h1
-      id="nedted-loops"
-      data-level="1.1"
-      class="heading-chapter-title no_toc">Nested loops, multidimentional lists</h1>
-  
 
 
 <section class="normal markdown-section">
+  <p>An outline of the chapters planned for this course.</p>
+
+<p>Many of them have yet to be written.
+Only the chapters with a checkmark appear in the contents and navigation.</p>
+
+<ul class="toc-chapters-full  show-drafts">
 
   
 
-  
-    
-    
-
-    
-      <div class="page-toc">
-        <div class="page-toc-heading">
-          In this chapter:
-          <ul><li><a href="#floyd-triangle">Floyd triangle</a></li><li><a href="#storing-floyd-triangle">Storing Floyd Triangle</a></li><li><a href="#matrices-list-of-list-or-numpy-array">Matrices: list-of-list or <code class="language-plaintext highlighter-rouge">numpy</code> array?</a></li><li><a href="#lists-and-references">Lists and references</a></li></ul>
-        </div>
-      </div>
-      <hr/>
-    
-  
-
-  <h2 id="floyd-triangle">Floyd triangle</h2>
-
-<p>write a program which:</p>
-
-<ul>
-  <li>defines a strictly positive integer number $n$</li>
-  <li>
-    <p>prints the corresponding Floyd Triangle. The output consists in the consecutive numbers from 1 to  $\frac{n (n+1)}{2}$ spanning $n$ lines, where the ith line consists of i consecutive integers.</p>
-
-    <ul>
-      <li>the numbers must be aligned in columns</li>
-      <li>the spacing between columns should minimum but not less than 2 spaces</li>
-    </ul>
-  </li>
-</ul>
-
-<p>Below is the output of the program for $n = 6$</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
-2   3
-4   5   6
-7   8   9   10
-11  12  13  14  15
-16  17  18  19  20  21
-</code></pre></div></div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">n = 6
-
-# with 2 spaces separation but no guaranteed column alignment
-term = 1
-for i in range(1, n+1): # when n = 4, i = 1, 2, 3, 4
-    line = ""
-    for v in range(1, i+1): # when i = 3, v = 1, 2, 3
-        line = line + str(term) + "  "
-        term += 1
-    print(line)
-
-# with column alignment
-termWidth = len(str(n * (n+1) // 2)) + 2  #extra spaces for separation
-term = 1
-for i in range(1, n+1):
-    line = ""
-    for v in range(1, i+1):
-        nbrToStr = str(term)
-        nbrToStr = nbrToStr.ljust(termWidth)
-        line = line + nbrToStr
-        #line += str(term).ljust(termwidth)
-        term += 1
-    print(line)
-
-# alternatively
-term = 0
-triangle = ""
-for i in range(1, n+1):
-    for v in range(1, i+1):
-        term += 1
-        nbrToStr = str(term)
-        triangle += nbrToStr.ljust(termWidth)
-    triangle += "\n"
-print(triangle)
 
 
-# alternatively
-term = 1
-termsPerline = 0
-lineNbr = 1
-line = ""
-while term &lt;= n*(n+1)//2 :
-    line += (str(term)).ljust(termWidth)
-    term += 1
-    termsPerline += 1
-    if termsPerline == lineNbr:
-        print(line)
-        line = ""
-        termsPerline = 0
-        lineNbr += 1</div>
 
-<h2 id="storing-floyd-triangle">Storing Floyd Triangle</h2>
 
-<ul>
-  <li>Suppose we want to use Floyd triangle for further purposes, other than just printing.</li>
-  <li>We need to store the numbers in memory, in a data structure, with the same (virtual) triangle-like layout
-    <ul>
-      <li>Each line is a separate sequence of numbers and we have an arbitrary number of sequences</li>
-      <li>We use one list to store the numbers of one line</li>
-      <li>We store these lists as elements of a list:  list-of-lists</li>
-    </ul>
-  </li>
-</ul>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">n = 6
 
-# generating the triangle as a list-of-lists
-triangle = []   # start with an empty accumulator for the whole data structure
-term = 1
-for i in range(1, n+1):
-    row = []
-    for j in range(1, i+1):
-        row.append(term)
-        term += 1
-    triangle.append(row)
-# debug printout
-print(triangle)
 
-# alternatively
-triangle = []
-for i in range(1, n+1):
-    # firstNumber = 1 + i * (i - 1) // 2
-    # lastNumber = i * (i + 1) // 2
-    # line = list(range(firstNumber, lastNumber+1))
-    # triangle.append(line)
-    triangle.append(list(range(1 + i * (i - 1) // 2, i * (i + 1) // 2 + 1)))
-# debug printout
-print(triangle)
 
-# printing output
-width = len(str(triangle[-1][-1])) + 2
-for line in triangle:
-    for value in line:
-        print(str(value).ljust(width), end="")
-    print()
 
-# alternatively
-output = ""
-for line in triangle:
-    for value in line:
-        output += str(value).ljust(width)
-    output += "\n"
-print(output)</div>
 
-<h2 id="matrices-list-of-list-or-numpy-array">Matrices: list-of-list or <code class="language-plaintext highlighter-rouge">numpy</code> array?</h2>
 
-<ul>
-  <li>Matrices can be stored as lists-of-lists:
-    <ul>
-      <li>Each row is a list of numbers</li>
-      <li>The matrix is a list of rows</li>
-      <li>To access matrix elements, we use double subscripts/indexing: e.g.: <code class="language-plaintext highlighter-rouge">L[1][5]</code></li>
-      <li>The logic to check and maintain correct matrix dimensions have to be handled by the programmer</li>
-    </ul>
-  </li>
-  <li>Python lists are not efficient data structures to be used for compute-intense applications</li>
-  <li><code class="language-plaintext highlighter-rouge">numpy</code> is a library (package) fitted with the data type <code class="language-plaintext highlighter-rouge">Array</code> which is designed to better handle matrices for (more advanced) scientific applications
-    <ul>
-      <li>Automatically maintains correct matrix dimensions</li>
-      <li>Comes with a large set of handy matrix operations</li>
-      <li>Basic access and iteration patterns for numpy arrays/matrices are the same as those of lists-of-lists</li>
-    </ul>
-  </li>
-</ul>
 
-<h2 id="lists-and-references">Lists and references</h2>
 
-<ul>
-  <li>Lists are not quite efficient because they are sequences of “references-to-objects”</li>
-  <li>Unlike other built-in types, simple assignment does not make a copy, just an alias</li>
-  <li>Multiple ways to make copies: slicing operator <code class="language-plaintext highlighter-rouge">[i:j:k]</code>, <code class="language-plaintext highlighter-rouge">list()</code> function, <code class="language-plaintext highlighter-rouge">copy()</code> method</li>
-  <li>All perform <em>shallow copy</em>: if elements are themselves lists (list-of-list) the two objects remain <em>dependent</em></li>
-</ul>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">L1 = [1, 2, 3]
-L2 = [1, 2, 3]
-print("L1 = ", L1, "L2 = ", L2)
 
-L1[0] = 10
-print("L1 = ", L1, "L2 = ", L2)
-###############################
-
-L1 = [4, 5, 6]
-L2 = L1
-print("L1 = ", L1, "L2 = ", L2)
-
-L1[0] = 40
-print("L1 = ", L1, "L2 = ", L2)
-################################
-
-L1 = [7, 8, 9]
-L2 = list(L1)
-L3 = L1[:]
-L4 = L1.copy()
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-
-L1[0] = 70
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-################################
-
-L1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-L2 = L1
-print("L1 = ", L1, "L2 = ", L2)
-
-L1.append([10, 12, 13])
-print("L1 = ", L1, "L2 = ", L2)
-
-L1[1] = [40, 50, 60]
-print("L1 = ", L1, "L2 = ", L2)
-
-L1[2][0] = 70
-print("L1 = ", L1, "L2 = ", L2)
-################################
-
-L1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-L2 = list(L1)
-L3 = L1[:]
-L4 = L1.copy()
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-
-L1.append([10, 12, 13])
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-
-L1[1] = [40, 50, 60]
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-
-L1[2][0] = 70
-print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
-################################
-#
-# # how to perform proper copy of list-of-list????????</div>
 
 
   
-</section>
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
 
 
-  <div class="chapter-pager">
+
+
+
+  
 
     
-      
-      <a
-        href="/sets.html"
-        class="chapter-next "
-        aria-label="Next page: Sets and Dictionaries"
-        data-level="1.1"
-        data-path="/sets.html">
-        <div class="pager-arrow">
-          <i class="fa fa-arrow-right"></i>
-        </div>
-        <div class="pager-labels">
-          <div class="part">
-            Next:
-            
-              
-                Loops and collections
-                 &#8250;
-              
-              Chapter 11.
-            
-          </div>
-          <div class="chapter-label">
-            Sets and Dictionaries
-          </div>
-        </div>
-      </a>
+
     
 
     
       
-      <a
-        href="/sequence.html"
-        class="chapter-prev "
-        aria-label="Previous page: Sequences: string, tuples, lists and ranges"
-        data-level="1.1"
-        data-path="/sequence.html">
-        <div class="pager-arrow">
-          <i class="fa fa-arrow-left"></i>
-        </div>
-        <div class="pager-labels">
-          <div class="part">
-            Previous:
-            
-              
-                Loops and collections
-                &#8250;
-              
-              Chapter 9.
-            
-          </div>
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/book.html">
           <div class="chapter-label">
+            
+            Introduction
+          </div>
+          
+          <div class="abstract">
+            Lecture materials for CS201 - Introduction to Programming with Python @ KAUST Spring 2024.
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/contents.html">
+          <div class="chapter-label">
+            
+            Table of Contents
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/basics.html">
+          
+          Part 1: Basics
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/getting-started.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 1.</span>
+            
+            Getting started
+          </div>
+          
+          <div class="abstract">
+            How does a computer work? What is programming? "Hello world!" and more.
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/io.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 2.</span>
+            
+            Console Input and Output
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/variables.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 3.</span>
+            
+            Objects of basic built-in data types
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/control.html">
+          
+          Part 2: Control flow
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/cond.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 4.</span>
+            
+            Conditional statements
+          </div>
+          
+          <div class="abstract">
+            Boolean expressions as conditions for the multiple variations of conditional statements
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/inp-vld.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 5.</span>
+            
+            Input validation
+          </div>
+          
+          <div class="abstract">
+            Validating program input with conditional statements and exceptions
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/guess-check.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 6.</span>
+            
+            Guess and check
+          </div>
+          
+          <div class="abstract">
+            An algorithmic approach to simplify complex compound conditional expression
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/loops.html">
+          
+          Part 3: Loops and collections
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/while.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 7.</span>
+            
+            Iterating with &quot;while&quot;
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/for.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 8.</span>
+            
+            Iterating with &quot;for&quot;
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/sequence.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 9.</span>
+            
             Sequences: string, tuples, lists and ranges
           </div>
-        </div>
-      </a>
+          
+        </a>
+      </li>
+   
+
     
 
-    <div style="clear: both;"></div>
-  </div>
-  <!-- .chapter-pager -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/nedted-loops.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 10.</span>
+            
+            Nested loops, multidimentional lists
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/sets.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 11.</span>
+            
+            Sets and Dictionaries
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/functions.html">
+          
+          Part 4: Functions
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/files.html">
+          
+          Part 5: File handling
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+
+    
+      <li class="chapter not-draft">
+        <a href="/file-access.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter 12.</span>
+            
+            Accessing files
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+
+    
+      
+    
+
+    
+
+    
+      <li class="chapter draft">
+        <a href="/read-write.html">
+          <div class="chapter-label">
+            
+              <span class="chapter-num">Chapter X.</span>
+            
+            Reading, writing and repositioning
+          </div>
+          
+        </a>
+      </li>
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+
+    
+      <li class="part">
+        <div class="part-label">
+          
+            <a href="/oop.html">
+          
+          Part 6: Object oriented programming
+          
+            </a>
+          
+        </div>
+        <ul>
+      
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+
+    
+
+    
+      
+
+    
+      </ul></li>
+      
+    
+
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+  
+</ul>
+
+</section>
 
 
               
@@ -2261,7 +3576,7 @@ print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
     "gitbook": "*"
   },
   "file": {
-    "path": "_chapters/003-Loops and Collections/004-nested.md",
+    "path": "_pages/draft-outline.md",
     "mtime": "2024-01-21 09:55:09 +0000",
     "type": "markdown"
   },
