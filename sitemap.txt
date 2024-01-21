@@ -17,5 +17,4 @@
 /functions.html
 /files.html
 /file-access.html
-/read-write.html
 /oop.html
