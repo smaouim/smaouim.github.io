@@ -15,7 +15,13 @@
 /nedted-loops.html
 /sets.html
 /functions.html
+/fun-def.html
+/scope.html
+/validation.html
 /files.html
 /file-access.html
+/read-write.html
 /oop.html
+/classes-objects.html
+/references.html
 /outline

@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Defining functions · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -49,6 +49,14 @@
   };
 </script>
 
+    
+      
+        <link rel="prev" href="/functions.html" />
+      
+
+      
+        <link rel="next" href="/scope.html" />
+      
     
 
   </head>
@@ -1329,7 +1337,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -1338,7 +1358,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/fun-def.html">
@@ -1401,6 +1423,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1968,20 +2006,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -2061,30 +2085,428 @@
               
 
 
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/functions.html">
+                
+                Part 4: Functions
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 12.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="fun-def"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Defining functions</h1>
+  
+
+
 <section class="normal markdown-section">
-  <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
 
-<div class="container">
-  <h1>404</h1>
+  
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#functions-in-mathematics">Functions in mathematics</a></li><li><a href="#functions-in-python">Functions in Python</a><ul><li><a href="#defining-a-function">Defining a function</a></li><li><a href="#calling-a-function">Calling a function</a></li><li><a href="#examples">Examples:</a></li></ul></li><li><a href="#why-functions">Why functions?</a></li><li><a href="#practice">Practice:</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="functions-in-mathematics">Functions in mathematics</h2>
+
+<ul>
+  <li>Example:</li>
+</ul>
+
+\[\begin{aligned}
+g: \mathbb{R} \to \mathbb{R} \ ;\\
+x \mapsto x^2 + 4x - 3
+\end{aligned}\]
+
+<ul>
+  <li>$g$ maps values from the  domain $\mathbb{R}$ to values in the range $\mathbb{R}$ using an arithmetic expression
+    <ul>
+      <li>Domains can vary, e.g. $\mathbb{N}, \mathbb{Q}, \mathbb{C}, \mathbb{R}^2, \mathbb{R}\times\mathbb{N}, …$</li>
+      <li>Ranges can vary similarly</li>
+      <li>Expressions can be conditional, e.g.</li>
+    </ul>
+  </li>
+</ul>
+
+\[\begin{aligned}
+h: \mathbb{N} \to \mathbb{N} ;\\ n \mapsto \left\{\begin{matrix} \frac{n}{2} &amp; if\ n\ is\ even\\ n-1 &amp; if\ n\ is\ odd \\\end{matrix}\right.
+\end{aligned}\]
+
+<h2 id="functions-in-python">Functions in Python</h2>
+
+<ul>
+  <li>Set of statements grouped under one identifier</li>
+  <li>A function can be applied on values in a certain <em>domain</em>: <strong>argument</strong></li>
+  <li>A function <strong>returns</strong> (produces) a value in a certain <em>range</em></li>
+</ul>
+
+<p>Additionally:</p>
+
+<ul>
+  <li>Any statement can be in a function, so functions can have “side-effects” like printing a message, modifying an object, writing a file, etc.
+    <ul>
+      <li>As a consequence, a function may not take an argument or return a value and just have some “side-effect”</li>
+    </ul>
+  </li>
+  <li>Functions can contain conditionals, loops and more</li>
+  <li>Functions can <strong>take multiple arguments</strong> and <strong>return multiple values</strong>, all of which of any type: <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">tuple</code>, <code class="language-plaintext highlighter-rouge">list</code>, etc.</li>
+</ul>
+
+<h3 id="defining-a-function">Defining a function</h3>
+
+<p>Defining a function is specifying:</p>
+
+<ul>
+  <li>An <strong>identifier</strong> i.e. a function name that should express what the function is about</li>
+  <li>Formal <strong>parameters</strong> i.e. a set of variables listed between ()  used to <strong>store</strong> the values on which the function will operate (<strong>arguments</strong>)</li>
+  <li><strong>Body</strong> i.e. the set of statements the perform the required computation</li>
+</ul>
+
+<h3 id="calling-a-function">Calling a function</h3>
+
+<ul>
+  <li>A function can only be called if it was defined previously in the code</li>
+  <li>Calling a function is applying the function name to some arguments and using the result in a statement</li>
+  <li>The argument can be a literal or can be the value of some existing variable</li>
+  <li>In programs we’ve written so far, we’ve been calling many built-in functions like <code class="language-plaintext highlighter-rouge">abs()</code>, <code class="language-plaintext highlighter-rouge">range()</code>, <code class="language-plaintext highlighter-rouge">len()</code>, <code class="language-plaintext highlighter-rouge">print()</code>, …
+    <ul>
+      <li><em>The code for the definitions of these functions is in the standard library part of the Python distribution</em></li>
+    </ul>
+  </li>
+  <li>When a function returns a value, the function call can be used in an expression, an assignment or as another function argument
+    <ul>
+      <li><strong>The function call evaluates to an object of the same type and value as the one returned</strong></li>
+    </ul>
+  </li>
+  <li>A function may not return a value but can perform operations like printing, modifying files, etc.</li>
+  <li>When a function does not return a value, the calling code should not try to use it in an expression, assignment or as another function argument
+    <ul>
+      <li><em>The function call evaluates to <code class="language-plaintext highlighter-rouge">None</code></em></li>
+      <li><em>Using <code class="language-plaintext highlighter-rouge">None</code>  in an expression or as a function argument can generate exceptions</em></li>
+    </ul>
+  </li>
+  <li>A function can both return a value and perform operations like printing or writing files: it can be called either way depending on the intended use in the calling code</li>
+</ul>
+
+<h3 id="examples">Examples:</h3>
+
+<p>Code for functions computing the $g$ and $h$ examples above.</p>
+
+<p>The code for $h$ contains additionally a side-effect, here printing a message about the parity of the argument $n$.</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def g(x):
+    y = x**2 + 4 * x - 3
+    return y
+
+def h(n):
+    if n % 2 != 0:
+        print(n, "is odd")
+        return n-1
+    print(n, "is even")
+    return n//2
+
+# calling the function g
+print("begin here")
+g(1)
+print(f"g(1) = {g(1)}")
+y = 3.2
+print(f"g({y}) = {g(y)}")
+
+z = h(21)
+print(f"h(20) = {h(20)}")</div>
+
+<h2 id="why-functions">Why functions?</h2>
+
+<ul>
+  <li>Functions are code-organization constructs</li>
+  <li>To avoid repeating/copying/rewriting <strong>similar</strong> sets of statements in the same code
+    <ul>
+      <li>Helps with code maintenance</li>
+    </ul>
+  </li>
+  <li>Reduce the size (number of statements) of the script
+    <ul>
+      <li>Shorter means easier to understand</li>
+      <li>Script becomes a sequence of “macro steps”; hiding the detailed operations in the functions</li>
+    </ul>
+  </li>
+  <li>And many more benefits …</li>
+  <li>Good reading: <a href="https://link.springer.com/chapter/10.1007/978-1-84996-537-8_5#Sec1">Chapter 5, Python programming fundamentals, Kent D. Lee</a></li>
+</ul>
+
+<h2 id="practice">Practice:</h2>
+
+<ol>
+  <li>Write a function <code class="language-plaintext highlighter-rouge">sum_digits</code>, which computes and returns the sum of digits of an integer number. Negative integers should have the same sum of digits as their absolute value.</li>
+  <li>To test this function, write a script in the same module (file), which:
+    <ul>
+      <li>prompts the user for an integer; terminate if the input is invalid</li>
+      <li>print its sum of digits, computed by calling the function</li>
+    </ul>
+  </li>
+  <li>Write a second function <code class="language-plaintext highlighter-rouge">digital_root</code>, which computes and returns the digital root of an integer number
+    <ul>
+      <li>The digital root is defined as the result of summing the digits repeatedly until only a single digit remains. Negative integers should have the same digital root as their absolute value.</li>
+      <li>e.g. the digital root of the number 12345:
+        <ul>
+          <li>12345 : sum of digits →15 : sum of digits → 6 : one digit → digital root = 6</li>
+          <li>To perform sum-of-digits operation, call the function previously implemented</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Change the script to print the digital root of the input number, instead of the sum of digits.</li>
+  <li>Change the script to prompt for a space-separated sequence of integers then print their digital root
+    <ul>
+      <li>ignore non-integer entries</li>
+      <li>print one line for each integer n in the form: <code class="language-plaintext highlighter-rouge">digital root(n) =</code></li>
+    </ul>
+  </li>
+  <li>Modify your code by defining then calling a function <code class="language-plaintext highlighter-rouge">get_integer_list</code>, which prompts for, acquires and validates the input and returns a list of the user integer entries</li>
+</ol>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+Step 1-2
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def sumOfDigits(x):
+    absx = abs(x)
+    sumDig = 0
+    for c in str(absx):
+        sumDig += int(c)
+    return sumDig
 
 
+print("This program computes the sum of digits of the number entered at the prompt")
+try:
+    intEntry = int(input("Please enter an integer number: "))
+    sDigits = sumOfDigits(intEntry)
+    print(f"The sum of digits of {intEntry} is {sDigits}.")
+except ValueError:
+    print("Not an integer")</div>
+
+Step 3-4
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def sumOfDigits(x):
+    absx = abs(x)
+    sumDig = 0
+    for c in str(absx):
+        sumDig += int(c)
+    return sumDig
+
+
+def digitalRoot(x):
+    digRt = abs(x)
+    while digRt &gt; 9:
+        digRt = sumOfDigits(digRt)
+    return digRt
+
+
+print("This program computes the digital root of the number entered at the prompt")
+try:
+    intEntry = int(input("Please enter an integer number: "))
+    dRoot = digitalRoot(intEntry)
+    print(f"The digital root of {intEntry} is {dRoot}.")
+except ValueError:
+    print("Not an integer")</div>
+
+Step 5
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def sumOfDigits(x):
+    absx = abs(x)
+    sumDig = 0
+    for c in str(absx):
+        sumDig += int(c)
+    return sumDig
+
+
+def digitalRoot(x):
+    digRt = abs(x)
+    while digRt &gt; 9:
+        digRt = sumOfDigits(digRt)
+    return digRt
+
+
+print("This program computes the digital root of the numbers entered at the prompt")
+
+userInput = input("Please enter space separated integer values: ")
+userInput = userInput.split()
+intList = []
+for s in userInput:
+    try:
+        intList.append(int(s))
+    except ValueError:
+        continue
+
+for number in intList:  
+    dRoot = digitalRoot(number)      
+    print(f"The digital root of {number} is {dRoot}.")</div>
+
+Step 6
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def sumOfDigits(x):
+    absx = abs(x)
+    sumDig = 0
+    for c in str(absx):
+        sumDig += int(c)
+    return sumDig
+
+
+def digitalRoot(x):
+    digRt = abs(x)
+    while digRt &gt; 9:
+        digRt = sumOfDigits(digRt)
+    return digRt
+
+
+def get_integer_list():
+    userInput = input("Please enter space separated integer values: ")
+    userInput = userInput.split()
+    intList = []
+    for s in userInput:
+        try:
+            intList.append(int(s))
+        except ValueError:
+            continue
+    return intList
+
+
+print("This program computes the digital root of the numbers entered at the prompt")
+numbers = get_integer_list()
+for number in numbers:
+    dRoot = digitalRoot(number)       
+    print(f"The digital root of {number} is {dRoot}.")</div>
+</details>
+
+
+
+  
 </section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/scope.html"
+        class="chapter-next "
+        aria-label="Next page: Variables scopes, Arguments mutability"
+        data-level="1.1"
+        data-path="/scope.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+                Functions
+                 &#8250;
+              
+              Chapter 13.
+            
+          </div>
+          <div class="chapter-label">
+            Variables scopes, Arguments mutability
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/functions.html"
+        class="chapter-prev "
+        aria-label="Previous page: Functions"
+        data-level="1.1"
+        data-path="/functions.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              Part 4.
+            
+          </div>
+          <div class="chapter-label">
+            Functions
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
 
 
               
@@ -2264,8 +2686,8 @@
     "gitbook": "*"
   },
   "file": {
-    "path": "404.html",
-    "mtime": "",
+    "path": "_chapters/004-Functions/001-fun-def.md",
+    "mtime": "2024-01-21 18:58:52 +0000",
     "type": "markdown"
   },
   "gitbook": {

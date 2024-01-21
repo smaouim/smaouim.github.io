@@ -5,7 +5,7 @@
 
 
 <meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Reading, writing and repositioning · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Variables scopes, Arguments mutability · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
 ">
 
@@ -51,11 +51,11 @@
 
     
       
-        <link rel="prev" href="/file-access.html" />
+        <link rel="prev" href="/fun-def.html" />
       
 
       
-        <link rel="next" href="/oop.html" />
+        <link rel="next" href="/validation.html" />
       
     
 
@@ -1410,7 +1410,19 @@
           
           
             
-          
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
 
@@ -1419,7 +1431,9 @@
           
 
           
-            <li class="chapter ">
+
+          
+            <li class="chapter active">
           
 
             <a href="/scope.html">
@@ -1482,6 +1496,22 @@
 
           
           
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
           
 
@@ -1697,20 +1727,6 @@
           
           
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           
 
           
@@ -1720,7 +1736,7 @@
           
 
           
-            <li class="chapter active">
+            <li class="chapter ">
           
 
             <a href="/read-write.html">
@@ -1783,22 +1799,6 @@
 
           
           
-            
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
           
 
@@ -2125,9 +2125,9 @@
             
               <li class="breadcrumb-part">
                 
-                  <a href="/files.html">
+                  <a href="/functions.html">
                 
-                Part 5: File handling
+                Part 4: Functions
                 
                   </a>
                 
@@ -2137,7 +2137,7 @@
 
           
             <li class="no-arrow">
-              Chapter 16.
+              Chapter 13.
             </li>
           
 
@@ -2148,9 +2148,9 @@
 
   
     <h1
-      id="read-write"
+      id="scope"
       data-level="1.1"
-      class="heading-chapter-title no_toc">Reading, writing and repositioning</h1>
+      class="heading-chapter-title no_toc">Variables scopes, Arguments mutability</h1>
   
 
 
@@ -2166,275 +2166,398 @@
       <div class="page-toc">
         <div class="page-toc-heading">
           In this chapter:
-          <ul><li><a href="#controlling-the-stream-position">Controlling the stream position</a><ul><li><a href="#exercise">Exercise:</a></li></ul></li><li><a href="#reading-methods">Reading methods</a></li><li><a href="#writing-methods">Writing methods</a><ul><li><a href="#exercise-1">Exercise:</a></li></ul></li><li><a href="#file-and-functions">File and functions</a></li><li><a href="#other-useful-methods">Other useful methods</a></li></ul>
+          <ul><li><a href="#base-example-function-reversing-a-string">Base example: function reversing a string</a></li><li><a href="#variables-scope">Variables scope</a></li><li><a href="#local-scope">Local scope</a></li><li><a href="#enclosing-and-global-scope">Enclosing and global scope</a></li><li><a href="#built-in-scope">Built-in scope</a></li><li><a href="#mutable-vs-immutable-arguments">Mutable vs immutable arguments</a></li><li><a href="#practice">Practice</a><ul><li><a href="#returning-without-mutating-the-argument">Returning without mutating the argument</a></li><li><a href="#mutating-the-argument-although-not-a-common-practice">Mutating the argument (although not a common practice)</a></li></ul></li></ul>
         </div>
       </div>
       <hr/>
     
   
 
-  <h2 id="controlling-the-stream-position">Controlling the stream position</h2>
+  <h2 id="base-example-function-reversing-a-string">Base example: function reversing a string</h2>
+
+<p>Write a function which returns the reverse of a string, passed as argument.</p>
+
+<h4 id="explanation">Explanation:</h4>
 
 <ul>
-  <li>The stream position determines at which character the next read or write operation will start</li>
-  <li>It is set initially to
+  <li><em><strong>What</strong></em>: Reverse a string</li>
+  <li><em><strong>How</strong></em> (algorithm): use for loop and concatenation or use slicing operator with negative step</li>
+  <li><em><strong>Interface</strong></em>:
     <ul>
-      <li>0 (beginning of the file) when the file is opened in <code class="language-plaintext highlighter-rouge">'r'</code> or <code class="language-plaintext highlighter-rouge">'w'</code> modes</li>
-      <li>the end of the file when the file is opened in <code class="language-plaintext highlighter-rouge">'a'</code> mode</li>
-    </ul>
-  </li>
-  <li>It is updated after each read/write operation to the position at which the operation has ended</li>
-  <li><code class="language-plaintext highlighter-rouge">file.tell()</code>:  returns the current stream position</li>
-  <li><code class="language-plaintext highlighter-rouge">file.seek(offset [, ref])</code>  changes the stream position by <code class="language-plaintext highlighter-rouge">offset</code> from <code class="language-plaintext highlighter-rouge">ref</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 0 (default) for the beginning of the file</li>
-      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 1 for the current position, <code class="language-plaintext highlighter-rouge">offset</code> has to be 0 for text files thus resulting in no-operation</li>
-      <li><code class="language-plaintext highlighter-rouge">ref</code> can be 2 for the end-of-file, <code class="language-plaintext highlighter-rouge">offset</code> has to be 0</li>
+      <li><em>Good function names</em>: <code class="language-plaintext highlighter-rouge">reverseString</code>, <code class="language-plaintext highlighter-rouge">reverse_string</code>, <code class="language-plaintext highlighter-rouge">strReverse</code>, <code class="language-plaintext highlighter-rouge">str_reverse</code>, etc.</li>
+      <li><em>Argument / parameter</em>: a string</li>
+      <li><em>Return value</em>: a string with the same characters as the argument but in reverse order</li>
     </ul>
   </li>
 </ul>
 
-<p>out.txt</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>test writing le I/O is not hard but requires more patience. test writing again test writing
-</code></pre></div></div>
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "w") as myfile:
-    print("Stream position when opening in 'w' mode:", myfile.tell())
-    content = "Learning file I/O is not hard but requires patience."
-    print("Length of text to be written:", len(content))
-    myfile.write(content)
-    print("Stream position after writing:", myfile.tell())
-    myfile.write("writing again.")
-    print("Stream position after writing:", myfile.tell())</div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "w+") as myfile:
-    print("Stream position when opening in 'w+' mode:", myfile.tell())
-    content = myfile.read()
-    print("Initial file content:", content)
-    print("Stream position after read:", myfile.tell())
-    content = "Learning myfile I/O is not hard but requires more patience. "
-    print("Writing to file:", content)
-    myfile.write(content)
-    print("Stream position after writing:", myfile.tell())
-    myfile.seek(0)
-    print("Stream position after seek(0):", myfile.tell())
-    print("text read from file:", myfile.read())
-    print("Stream position after read:", myfile.tell())</div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "r") as myfile:
-    print("Stream position when opening in 'r' mode:", myfile.tell())
-    content = myfile.read()
-    print("Length of text read from file:", len(content))
-    print("Stream position after reading:", myfile.tell())</div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "a+") as myfile:
-    print("Stream position when opening in 'a+' mode:", myfile.tell())
-    print("text read at current position:", myfile.read())
-    print("Stream position after read:", myfile.tell())
-    content = "test writing "
-    print("Writing to file at current position:", content)
-    myfile.write(content)
-    print("Stream position after writing: ", myfile.tell())
-    myfile.seek(0)
-    print("Stream position after seek(0)", myfile.tell())
-    content = "again test writing"
-    print("Writing to file at current position:", content)
-    myfile.write(content)
-    print("Stream position after writing: ", myfile.tell())</div>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("out.txt", "a") as myfile:
-    print("Stream position when opening in 'a' mode:", myfile.tell())
-    content = "Showing how tell() works."
-    print("Length of text to be written:", len(content))
-    myfile.write(content)
-    print("Stream position after writing:", myfile.tell())</div>
-
-<h3 id="exercise">Exercise:</h3>
-
-<p>Write a program where you print to the screen the second half of the text in the provided file twinkle.txt, <strong>without reading the first half</strong>.</p>
-
-<p>twinkle.txt</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Twinkle, twinkle, little bat!
-How I wonder what you're at!
-Up above the world you fly,
-Like a teatray in the sky.
-</code></pre></div></div>
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
-
-<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">file = open("twinkle.txt")
-file.seek(0, 2)
-nChar = file.tell()
-file.seek(nChar//2)
-s = file.read()
-print(s)
-file.close()</div>
-</details>
-
-<h2 id="reading-methods">Reading methods</h2>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">s = file.read([size])</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">size</code> specifies the number of characters to read</li>
-      <li>If <code class="language-plaintext highlighter-rouge">size</code> is not specified or negative, returns a string with all the characters in the file until the end-of-file (EOF)</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">s = file.readline([size])</code>
-    <ul>
-      <li>Returns a string containing the characters up to the next new line character from the file</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">L = file.readlines([size])</code>
-    <ul>
-      <li>Returns a list of strings where each is a line from the file</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">size</code> <em>always represents the maximum number of characters to be read. If less characters are left till the end of line or end of file, then shorter strings are returned.</em></li>
-  <li><code class="language-plaintext highlighter-rouge">for line in file:</code>
-    <ul>
-      <li>Iterate through lines of the file using a for loop</li>
-    </ul>
-  </li>
-  <li>All read operations start from the current stream position.</li>
-  <li>The stream position is incremented by the number of characters read</li>
-</ul>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">with open("twinkle.txt") as infile:
-    print(len(infile.read(10))) # reading the first 10 charcters
-    infile.seek(0)
-    print(len(infile.read(500))) # the file has less than 500 characters
-    infile.seek(0)
-    print(infile.readline()) # reading the first line
-    infile.seek(0)
-    line = infile.readline(15) # reading up until the end of the first line or 15 characters
-    print(line, len(line)) 
-    infile.seek(0)
-    line = infile.readline(100) # reading up until the end of the first line or 100 characters
-    print(line, len(line)) 
-    infile.seek(0)
-    print(infile.readlines())
-    infile.seek(0)
-    print(infile.readlines(10))
-    infile.seek(0)
-    print(infile.readlines(50))
-    infile.seek(0)
-    print(infile.readlines(200))
-    infile.seek(0)
-    for line in infile:
-        print(line)</div>
-
-<h2 id="writing-methods">Writing methods</h2>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">file.write(content)</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">content</code>  must be a string</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">file.writelines(list_of_content)</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">list_of_content</code>  must be a list of strings</li>
-      <li>the function does <strong>NOT</strong> add new line characters at the end of each string in the list</li>
-    </ul>
-  </li>
-  <li>All write operations start from the current stream position (in <code class="language-plaintext highlighter-rouge">"w"</code> and <code class="language-plaintext highlighter-rouge">"w+"</code> modes)</li>
-  <li>The stream position is incremented by the number of characters written</li>
-  <li>If the stream position is not at the end-of-file, the write operation <strong>overwrites</strong> the bytes at the current position, when in <code class="language-plaintext highlighter-rouge">'w'</code> and <code class="language-plaintext highlighter-rouge">'w+'</code> mode.</li>
-  <li>Regardless of the current stream position, write operations will always happen at the end of file, if in <code class="language-plaintext highlighter-rouge">'a'</code> or <code class="language-plaintext highlighter-rouge">'a+'</code> mode.</li>
-</ul>
-
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">text = ["Twinkle, twinkle, little bat!", "How I wonder what you're at!\n", "Up above the world you fly,", "Like a teatray in the sky."]
-with open("Twinkle.txt", "w") as outfile:
-    outfile.write("The twinkle poem\n")
-    outfile.writelines(text)</div>
-
-<h3 id="exercise-1">Exercise:</h3>
-
-<p>Write a program which rewrites the file Twinkle.txt while reversing the characters of each line.</p>
+<p>Write a short script to call the function, so to test it.</p>
 
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
 
 <details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># preferred approach
-with open("Twinkle.txt") as infile:
-    lines = infile.readlines()
-
-with open("Twinkle.txt", "w") as outfile:
-    for line in lines:
-        if line[-1] == "\n":
-            line = line.rstrip("\n")
-            line = line[::-1]
-            line += "\n"
-        else:
-            line = line[::-1]
-        outfile.write(line)
-        
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s):
+    rev = ""
+    for c in s:
+        rev = c + rev
+    # other implementation
+    # rev = s[::-1]
+    # or simply
+    # return s[::-1]
+    return rev
 
 
-# alternate approach
-with open("Twinkle.txt", "r+") as infile:
-    position = infile.tell()
-    for line in infile:
-        if line[-1] == "\n":
-            line = line.rstrip("\n")
-            line = line[::-1]
-            line += "\n"
-        else:
-            line = line[::-1]
-        infile.seek(position)
-        infile.write(line)
-        position = infile.tell()</div>
+print(strReverse("This is CS201")) # the argument here is the literal string "This is CS201"
+s1 = "This is CS201"
+s2 = strReverse(s1)</div>
 </details>
 
-<h2 id="file-and-functions">File and functions</h2>
+<h2 id="variables-scope">Variables scope</h2>
 
 <ul>
-  <li>A file can be opened, read or written, then closed within a function
+  <li><strong>Scope</strong> refers to the area in a program where a variable/object is defined, with respect to a certain function
     <ul>
-      <li>The file object is a local variable</li>
-      <li>The function can obtain the file path as an argument, or eventually generate it , depending on the need</li>
+      <li>Note that a variable/object is defined when it is assigned a value</li>
     </ul>
   </li>
-  <li>A function can also perform operations on a <strong>file object/stream</strong> provided as argument
+  <li>We can talk about 4 scopes in Python (according to Mark Lutz):
     <ul>
-      <li>The file object/stream is mutable</li>
-      <li>any read/write operation performed in the function will take effect on the file</li>
-      <li>modifications to the stream position due to such operations should be taken into consideration in the calling code</li>
-      <li>It is possible to check whether the file is readable or writable before attempting the corresponding operation or use try-except to catch potential exceptions</li>
+      <li>Local scope</li>
+      <li>Enclosing scope</li>
+      <li>Global scope</li>
+      <li>Built-in scope</li>
     </ul>
   </li>
 </ul>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def createListFile(L, filename):
-    outfile = open(filename, "w")
-    outfile.write(str(L))
-    outfile.close()
+<h2 id="local-scope">Local scope</h2>
 
-
-
-def appendListToFile(L, outfile):
-    try:
-        outfile.seek(0, 2)
-        outfile.write(str(L))
-    except:
-        print("Could not write to file")
-
-
-L1 = [1, 2, 3, 4]
-L2 = [5, 6, 7, 8]
-
-createListFile(L1, "listFile.txt")
-
-myfile = open("listFile.txt", "r+")
-appendListToFile(L2, myfile)
-myfile.close()</div>
-
-<h2 id="other-useful-methods">Other useful methods</h2>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">file.readable()</code>: returns True, if the file can be read</li>
-  <li><code class="language-plaintext highlighter-rouge">file.writable()</code>: returns True, if the file can be written to</li>
-  <li><code class="language-plaintext highlighter-rouge">file.truncate([size])</code>: resizes the file to the given size in bytes (or the current position if size is not specified). The current stream position isn’t changed. This resizing can extend or reduce the current file size. In case of extension, the contents of the new file area depend on the platform (on most systems, additional bytes are zero-filled). The new file size is returned.</li>
+  <li>Starts at function definition and extends to the whole body of a function</li>
+  <li>Includes formal parameters of a function and all variables defined in the function’s body
+    <ul>
+      <li>In the example below, <code class="language-plaintext highlighter-rouge">s</code>, <code class="language-plaintext highlighter-rouge">rev</code> and <code class="language-plaintext highlighter-rouge">c</code> are all local variables to the function <code class="language-plaintext highlighter-rouge">strReverse</code></li>
+    </ul>
+  </li>
+  <li>Local object/variables are not accessible (usable) outside the function
+    <ul>
+      <li>The example below results in an undefined identifier error, because the variable <code class="language-plaintext highlighter-rouge">rev</code> is only accessible from the function <code class="language-plaintext highlighter-rouge">strReverse</code></li>
+    </ul>
+  </li>
 </ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">s = "This is CS201"
+
+def strReverse(s): 
+    rev = ""
+    for c in s:
+        rev = c + rev
+    s = "empty"  # we can modify the value of the formal parameter
+    print(f"Overwritten the formal parameter {s =}")
+    return s
+
+
+result = strReverse("Hello world")
+print(result) # this is a copy of the variable rev (local to the function), made by the return construct
+#print(rev)  # this creates an error as rev has the local scope of the function
+
+
+print(strReverse(s))  # Even though the argument has the same name as the formal parameter, they are two different objects because they are defined in different scopes
+print(s)   # the value of the argument s remains the same after calling the function, eventhough the function modifies its formal parameter (local variable) value to "empty"</div>
+
+<h2 id="enclosing-and-global-scope">Enclosing and global scope</h2>
+
+<ul>
+  <li><em><strong>Enclosing scope</strong></em>: Functions can access variables defined in the (main) script, either to use their values or to modify them, via methods.
+    <ul>
+      <li>Functions cannot directly “assign” new values to enclosing scope variable, since assignment is interpreted a defining a new local variable</li>
+    </ul>
+  </li>
+  <li><em><strong>Global scope</strong></em>: to allow a function to modify a variable defined in the enclosing scope via assignment, it must be explicitly specified as <code class="language-plaintext highlighter-rouge">global</code></li>
+</ul>
+
+<blockquote class="block-danger">
+  <ul>
+    <li>Using <em><strong>enclosing</strong></em> and <em><strong>global</strong></em> scope variables is possible but is <strong>not a recommended</strong> programming procatice and will <strong>not be accepted</strong> in this course assessments.</li>
+    <li>The right programming practice is to make functions as self-contained units of code and independent from the context where they are defined.</li>
+    <li>If a function is supposed to modify the value of some variable/object defined outside, the object should be provided as function argument and eventually returned.</li>
+  </ul>
+</blockquote>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def foo():
+    count = 34
+    print(f"in the function {count =}")
+    len = 67
+    print(f"in the function {len =}")
+    #print(len("Hello"))
+    
+
+
+count = 25
+print(f"before the call to foo {count =}")
+foo()
+print(f"after the call to foo {count =}")
+print(len("Hello"))</div>
+
+<h4 id="enclosing-example">Enclosing example</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s):
+    rev = ""
+    for c in s:
+        rev = c + rev
+    print(f"This is string #{count}")
+    #reversedInputs.append(rev)  # refers to the list defined in the main code at line 13
+    #reversedInputs = reversedInputs + [rev]   # errors out
+    count = 34
+    print(count)                       # errors out
+    return rev
+
+
+reversedInputs = []
+count = 1
+inputString = input("Enter a string to get its reverse, enter 'quit' to exit the program: ")
+while inputString != "quit":
+    print(strReverse(inputString))
+    count = count + 1
+    inputString = input("Enter a string to get its reverse, enter 'quit' to exit the program: ")
+
+print(f"These are all reversed strings: {reversedInputs}")
+print(f"We reversed {count} strings.")</div>
+
+<h4 id="global-example">Global example</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s):
+    rev = ""
+    for c in s:
+        rev = c + rev
+    global reversedInputs  # without it, the next line will try to create a local list
+    reversedInputs = reversedInputs + [rev]
+    global count
+    count = count + 1
+    return rev
+
+
+reversedInputs = []
+count = 0
+inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+while inputString != "quit":
+    print(strReverse(inputString))
+    inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+
+print(f"These are all reversed strings: {reversedInputs}")
+print(f"We reversed {count} strings.")</div>
+
+<h4 id="proper-practice">Proper Practice</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s, countOfReversed, reversedStrings):
+    rev = ""
+    for c in s:
+        rev = c + rev
+    reversedStrings += [rev]
+    countOfReversed += 1
+    return rev, countOfReversed, reversedStrings
+
+
+reversedInputs = []
+count = 0
+inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+while inputString != "quit":
+    reversedString, count, reversedInputs = strReverse(inputString, count, reversedInputs)
+    print(reversedString)
+    inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+
+print(f"These are all reversed strings: {reversedInputs}")
+print(f"We reversed {count} strings.")</div>
+
+<h2 id="built-in-scope">Built-in scope</h2>
+
+<ul>
+  <li>Includes all objects and function defined by default in Python standard library e.g. <code class="language-plaintext highlighter-rouge">len()</code>, <code class="language-plaintext highlighter-rouge">range()</code>, <code class="language-plaintext highlighter-rouge">max()</code>, etc.</li>
+  <li>Assigning new values to identifiers of function and objects already used in the standard library overwrites their existing definition, and prevents from using that built-in functionality.</li>
+  <li>Local scope has precedence over enclosing scope which has precedence over global scope which has precedence over built-in scope</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def length(L):
+    len = 0  # shadowing (redefining) the built-in function len into an int
+    for i in range(len(L)): # errors out here: TypeError
+        len = len + 1
+    return len
+
+myList = [1, 2 ,3]
+print(length(myList))</div>
+
+<h2 id="mutable-vs-immutable-arguments">Mutable vs immutable arguments</h2>
+
+<ul>
+  <li>When passing an <strong>immutable</strong> object as argument to a function, its <strong>value</strong> is copied into the formal parameter =&gt; modifying the value of the formal parameter within the function does not affect the object passed as argument</li>
+  <li>When passing a <strong>mutable</strong> object as argument to a function, a <strong>reference</strong> to the object is passed to the formal parameter =&gt; the function is able to alter the object passed as argument by altering its formal parameter</li>
+  <li>The common practice in programming is that functions DO NOT (intentionally) mutate their arguments</li>
+  <li>To prevent from <strong>accidentally</strong> altering a mutable argument, start the function with a copy of the argument, and work only with the copy</li>
+  <li>Additionally, any alteration attempted with an assignment results in creating a local variable with the same name as the formal parameter, thus won’t be reflected on the argument.</li>
+</ul>
+
+<h4 id="immutable">Immutable</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># This code is to illustrate how immutable objects passed as arguments are not affected by function modifications
+def foo(x):
+    print("In the function, the original value of the parameter x is", x)
+    x += x
+    # x = x + x
+    print("In the function, the parameter x was modified to", x)
+    return x
+
+
+z = "hello"  # try experimenting with immutable objects like integer, floating point, strings and tuples
+print(f"The argument passed to foo from the main code is the object {z =}")
+y = foo(z)
+print(f"After executing the function, in the main code, the argument that was passed to foo, {z =}")
+print(f"The function return value is stored in {y =}")</div>
+
+<h4 id="mutable">Mutable</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># This code is to illustrate how mutable objects passed as arguments are not affected by function modifications'''
+def foo(L):
+    print("In the function foo, the original value of the parameter L is", L)
+    L.extend([4, 5, 6])
+    #L += [4, 5, 6]  # would also provide the same result
+    L[0] *= 10
+    print("In the function foo, the parameter L was modified to", L)
+    return L
+
+
+def bar(L):
+    print("In the function bar, the original value of the parameter L is", L)
+    L = L + [4, 5, 6]  # the assignment will however dynamically refer L to a local object different from the argument
+    L[0] *= 10
+    print("In the function bar, the parameter L was locally redefined and modified to", L)
+    return L
+
+L1 = [1, 2, 3]
+print(f"The argument passed to foo from the main code is the object {L1 =}")
+L2 = foo(L1)
+print(f"After executing the function, in the main code, the argument that was passed to foo, {L1 =}")
+print(f"The function returns {L2 =}, a copy of the parameter L (which is a reference to the argument L1)")
+L1 = []
+print(f"Indeed, after setting L1 = [], still {L2 =}")
+print("============================================================================================")
+L3 = [1, 2, 3]
+print(f"The argument passed to bar from the main code is the object {L3 =}")
+L4 = bar(L3)
+print(f"After executing the function, in the main code, the argument that was passed to bar remains, {L3 =}")
+print(f"The function returns {L4 =}, a copy of the local list L created in the function")</div>
+
+<h4 id="mutable-vs-immutable">Mutable VS Immutable</h4>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s, reverseList):
+    s = s[::-1]  # modification is only local
+    reverseList.append(s)   # argument will be mutated
+    return s
+
+
+reversedInputs = []
+inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+while inputString != "quit":
+    rev = strReverse(inputString, reversedInputs)
+    print(rev, "is the reverse of ", inputString)
+    inputString = input("Enter a string to get its reverse, enter quit to exit the program: ")
+print("These are all reversed strings:", reversedInputs)</div>
+
+<h2 id="practice">Practice</h2>
+
+<h3 id="returning-without-mutating-the-argument">Returning without mutating the argument</h3>
+
+<ul>
+  <li>Write a function that takes as argument a list of positive integers and returns a list of pairs (n, count) where
+    <ul>
+      <li>n is one element of the argument list</li>
+      <li>count is the number of steps needed to reduce n to 0 following the rules
+        <ul>
+          <li>If the number is even, divide it by 2</li>
+          <li>If the number is odd, decrement it by 1</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Your function should not modify its argument i.e. if you pass a list object as argument it should remain unchanged after the function call</li>
+  <li>For instance, if you pass the object <code class="language-plaintext highlighter-rouge">L1 = [3, 45, 59, 16, 32, 89]</code> as argument, the function should return <code class="language-plaintext highlighter-rouge">[(3, 3), (45, 9), (59, 10), (16, 5), (32, 6), (89, 10)]</code> while <code class="language-plaintext highlighter-rouge">L1</code> remains the same</li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def reduceToZero(intList):
+    result = []
+    for value in intList:
+        count = 0
+        tmp = value
+        while value &gt; 0:
+            if value % 2 == 0:
+                value //= 2
+            else:
+                value -= 1
+            count += 1
+        result.append((tmp, count))
+    return result
+
+
+L1 = [3, 45, 59, 16, 32, 89]
+L2 = reduceToZero(L1)
+print(L1)
+print(L2)</div>
+</details>
+
+<h3 id="mutating-the-argument-although-not-a-common-practice">Mutating the argument (although not a common practice)</h3>
+
+<ul>
+  <li>Write a function that takes as argument a list of positive integers and transforms it into a list of pairs (n, count) where
+    <ul>
+      <li>n is one element of the argument list</li>
+      <li>count is the number of steps needed to reduce n to 0 following the rules
+        <ul>
+          <li>If the number is even, divide it by 2</li>
+          <li>If the number is odd, decrement it by 1</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>This function should not return any object</li>
+  <li>For instance, if you pass the object <code class="language-plaintext highlighter-rouge">L = [3, 45, 59, 16, 32, 89]</code> as argument, after the function call <code class="language-plaintext highlighter-rouge">L</code> becomes <code class="language-plaintext highlighter-rouge">[(3, 3), (45, 9), (59, 10), (16, 5), (32, 6), (89, 10)]</code></li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def reduceToZero(intList):
+    for i in range(len(intList)):
+        count = 0
+        value = intList[i]
+        while value &gt; 0:
+            if value % 2 == 0:
+                value //= 2
+            else:
+                value -= 1
+            count += 1
+        intList[i] = (intList[i], count)
+    print(intList)
+
+def otherReduceToZero(intList):
+    localCopy = intList.copy()
+    intList.clear()   # intList = []  does not work, will create a local object
+    for value in localCopy:
+        count = 0
+        tmp = value
+        while value &gt; 0:
+            if value % 2 == 0:
+                value //= 2
+            else:
+                value -= 1
+            count += 1
+        intList.append((tmp, count))
+
+
+
+L1 = [3, 45, 59, 16, 32, 89]
+reduceToZero(L1)
+print(L1)
+
+L2 = [3, 45, 59, 16, 32, 89]
+otherReduceToZero(L2)
+print(L2)</div>
+</details>
 
 
   
@@ -2446,11 +2569,11 @@ myfile.close()</div>
     
       
       <a
-        href="/oop.html"
+        href="/validation.html"
         class="chapter-next "
-        aria-label="Next page: Object oriented programming"
+        aria-label="Next page: Validating, importing, documenting"
         data-level="1.1"
-        data-path="/oop.html">
+        data-path="/validation.html">
         <div class="pager-arrow">
           <i class="fa fa-arrow-right"></i>
         </div>
@@ -2458,11 +2581,15 @@ myfile.close()</div>
           <div class="part">
             Next:
             
-              Part 6.
+              
+                Functions
+                 &#8250;
+              
+              Chapter 14.
             
           </div>
           <div class="chapter-label">
-            Object oriented programming
+            Validating, importing, documenting
           </div>
         </div>
       </a>
@@ -2471,11 +2598,11 @@ myfile.close()</div>
     
       
       <a
-        href="/file-access.html"
+        href="/fun-def.html"
         class="chapter-prev "
-        aria-label="Previous page: Accessing files"
+        aria-label="Previous page: Defining functions"
         data-level="1.1"
-        data-path="/file-access.html">
+        data-path="/fun-def.html">
         <div class="pager-arrow">
           <i class="fa fa-arrow-left"></i>
         </div>
@@ -2484,14 +2611,14 @@ myfile.close()</div>
             Previous:
             
               
-                File handling
+                Functions
                 &#8250;
               
-              Chapter 15.
+              Chapter 12.
             
           </div>
           <div class="chapter-label">
-            Accessing files
+            Defining functions
           </div>
         </div>
       </a>
@@ -2680,7 +2807,7 @@ myfile.close()</div>
     "gitbook": "*"
   },
   "file": {
-    "path": "_chapters/005-File Handling/002-read-write.md",
+    "path": "_chapters/004-Functions/002-scope.md",
     "mtime": "2024-01-21 18:58:52 +0000",
     "type": "markdown"
   },

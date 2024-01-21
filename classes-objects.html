@@ -1,0 +1,2986 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    
+
+
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Classes and Objects · CS201 - Introduction to Programming with Python</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Lecture materials for CS201 - Introduction to Programming with Python - KAUST Spring 2024
+">
+
+<meta name="generator" content="Jekyll (using jekyll-chapterbook theme)"><meta name="author" content="Malek Smaoui"><link rel="stylesheet" href="/assets/gitbook/style.css">
+<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css"><!--
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
+  <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+  <link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+  --><link rel="stylesheet" href="/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/assets/chapterbook/chapterbook.css">
+
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+-->
+  
+<link
+  rel="shortcut icon"
+  href="/assets/gitbook/images/favicon.ico"
+  type="image/x-icon">
+
+
+
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+    
+      
+        <link rel="prev" href="/oop.html" />
+      
+
+      
+        <link rel="next" href="/references.html" />
+      
+    
+
+  </head>
+  <body>
+    <div class="book">
+      
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary chapter-summary">
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/book.html">
+              
+              Introduction
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/contents.html">
+              
+              Table of Contents
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/basics.html">
+              
+              Part 1: Basics
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/getting-started.html">
+              
+                1.
+              
+              Getting started
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/io.html">
+              
+                2.
+              
+              Console Input and Output
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/variables.html">
+              
+                3.
+              
+              Objects of basic built-in data types
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/control.html">
+              
+              Part 2: Control flow
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/cond.html">
+              
+                4.
+              
+              Conditional statements
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/inp-vld.html">
+              
+                5.
+              
+              Input validation
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/guess-check.html">
+              
+                6.
+              
+              Guess and check
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/loops.html">
+              
+              Part 3: Loops and collections
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/while.html">
+              
+                7.
+              
+              Iterating with &quot;while&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/for.html">
+              
+                8.
+              
+              Iterating with &quot;for&quot;
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sequence.html">
+              
+                9.
+              
+              Sequences: string, tuples, lists and ranges
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/nedted-loops.html">
+              
+                10.
+              
+              Nested loops, multidimentional lists
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/sets.html">
+              
+                11.
+              
+              Sets and Dictionaries
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/functions.html">
+              
+              Part 4: Functions
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/fun-def.html">
+              
+                12.
+              
+              Defining functions
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/scope.html">
+              
+                13.
+              
+              Variables scopes, Arguments mutability
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/validation.html">
+              
+                14.
+              
+              Validating, importing, documenting
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/files.html">
+              
+              Part 5: File handling
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/file-access.html">
+              
+                15.
+              
+              Accessing files
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/read-write.html">
+              
+                16.
+              
+              Reading, writing and repositioning
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+
+          
+            <li class="header ">
+              
+                <a href="/oop.html">
+              
+              Part 6: Object oriented programming
+              
+                </a>
+              
+            </li>
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+          
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter active">
+          
+
+            <a href="/classes-objects.html">
+              
+                17.
+              
+              Classes and Objects
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+        
+
+          
+          
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+          
+
+          
+
+          
+
+          
+            <li class="chapter ">
+          
+
+            <a href="/references.html">
+              
+              References
+            </a>
+
+            
+          </li>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+          
+          
+            
+          
+
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+            
+
+        
+
+      </ul>
+    </nav>
+  </div>
+  
+
+      <div class="book-body">
+        <div class="book-header" role="navigation">
+          
+          <h1>
+            <a href="/index.html">CS201 - Introduction to Programming with Python</a>
+          </h1>
+        </div>
+        <!-- .book-header -->
+
+        <div class="body-inner">
+          <div
+            class="page-wrapper"
+            tabindex="-1"
+            role="main">
+            <div class="page-inner ">
+
+              
+
+              
+
+
+
+
+  <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
+    <ul>
+      
+        
+          <li>
+              
+              <a href="/book.html">
+            
+              <img class="book-icon" src="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+              Book
+            
+              </a>
+            
+          </li>
+      
+
+      
+        
+        <li >
+          
+            <a href="/contents.html">
+          
+            Contents
+          
+            </a>
+          
+        </li>
+      
+
+      
+
+      
+        
+
+          
+            
+              <li class="breadcrumb-part">
+                
+                  <a href="/oop.html">
+                
+                Part 6: Object oriented programming
+                
+                  </a>
+                
+              </li>
+            
+          
+
+          
+            <li class="no-arrow">
+              Chapter 17.
+            </li>
+          
+
+        
+      
+    </ul>
+  </nav>
+
+  
+    <h1
+      id="classes-objects"
+      data-level="1.1"
+      class="heading-chapter-title no_toc">Classes and Objects</h1>
+  
+
+
+<section class="normal markdown-section">
+
+  
+
+  
+    
+    
+
+    
+      <div class="page-toc">
+        <div class="page-toc-heading">
+          In this chapter:
+          <ul><li><a href="#what-are-objects">What are objects?</a></li><li><a href="#what-are-types">What are types?</a></li><li><a href="#built-in-types">Built-in types</a></li><li><a href="#custom-types-classes">Custom types: classes</a></li><li><a href="#methods">Methods</a></li><li><a href="#constructor">Constructor</a></li><li><a href="#practice-the-fraction-class">Practice: The Fraction class</a></li><li><a href="#getter-and-setter-methods">Getter and Setter methods</a></li><li><a href="#practice-fraction-class-continued">Practice: Fraction class, continued</a></li><li><a href="#special-magic-methods-for-object-representation">Special (magic) methods for object representation</a></li><li><a href="#special-methods-for-overloading-operators-and-built-in-functions">Special methods for overloading operators and built in functions</a></li><li><a href="#practice-fraction-class-overloading-operators">Practice: Fraction class, overloading operators</a></li></ul>
+        </div>
+      </div>
+      <hr/>
+    
+  
+
+  <h2 id="what-are-objects">What are objects?</h2>
+
+<ul>
+  <li>Objects are representations of concepts in a program: person, car, bank, student, shape, device, file, signed whole number, etc.</li>
+  <li>An object has two inseparable aspects:
+    <ul>
+      <li>has properties AKA  <em><strong>attributes</strong></em></li>
+      <li>performs or undergoes actions AKA  <em><strong>methods and operations</strong></em></li>
+    </ul>
+  </li>
+  <li>A concept can have a <em>infinity</em> of attributes and operations. E.g. Person:
+    <ul>
+      <li>first name, last name, phone number, address, height, weight, eye color, skin color, blood type, nationality, family members, etc.</li>
+      <li>register birth, walk, sleep, study, visit doctor, open bank account, etc.</li>
+    </ul>
+  </li>
+  <li>When an object is used in an application, only attributes and operations relevant to the application need to be defined. E.g.: Consider an application for managing a <strong>car repair shop</strong> and an application for managing a <strong>transportation department</strong>. Since both applications deal with cars, each application can define objects representing cars. The car repair shop app will record mostly technical attributes of the car, including issues to be repaired, parts to be replaced, costs, etc. Whereas, the transportation department app will record attributes like plate number, first date of circulation, ownership, insurance status, registration status, etc.</li>
+  <li>An object in a program is an  <strong>abstraction</strong>  of a concept</li>
+</ul>
+
+<h2 id="what-are-types">What are types?</h2>
+
+<ul>
+  <li>In a an application, many objects may have the same attributes (with different values) and operations. E.g. All (objects representing) cars in the transportation department app will have the same set of attributes, among which is the plate number. Each car however will have a different value for the plate number.</li>
+  <li>Objects with the same attributes and operations have the same type or class</li>
+  <li>Some types are built-in i.e. defined by the programming language:
+    <ul>
+      <li>integers, floats, strings, lists, tuples, file objects, etc.</li>
+    </ul>
+  </li>
+  <li>A programmer can define custom types which are abstractions of concepts relevant to his/her application:</li>
+  <li>car repair shop, car, truck, repairman, replacement part, repair order, client, etc.</li>
+  <li>The  <code class="language-plaintext highlighter-rouge">class</code>  construct is used to define new types.</li>
+</ul>
+
+<h2 id="built-in-types">Built-in types</h2>
+
+<ul>
+  <li>The simplest types are integers and floats :
+    <ul>
+      <li>The value is the one intrinsic attribute</li>
+      <li>Most operations are expressed via operators</li>
+      <li>Value and most operations are implemented in hardware</li>
+      <li>They are the bases for almost every other type</li>
+    </ul>
+  </li>
+  <li>Strings, tuples, lists, etc. are compound types:
+    <ul>
+      <li>They have multiple attributes: number of elements, types of elements, file descriptor, access mode, etc.</li>
+      <li>Some operations are expressed via operators but many via methods: s.sort(), l.reverse(), f.write(), etc.</li>
+      <li>The exact attributes are usually unknown, hidden to programmers</li>
+    </ul>
+  </li>
+  <li>Programmers are interested in how to use (interface) these types rather than how there are made-up (implementation details):  <strong>encapsulation principle</strong></li>
+</ul>
+
+<h2 id="custom-types-classes">Custom types: classes</h2>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">class</code> construct is used to <strong>draw a blueprint</strong> of a type but does not create any object.
+    <ul>
+      <li>similar to when <code class="language-plaintext highlighter-rouge">def</code> is used to define how a function would work</li>
+    </ul>
+  </li>
+  <li>The simplest class is where we define only attributes, no operations or methods</li>
+  <li>An object is only created when it is given an identifier
+    <ul>
+      <li>Just like a function is only executed when it is called</li>
+    </ul>
+  </li>
+  <li>When an object is created, then its attributes, as defined in the class, are created and then can be accessed
+    <ul>
+      <li>Note that attributes need to have initial values</li>
+    </ul>
+  </li>
+  <li>Accessing attributes from outside the class can be done using the selection operator .
+    <ul>
+      <li>This is not the best practice though, as in most cases it is contradictory to the <strong>encapsulation</strong> concept.</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Character:
+    name = "Steve Rogers"
+    age = 95
+    height = 1.85
+
+
+captainAmerica = Character()
+print("Captain America:")
+print(captainAmerica)
+print(captainAmerica.name)
+print(captainAmerica.age)
+print(captainAmerica.height)
+
+
+print()
+theHulk = Character()
+print("The hulk:")
+print(theHulk)
+print(theHulk.name)
+print(theHulk.age)
+print(theHulk.height)
+
+print()
+print("Fixing the hulk attributes:")
+theHulk.name = "Bruce Banner"
+theHulk.age = 49
+theHulk.height = 2.4
+
+print("The hulk:")
+print(theHulk.name)
+print(theHulk.age)
+print(theHulk.height)</div>
+
+<h2 id="methods">Methods</h2>
+
+<ul>
+  <li>Functions defined within a class</li>
+  <li>Called just like accessing an attribute (but with parenthesis)</li>
+  <li>Takes one  <strong>compulsory</strong>  parameter:  <code class="language-plaintext highlighter-rouge">self</code>
+    <ul>
+      <li>Refers to the object, instance of the class</li>
+      <li>Used to access the attributes of that object from within the function</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Character:
+    name = "Steve Rogers"
+    age = 95
+    height = 1.85
+
+    def IDCard(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Height", self.height)
+
+
+captainAmerica = Character()
+print("Captain America:")
+print(captainAmerica)  # does not print anything about the attributes
+captainAmerica.IDCard()  # a method that explicitly prints the attributes in a certain format
+
+theHulk = Character()
+theHulk.name = "bruce banner"
+theHulk.age = 49
+theHulk.height = 2.4
+theHulk.IDCard()
+
+# this is a free function which takes as parameter a Character object
+def editCharacter(superhero):
+    superhero.name = superhero.name.upper()
+
+editCharacter(theHulk)
+theHulk.IDCard()  # object was mutated by the function</div>
+
+<h2 id="constructor">Constructor</h2>
+
+<ul>
+  <li>It is unpractical to instantiate an object with default attribute values then modify them</li>
+  <li>A constructor:
+    <ul>
+      <li>special method named <code class="language-plaintext highlighter-rouge">__init__(self, …)</code></li>
+      <li>Called <strong>implicitly</strong> when an object is instantiated</li>
+      <li>Main objective is to create attributes which initial values are provided at instantiation as arguments</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Character:
+    def __init__(self, initialName, initialAge, initialHeight):
+        # attributes are defined here
+        self.height = abs(initialHeight)
+        self.name = initialName.upper()
+        self.age = round(initialAge)
+
+
+    def IDCard(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Height", self.height)
+
+
+captainAmerica = Character("steve rogers", 95, 1.85)
+print("Captain America")
+captainAmerica.IDCard()
+theHulk = Character("Bruce Banner", 49.5, -2.4)
+print()
+print("The Hulk")
+theHulk.IDCard()
+# still can access each attribute directly using selection
+print("Changing captain america's name. Current name:", captainAmerica.name)
+captainAmerica.name = 2  # !!!!!!!!!
+print("new name:", captainAmerica.name)</div>
+
+<h2 id="practice-the-fraction-class">Practice: The Fraction class</h2>
+
+<ul>
+  <li>Write the implementation of a class called  <code class="language-plaintext highlighter-rouge">Fraction</code> that represents rational numbers, with respect to the following guidelines:
+    <ul>
+      <li>has two integer attributes: a numerator and a denominator set by the constructor</li>
+      <li>has a method that returns the quotient of the numerator and denominator as a floating point number</li>
+      <li>Has a method that prints the fraction in the format: numerator / denominator</li>
+      <li>has a method that adds to the fraction an integer and returns the result as a new fraction</li>
+      <li>has a method that adds to the fraction another fraction and returns result as a new fraction</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Fraction:
+    def __init__(self, numerator, denominator):
+        self.num = numerator
+        self.denom = denominator
+    
+    def quotient(self):
+        return self.num / self.denom
+
+    def printFraction(self):
+        print(self.num, "/", self.denom)
+
+    def add_int(self, operand):
+        # result = Fraction(1, 1)
+        # result.denom = self.denom
+        # result.numr = self.num + operand * self.denom
+        # return result
+        otherFraction = Fraction(operand, 1)
+        return self.add_fraction(otherFraction)
+    
+    def add_fraction(self, operand):
+        denominator = self.denom * operand.denom
+        numerator = self.num * operand.denom + operand.num * self.denom
+        return Fraction(numerator, denominator)
+
+
+    def accumulate(self, operand):
+        self.num = self.num * operand.denom + operand.num * self.denom
+        self.denom = self.denom * operand.denom
+
+F1 = Fraction(3, 4)
+print("F1 = ", end="")
+F1.printFraction()
+F2 = Fraction(5, 6)
+print("F2 = ", end="")
+F2.printFraction()
+F3 = F1.add_fraction(F2)
+print("F1 = ", end="")
+F1.printFraction()
+print("F2 =", end="")
+F2.printFraction()
+print("F3 = ", end="")
+F3.printFraction()
+F1.accumulate(F2)
+print("F1 = ", end="")
+F1.printFraction()
+F4 = F2.add_int(2)
+print("F4 = ", end="")
+F4.printFraction()</div>
+</details>
+
+<h2 id="getter-and-setter-methods">Getter and Setter methods</h2>
+
+<ul>
+  <li>Attributes may require to have specific format or range</li>
+  <li>While the class should maintain these invariants at all times, assigning values to attributes outside the class functions may inadvertently violate these rules</li>
+  <li>Class can implement those rules by defining getter and setter methods for all or select attributes</li>
+  <li>Using getters and setters is a better practice than accessing attributes directly
+    <ul>
+      <li>Still, defining them does not compel programmers to use them and prevent from directly assigning values to attributes</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Character:
+    def __init__(self, initialName, initialAge, initialHeight):
+        self.height = abs(initialHeight)  # height has to be always positive
+        self.name = initialName.upper()  # name has to be always upper case
+        self.age = round(abs(initialAge))   # age has to be always positive integer)
+
+    def IDCard(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Height", self.height)
+
+    def set_name(self, newName):
+        self.name = newName.upper()
+
+    def set_age(self, newAge):
+        self.age = round(abs(newAge))
+
+    def set_height(self, newHeight):
+        self.height = abs(newHeight)
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
+
+    def get_height(self):
+        return self.height
+
+
+captainAmerica = Character("Steve Rogers", 95, 1.85)
+print("Captain America:")
+captainAmerica.IDCard()
+captainAmerica.set_age(100)
+captainAmerica.IDCard()
+
+theHulk = Character("Bruce Banner", 49, 2.4)
+print("The hulk:")
+theHulk.IDCard()
+theHulk.set_age(49.5)
+theHulk.IDCard()
+
+# however, we still can assign new attribute values directly
+# ignoring the class rules for those attributes
+# this can eventually create errors, if some object operations
+# rely on those rules for correctness
+theHulk.name = "green man"
+theHulk.age = -2.2
+print("The hulk:")
+theHulk.IDCard()</div>
+
+<h2 id="practice-fraction-class-continued">Practice: Fraction class, continued</h2>
+
+<ul>
+  <li>Modify the implementation of the class <code class="language-plaintext highlighter-rouge">Fraction</code> that represents rational numbers, with respect to the following guidelines:
+    <ul>
+      <li>A fraction has two integer attributes: a numerator and a denominator such that:
+        <ul>
+          <li>The fraction is <strong>always</strong> reduced to lowest terms E.g. if the initial numerator is 6 and the initial denominator is 12, they must be transformed into 1 and 2.</li>
+          <li>If the fraction is negative, the sign <strong>must</strong> show up in the numerator E.g. if the initial numerator is 15 and the initial denominator is -20, they should be transformed into -3 and 4.</li>
+        </ul>
+      </li>
+      <li>The constructor should take two integer values (numerator and denominator) as arguments and perform the reduction and sign adjustment as needed</li>
+      <li>Implement setters which maintain the same rules (invariants) when either the numerator or the denominator changes</li>
+      <li>reduction to lowest terms and sign adjustment can be done by a separate method, which would be called from the constructor and from the setters.
+        <ul>
+          <li>reduction to lowest terms requires dividing each of the numerator and denominator by their Greatest Common Divisor (GCD)</li>
+          <li>the <code class="language-plaintext highlighter-rouge">math</code> package provides a function that computes the GCD of two numbers, look it up.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">import math
+
+class Fraction:
+    def reduce(self):
+        if self.denom &lt; 0:
+            self.denom *= -1
+            self.num *= -1
+        div = math.gcd(self.num, self.denom)
+        self.num //= div
+        self.denom//= div
+
+    def __init__(self, numerator, denominator):
+        self.num = numerator
+        self.denom = denominator
+        self.reduce()
+
+    def set_numerator(self, newNumerator):
+        self.num = newNumerator
+        self.reduce()
+
+    def set_denominator(self, newDenominator):
+        self.denom = newDenominator
+        self.reduce()
+
+    def get_numerator(self):
+        return self.num
+
+    def get_denominator(self):
+        return self.denom
+
+    def printFraction(self):
+        print(self.num, "/", self.denom)
+
+    def add_int(self, operand):
+        # result = Fraction(1, 1)
+        # result.denom = self.denom
+        # result.num = self.num + operand * self.denom
+        # return result
+        return self.add_fraction(Fraction(operand,1))
+    
+    def add_fraction(self, operand):
+        denominator = self.denominator * operand.denominator
+        numerator = self.numerator * operand.denominator + operand.numerator * self.denominator
+        return Fraction(numerator, denominator)
+
+    
+
+F1 = Fraction(-2, -24)
+print("F1 = ", end="")
+F1.printFraction()
+print(f"{F1.num =}, {F1.denom =}")
+F1.num = 36
+print(f"{F1.num =}, {F1.denom =}")
+F1.set_numerator(36)
+print("F1 = ", end="")
+F1.printFraction()
+print(f"{F1.num =}, {F1.denom =}")
+F1.set_denominator(-15)
+print("F1 = ", end="")
+F1.printFraction()
+print(f"{F1.num =}, {F1.denom =}")</div>
+</details>
+
+<h2 id="special-magic-methods-for-object-representation">Special (magic) methods for object representation</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">__str__(self)</code> and <code class="language-plaintext highlighter-rouge">__repr__(self)</code>: both return a string representation of the object
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">__str__</code>: returns an informal string representation of the object, used for creating output for end user.</li>
+      <li><code class="language-plaintext highlighter-rouge">__repr__</code>: returns the “official” string representation of the object, mainly used for debugging and development</li>
+    </ul>
+  </li>
+</ul>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">class Character:
+    def __init__(self, initial_name, initial_age, initial_height):
+        self.height = abs(initial_height)  # __height has to be always positive
+        self.name = initial_name.upper()  # __name has to be always upper case
+        self.age = round(initial_age)    # __age has to be always integer
+
+    def __str__(self):
+        return "Name : {}\nAge : {}\nHeight: {}".format(self.name, self.age, self.height)
+
+    def __repr__(self):
+        return "Character(name = {}, age = {}, height = {})".format(self.name, self.age, self.height)
+
+captainAmerica = Character("Steve", 95, 1.85)
+theHulk = Character("Bruce banner", 49, 2.4)
+blackWidow = Character("Natasha Romanoff", 36, 1.5)
+theAvengers = [captainAmerica, theHulk, blackWidow]
+print(captainAmerica)
+card = str(theHulk)
+print(card)
+print(repr(blackWidow))
+print(theAvengers)</div>
+
+<h2 id="special-methods-for-overloading-operators-and-built-in-functions">Special methods for overloading operators and built in functions</h2>
+
+<ul>
+  <li>Implementing these functions for a class allows to use the objects in arithmetic expressions or in comparison expressions or with built-in functions.</li>
+  <li><strong>Special methods are only implemented when they make sense. E.g. classes that emulate numerical concepts or containers</strong></li>
+</ul>
+
+<p><img src="/assets/images/Lec16-1.png" alt="" />
+<img src="/assets/images/Lec16-2.png" alt="" />
+<img src="/assets/images/Lec16-3.png" alt="" /></p>
+
+<h2 id="practice-fraction-class-overloading-operators">Practice: Fraction class, overloading operators</h2>
+
+<p>Implement any relevant special methods for the Fraction class and experiment with using them. A sample script is given.</p>
+
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">import math
+
+class Fraction:
+    def reduced(self):
+        GCD = math.gcd(self.__num, self.__den)
+        self.__num //= GCD
+        self.__den //= GCD
+        if self.__den &lt; 0:
+            self.__num *= -1
+            self.__den *= -1
+
+    def __init__(self, numerator, denominator):
+        self.__num = numerator
+        self.__den = denominator
+        self.reduced()
+
+    def set_numerator(self, newNumerator):
+        self.__num = newNumerator
+        self.reduced()
+
+    def set_denominator(self, newDenominator):
+        self.__den = newDenominator
+        self.reduced()
+
+    def get_numerator(self):
+        return self.__num
+
+    def get_denominator(self):
+        return self.__den
+
+    numerator = property(get_numerator, set_numerator)
+    denominator = property(get_denominator, set_denominator)
+
+    def quotient(self):
+        return self.__num / self.__den
+
+    def print(self):
+        print(f"{self.__num}/{self.__den}")
+
+    def __str__(self):
+        return f"{self.__num}/{self.__den}"
+
+    def __repr__(self):
+        return f"Fraction({self.__num}, {self.__den})"
+
+    def __add__(self, operand):
+        return Fraction(self.__num * operand.__den + self.__den * operand.__num, self.__den * operand.__den)
+
+    def __mul__(self, operand):
+        return Fraction(self.__num * operand.__num, self.__den * operand.__den)
+
+    def __sub__(self, operand):
+        return Fraction(self.__num * operand.__den - self.__den * operand.__num, self.__den * operand.__den)
+
+    def __truediv__(self, operand):
+        return Fraction(self.__num * operand.__den, self.__den * operand.__num)
+
+    def __abs__(self):
+        return Fraction(-self.__num, self.__den)
+
+    def __float__(self):
+        return self.__num / self.__den
+
+    def __int__(self):
+        return int(self.quotient())
+
+
+F1 = Fraction(1, 2)
+F2 = Fraction(3, 4)
+print("F1 =", F1)
+s = str(F2)
+print(f"{s = } = str(F2)")
+L = [F1, F2]
+print(f"{L = }")
+F3 = F1 + F2
+print("F3 = F1 + F2 =", F3)
+print("F1 - F2 =", F1 - F2)
+print("F1 * F2 =", F1 * F2)
+print("F1 / F2 =", F1 / F2)
+print("float(F3) =", float(F3))
+print("int(F3) = ", int(F3))</div>
+</details>
+
+
+  
+</section>
+
+
+  <div class="chapter-pager">
+
+    
+      
+      <a
+        href="/references.html"
+        class="chapter-next "
+        aria-label="Next page: References"
+        data-level="1.1"
+        data-path="/references.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Next:
+            
+              
+              
+            
+          </div>
+          <div class="chapter-label">
+            References
+          </div>
+        </div>
+      </a>
+    
+
+    
+      
+      <a
+        href="/oop.html"
+        class="chapter-prev "
+        aria-label="Previous page: Object oriented programming"
+        data-level="1.1"
+        data-path="/oop.html">
+        <div class="pager-arrow">
+          <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="pager-labels">
+          <div class="part">
+            Previous:
+            
+              Part 6.
+            
+          </div>
+          <div class="chapter-label">
+            Object oriented programming
+          </div>
+        </div>
+      </a>
+    
+
+    <div style="clear: both;"></div>
+  </div>
+  <!-- .chapter-pager -->
+
+
+
+              
+
+            </div>
+            <!-- .page-inner -->
+          </div>
+          <!-- .page-wrapper -->
+        </div>
+        <!-- .body-inner -->
+        <div class="page-footer">
+          
+
+          
+            <div class="bottom-nav">
+              
+                
+                
+                
+                
+                <a href="/index.html">
+                  Home
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="/book.html">
+                  Book
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://github.com/jasongrimes/jekyll-chapterbook">
+                  GitHub
+                </a>
+              
+                
+                  -
+                
+                
+                
+                
+                <a href="https://codingrooms.com">
+                  Codingrooms
+                </a>
+              
+            </div>
+          
+
+          
+            <div class="copyright">
+              
+              
+              
+                <a href="/book.html">
+              
+              &copy;
+              
+                
+                2023-
+              2024
+              Malek Smaoui
+              
+                </a>
+              
+            </div>
+          
+
+        </div>
+        <!-- .chapter-footer -->
+
+      </div>
+      <!-- .book-body -->
+    </div>
+    <!-- .book --><!--
+<script src="/assets/chapterbook/require.js"></script>
+<script src="/assets/chapterbook/jquery-3.6.0.min.js"></script>
+-->
+
+<script src="/assets/gitbook/gitbook.js"></script>
+<script src="/assets/gitbook/theme.js"></script>
+
+<script src="/assets/chapterbook/chapterbook.js"></script>
+
+<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+<!--
+<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+-->
+
+<!-- <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script> -->
+
+<!-- // JG
+<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+-->
+<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+
+<script>
+      // var gitbook = gitbook || [];
+      gitbook.push(function() {
+        gitbook.page.hasChanged({
+  "page": {
+    "title": "Introduction",
+    "level": "1.1",
+    "depth": 1,
+    "dir": "ltr"
+  },
+
+  "config": {
+   "plugins": ["fontsettings"],
+    "styles": {
+      "ebook": "styles/ebook.css",
+      "epub": "styles/epub.css",
+      "mobi": "styles/mobi.css",
+      "pdf": "styles/pdf.css",
+      "print": "styles/print.css",
+      "website": "styles/website.css"
+    },
+    "pluginsConfig": {
+      "fontsettings": {
+        "family": "sans",
+        "size": 2,
+        "theme": "white"
+      },
+      "theme-default": {
+        "showLevel": false,
+        "styles": {
+          "ebook": "styles/ebook.css",
+          "epub": "styles/epub.css",
+          "mobi": "styles/mobi.css",
+          "pdf": "styles/pdf.css",
+          "print": "styles/print.css",
+          "website": "styles/website.css"
+        }
+      }
+    },
+    "theme": "default",
+    "author": "",
+    "pdf": {
+      "pageNumbers": true,
+      "fontSize": 12,
+      "fontFamily": "Arial",
+      "paperSize": "a4",
+      "chapterMark": "pagebreak",
+      "pageBreaksBefore": "/",
+      "margin": {
+        "right": 62,
+        "left": 62,
+        "top": 56,
+        "bottom": 56
+      }
+    },
+    "structure": {
+      "langs": "LANGS.md",
+      "readme": "README.md",
+    },
+    "variables": {},
+    "title": "CS201 - Introduction to Programming with Python",
+    "language": "en",
+    "gitbook": "*"
+  },
+  "file": {
+    "path": "_chapters/006-Object Oriented Programming/001-classes.md",
+    "mtime": "2024-01-21 18:58:52 +0000",
+    "type": "markdown"
+  },
+  "gitbook": {
+    "version": "",
+    "time": "2024-01-21 18:58:52 +0000"
+  },
+  "basePath": "",
+  "book": {
+    "language": ""
+  }
+}
+);
+      });
+    </script>
+
+<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
+  </body>
+</html>
