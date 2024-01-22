@@ -67,7 +67,7 @@ An **Integrated Development Environment (IDE)** is a software with a Graphical U
 
 To develop multi-file codes for large applications, it is recommended to use a standalone (desktop application) IDE like Visual Studio Code, Spyder, PyCharm, etc. 
 
-Beginner learners can quickly get started on an online IDE available on websites like [[programiz.com](https://www.programiz.com/python-programming/online-compiler/)], [replit.com](https://replit.com/site/ide), [online-python.com](https://www.online-python.com/), [onlinegdb.com](https://www.onlinegdb.com/), etc. or the ones embedded in this course pages. 
+Beginner learners can quickly get started on an online IDE available on websites like [programiz.com](https://www.programiz.com/python-programming/online-compiler/), [replit.com](https://replit.com/site/ide), [online-python.com](https://www.online-python.com/), [onlinegdb.com](https://www.onlinegdb.com/), etc. or the ones embedded in this course pages. 
 
 ## Hello world!
 
