@@ -1,7 +1,7 @@
 ---
 title: Getting started
 slug: getting-started
-abstract: How does a computer work? What is programming? "Hello world!" and more.
+abstract: What is programming?; Programming environments; Your first program; and more...
 ---
 
 ## Why programming?
@@ -83,9 +83,9 @@ print("Hello, world! This is Python 3!")
 
 #### JDoodle IDE
 * Simple IDE embedded from [JDoodle.com](https://www.jdoodle.com/)
-* The file editor can be provided blanc or comes with a (template) program or script
+* The file editor can be provided blank or can come with a (template) program or script
 * Provides a choice of the Python version
-* Provides a button to select whether the program is interactive (i.e. takes user inputs)
+* Provides a button to select whether the program is interactive (i.e. prompts for or accepts user inputs)
 * Runtime input arguments and standard input can also be provided before execution
 * The result box shows the program output at execution
   
