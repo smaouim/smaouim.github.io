@@ -2157,6 +2157,10 @@
 <section class="normal markdown-section">
 
   
+    <div class="chapter-abstract color-callout-dark">
+      What are variables?; Fundamental data types and basic operations
+    </div>
+  
 
   
     
@@ -2291,7 +2295,6 @@ print(type(x))</div>
 <h2 id="arithmetic-expressions">Arithmetic expressions</h2>
 
 <ul>
-  <li>Write a program that displays your name in the console</li>
   <li>Solving computational problems (even the simplest) requires performing arithmetic computation using the input data, constant values and more</li>
   <li>An arithmetic expression is a combination of arithmetic operators (+, -, /, etc.) and numerical operands used to perform such computations</li>
   <li>An expression is evaluated at execution time and its result assigned to a variable, printed, etc. depending on the statement it appears in</li>
@@ -2301,8 +2304,8 @@ print(type(x))</div>
 <p><img src="assets/images/Lec2-2.png" alt="" /></p>
 
 <ul>
-  <li>Expressions can have mixed types operands (some <code class="language-plaintext highlighter-rouge">int</code> and some <code class="language-plaintext highlighter-rouge">float</code>); in such case, they are evaluated using float arithmetic and the result is always a float</li>
-  <li>Conversion from floating point to integer via truncation of decimal part</li>
+  <li>Expressions can have mixed types operands (some <code class="language-plaintext highlighter-rouge">int</code> and some <code class="language-plaintext highlighter-rouge">float</code>); in such case, they are evaluated using float arithmetic and the result is always a <code class="language-plaintext highlighter-rouge">float</code></li>
+  <li>Conversion from floating point to integer via truncation of decimal (fractional) part</li>
   <li>Conversion from integer to floating point by adding a 0 decimal (fractional) part</li>
   <li>Conversion operators within expressions produce operands in the intended data type but <em><strong>do not alter</strong></em> the object’s original type
     <ul>
@@ -2382,9 +2385,9 @@ print("round(10 / 6, 2) = ", round(10 / 6, 2))</div>
 
 <details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
   <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">sideA = 6
-    sideB = 8
-    sideC = (sideA ** 2 + sideB ** 2) ** 0.5
-    print(sideC)</div>
+sideB = 8
+sideC = (sideA ** 2 + sideB ** 2) ** 0.5
+print(sideC)</div>
 </details>
 
 <h2 id="exercise-weight-conversion">Exercise: weight conversion</h2>
@@ -2887,12 +2890,12 @@ print(f"sum(1..{N})={sumToN}")
   },
   "file": {
     "path": "_chapters/001-Basics/003.variables.md",
-    "mtime": "2024-01-22 07:44:25 +0000",
+    "mtime": "2024-01-22 08:36:17 +0000",
     "type": "markdown"
   },
   "gitbook": {
     "version": "",
-    "time": "2024-01-22 07:44:25 +0000"
+    "time": "2024-01-22 08:36:17 +0000"
   },
   "basePath": "",
   "book": {
