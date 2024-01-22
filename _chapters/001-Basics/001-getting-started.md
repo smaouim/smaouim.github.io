@@ -88,10 +88,11 @@ print("Hello, world! This is Python 3!")
 * Provides a button to select whether the program is interactive (i.e. takes user inputs)
 * Runtime input arguments and standard input can also be provided before execution
 * The result box shows the program output at execution
+  
 > It is advisable to get acquainted with a standalone IDE as well.
 > Please install [Pycharm (community edition)](https://www.jetbrains.com/pycharm/download/?section=windows) on your laptop 
 {: .block-tip }
-> 
+
 #### About the 'Hello world' program
 
 * The program consists of a single `print` **statement**.
