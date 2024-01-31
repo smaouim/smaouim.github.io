@@ -86,9 +86,9 @@ Write a program which:
 #### Idea
 
 * For a positive integer, the right-most bit is the remainder of division by 2.
-  * e.g. (83)~1~0 = (1010011)~2 . Note that 83 % 2 = 1 and the right-most bit of its binary representation is 1.
+  * e.g. (83)~1~0~ = (1010011)~2~ . Note that 83 % 2 = 1 and the right-most bit of its binary representation is 1.
 * The other bits represent the number obtained by floor division by 2.
-  * e.g. (83)~1~0 = (1010011)~2 , 83 // 2 = 41 and (41)~1~0 = (101001)~2 
+  * e.g. (83)~1~0~ = (1010011)~2~ , 83 // 2 = 41 and (41)~1~0~ = (101001)~2~ 
 * **Repeatedly** _extract, accumulate and eliminate the rightmost bit_, **until** no bits remain (i.e. the number becomes 0)
 * The result should be stored as a “string of bits” i.e. a string of the characters “0” and “1”. Thus, accumulation actually consists of concatenating one bit at each iteration, considering that the first iteration produces the right-most bit, the second iteration produces the second most-right, etc.
 
