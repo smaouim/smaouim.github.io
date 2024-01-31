@@ -1,7 +1,7 @@
 ---
 title: Iterating with "while"
 slug: while
-abstract:
+abstract: Fundamental looping construct; Graceful input validation
 ---
 
 ## The `while` statement
@@ -40,9 +40,9 @@ Write a program which:
 #### Idea
 
 * For a positive integer, the right most digit is the remainder of division by 10.
-* if the number has only a single digit, the remainder is the one digit
+    * if the number has only a single digit, the remainder is the one digit
 * To eliminate the right most digit from the number, floor-divide it by 10.
-* If the number has only a single digit, the floor division results in 0 and any subsequent division will also result in 0.
+    * If the number has only a single digit, the floor division results in 0 and any subsequent division will also result in 0.
 * **Repeatedly** **_extract, accumulate and eliminate the rightmost digit_**, **until** no digits remain (i.e. the number becomes 0)
 
 {% empty_jdoodle %}
@@ -59,8 +59,7 @@ while n != 0:
     sumOfDigits += n % 10 # sumOfDigits = sumOfDigits + n % 10
     n = n // 10
 
-print(f"The sum of digits of {initial_n} is {sumOfDigits}.")   
-
+print(f"The sum of digits of {initial_n} is {sumOfDigits}.")
 {% endJDoodle %}
 
 Another solution
@@ -87,9 +86,9 @@ Write a program which:
 #### Idea
 
 * For a positive integer, the right-most bit is the remainder of division by 2.
-  * e.g. (83)10 = (1010011)2 . Note that 83 % 2 = 1 and the right-most bit of its binary representation is 1.
+  * e.g. (83)~1~0 = (1010011)~2 . Note that 83 % 2 = 1 and the right-most bit of its binary representation is 1.
 * The other bits represent the number obtained by floor division by 2.
-  * e.g. (83)10 = (1010011)2 , 83 // 2 = 41 and (41)10 = (101001)2 
+  * e.g. (83)~1~0 = (1010011)~2 , 83 // 2 = 41 and (41)~1~0 = (101001)~2 
 * **Repeatedly** _extract, accumulate and eliminate the rightmost bit_, **until** no bits remain (i.e. the number becomes 0)
 * The result should be stored as a “string of bits” i.e. a string of the characters “0” and “1”. Thus, accumulation actually consists of concatenating one bit at each iteration, considering that the first iteration produces the right-most bit, the second iteration produces the second most-right, etc.
 
@@ -150,7 +149,7 @@ else:
 
 ### Exercise: Second maximum
 
-such that the program prints also the second maximum.
+In the IDE below, make a copy of your solution to the problem above then modify it such that the program prints also the second maximum.
 
 There are a few considerations here:
 
@@ -292,9 +291,6 @@ The `break` construct interrupts all iteration: `<loop_body_part_2>` is skipped 
 
 ### Example: Maximum of a sequence using `while` and `break`
 
-{% empty_jdoodle %}
-
-{% Solution %}
 {% JDoodle %}
 print("This program finds the maximum of a sequence of integers")
 
@@ -312,8 +308,6 @@ if userEntry != 0:
 else:
     print("No maximum found. The sequence is empty")
 {% endJDoodle %}
-{% endSolution %}
-
 
 ## "continue" to the next loop iteration
 
