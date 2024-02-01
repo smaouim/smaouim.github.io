@@ -1,7 +1,7 @@
 ---
 title: "Sequences: string, tuples, lists and ranges"
 slug: sequence
-abstract:
+abstract: Operators and methods of built-in sequences; Example related problems 
 ---
 
 ## Introduction
