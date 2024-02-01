@@ -4,6 +4,8 @@ slug: sequence
 abstract:
 ---
 
+## Introduction
+
 * Repetition in computing does not involve only actions but also data
 * It is not always possible to work with an arbitrary (runtime defined) amount of data while relying only on "scalar" variables.
 * Python offers to aggregate an arbitrary number of pieces of data into one object (data structure, collection) under the same identifier (name)
