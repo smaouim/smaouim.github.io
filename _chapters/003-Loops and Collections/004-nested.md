@@ -9,7 +9,7 @@ abstract:
 write a program which:
 
 * defines a strictly positive integer number $n$
-* prints the corresponding Floyd Triangle. The output consists in the consecutive numbers from 1 to  $\frac{n (n+1)}{2}$ spanning $n$ lines, where the ith line consists of i consecutive integers. 
+* prints the corresponding Floyd Triangle. The output consists in the consecutive numbers from 1 to  $\frac{n (n+1)}{2}$ spanning $n$ lines, where the i^th^ line consists of i consecutive integers. 
 
     * the numbers must be aligned in columns 
     * the spacing between columns should minimum but not less than 2 spaces
@@ -25,8 +25,11 @@ Below is the output of the program for $n = 6$
 16  17  18  19  20  21
 ```
 
-{% empty_jdoodle %}
+{% JDoodle %}
+n = 6
+{% endJDoodle %}
 
+{% Solution %}
 {% JDoodle %}
 n = 6
 
@@ -80,19 +83,30 @@ while term <= n*(n+1)//2 :
         lineNbr += 1
 
 {% endJDoodle %}
+{% endSolution %}
 
-## Storing Floyd Triangle
+## Floyd Triangle as nested lists
 
 * Suppose we want to use Floyd triangle for further purposes, other than just printing.
 * We need to store the numbers in memory, in a data structure, with the same (virtual) triangle-like layout
     * Each line is a separate sequence of numbers and we have an arbitrary number of sequences
     * We use one list to store the numbers of one line
-    * We store these lists as elements of a list:  list-of-lists
-
-{% empty_jdoodle %}
+    * We store these lists as elements of an (outer) list:  list-of-lists or nested lists
 
 {% JDoodle %}
+# modify this code to create the nested list where yu store the triangle elements
+n = 6
 
+term = 1
+for i in range(1, n+1): # when n = 4, i = 1, 2, 3, 4
+    line = ""
+    for v in range(1, i+1): # when i = 3, v = 1, 2, 3
+        line = line + str(term) + "  "
+        term += 1
+    print(line)
+{% endJDoodle %}
+(% Solution %}
+{% JDoodle %}
 n = 6
 
 # generating the triangle as a list-of-lists
@@ -134,7 +148,7 @@ for line in triangle:
 print(output)
 
 {% endJDoodle %}
-
+{% endSolution %}
 
 ## Matrices: list-of-list or `numpy` array?
 
