@@ -2157,6 +2157,10 @@
 <section class="normal markdown-section">
 
   
+    <div class="chapter-abstract color-callout-dark">
+      Example of problem requiring nested loops and multidimentional lists
+    </div>
+  
 
   
     
@@ -2166,7 +2170,7 @@
       <div class="page-toc">
         <div class="page-toc-heading">
           In this chapter:
-          <ul><li><a href="#floyd-triangle">Floyd triangle</a></li><li><a href="#storing-floyd-triangle">Storing Floyd Triangle</a></li><li><a href="#matrices-list-of-list-or-numpy-array">Matrices: list-of-list or <code class="language-plaintext highlighter-rouge">numpy</code> array?</a></li><li><a href="#lists-and-references">Lists and references</a></li></ul>
+          <ul><li><a href="#floyd-triangle">Floyd triangle</a></li><li><a href="#floyd-triangle-as-nested-lists">Floyd Triangle as nested lists</a></li><li><a href="#matrices-list-of-list-or-numpy-array">Matrices: list-of-list or <code class="language-plaintext highlighter-rouge">numpy</code> array?</a></li><li><a href="#lists-and-references">Lists and references</a></li></ul>
         </div>
       </div>
       <hr/>
@@ -2180,7 +2184,7 @@
 <ul>
   <li>defines a strictly positive integer number $n$</li>
   <li>
-    <p>prints the corresponding Floyd Triangle. The output consists in the consecutive numbers from 1 to  $\frac{n (n+1)}{2}$ spanning $n$ lines, where the ith line consists of i consecutive integers.</p>
+    <p>prints the corresponding Floyd Triangle. The output consists in the consecutive numbers from 1 to  $\frac{n (n+1)}{2}$ spanning $n$ lines, where the i^th^ line consists of i consecutive integers.</p>
 
     <ul>
       <li>the numbers must be aligned in columns</li>
@@ -2199,8 +2203,9 @@
 16  17  18  19  20  21
 </code></pre></div></div>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">n = 6</div>
 
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">n = 6
 
 # with 2 spaces separation but no guaranteed column alignment
@@ -2251,8 +2256,9 @@ while term &lt;= n*(n+1)//2 :
         line = ""
         termsPerline = 0
         lineNbr += 1</div>
+</details>
 
-<h2 id="storing-floyd-triangle">Storing Floyd Triangle</h2>
+<h2 id="floyd-triangle-as-nested-lists">Floyd Triangle as nested lists</h2>
 
 <ul>
   <li>Suppose we want to use Floyd triangle for further purposes, other than just printing.</li>
@@ -2260,13 +2266,22 @@ while term &lt;= n*(n+1)//2 :
     <ul>
       <li>Each line is a separate sequence of numbers and we have an arbitrary number of sequences</li>
       <li>We use one list to store the numbers of one line</li>
-      <li>We store these lists as elements of a list:  list-of-lists</li>
+      <li>We store these lists as elements of an (outer) list:  list-of-lists or nested lists</li>
     </ul>
   </li>
 </ul>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
+<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""># modify this code to create the nested list where yu store the triangle elements
+n = 6
 
+term = 1
+for i in range(1, n+1): # when n = 4, i = 1, 2, 3, 4
+    line = ""
+    for v in range(1, i+1): # when i = 3, v = 1, 2, 3
+        line = line + str(term) + "  "
+        term += 1
+    print(line)</div>
+<details><summary><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Solution</summary>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">n = 6
 
 # generating the triangle as a list-of-lists
@@ -2306,6 +2321,7 @@ for line in triangle:
         output += str(value).ljust(width)
     output += "\n"
 print(output)</div>
+</details>
 
 <h2 id="matrices-list-of-list-or-numpy-array">Matrices: list-of-list or <code class="language-plaintext highlighter-rouge">numpy</code> array?</h2>
 
@@ -2644,12 +2660,12 @@ print("L1 = ", L1, "L2 = ", L2, "L3 = ", L3, "L4 = ", L4)
   },
   "file": {
     "path": "_chapters/003-Loops and Collections/004-nested.md",
-    "mtime": "2024-02-01 09:04:01 +0000",
+    "mtime": "2024-03-19 14:59:44 +0000",
     "type": "markdown"
   },
   "gitbook": {
     "version": "",
-    "time": "2024-02-01 09:04:01 +0000"
+    "time": "2024-03-19 14:59:44 +0000"
   },
   "basePath": "",
   "book": {

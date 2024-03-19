@@ -2157,6 +2157,10 @@
 <section class="normal markdown-section">
 
   
+    <div class="chapter-abstract color-callout-dark">
+      Set and Dictionary data types and their operations
+    </div>
+  
 
   
     
@@ -2305,7 +2309,6 @@ print(noDuplicates)</div>
 <h2 id="dictionaries">Dictionaries</h2>
 
 <ul>
-  <li>Dictionaries</li>
   <li>mapping or associative data structure i.e. elements are pairs</li>
   <li>keys can have different data types, but must be hashable (e.g. immutable built-in types).</li>
   <li>values also can have different data types and can be mutable</li>
@@ -2409,7 +2412,11 @@ print("list(d1.items()) = ", list(d1.items()))</div>
 
 <p>Sample text:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Once upon a time, there was a beautiful girl named Cinderella. She lived with her wicked stepmother and two stepsisters. They treated Cinderella very badly. One day, they were invited for a grand ball in the king's palace. But Cinderella's stepmother would not let her go. Cinderella was made to sew new party gowns for her stepmother and stepsisters, and curl their hair. They then went to the ball, leaving Cinderella alone at home. Cinderella felt very sad and began to cry. Suddenly, a fairy godmother appeared and said, "Don't cry, Cinderella! I will send you to the ball!". But Cinderella was sad. She said, "I don't have a gown to wear for the ball!". The fairy godmother waved her magic wand and changed Cinderella's old clothes into a beautiful new gown! The fairy godmother then touched Cinderella's feet with the magic wand. And lo! She had beautiful glass slippers! "How will I go to the grand ball?", asked Cinderella. The fairy godmother found six mice playing near a pumpkin, in the kitchen. She touched them with her magic wand and the mice became four shiny black horses and two coachmen and the pumpkin turned into a golden coach. Cinderella was overjoyed and set off for the ball in the coach drawn by the six black horses. Before leaving, the fairy godmother said, "Cinderella, this magic will only last until midnight! You must reach home by then!". When Cinderella entered the palace, everybody was struck by her beauty. Nobody, not even Cinderella's stepmother or stepsisters, knew who she really was in her pretty clothes and shoes. The handsome prince also saw her and fell in love with Cinderella. He went to her and asked, "Do you want to dance?" And Cinderella said, "Yes!". The prince danced with her all night and nobody recognized the beautiful dancer. Cinderella was so happy dancing with the prince that she almost forgot what the fairy godmother had said. At the last moment, Cinderella remembered her fairy godmother's words and she rushed to go home. "Oh! I must go!", she cried and ran out of the palace. One of her glass slippers came off but Cinderella did not turn back for it. She reached home just as the clock struck twelve. Her coach turned back into a pumpkin, the horses into mice and her fine ball gown into rags. Her stepmother and stepsisters reached home shortly after that. They were talking about the beautiful lady who had been dancing with the prince. The prince had fallen in love with Cinderella and wanted to find out who the beautiful girl was, but he did not even know her name. He found the glass slipper that had come off Cinderella's foot as she ran home. The prince said, "I will find her. The lady whose foot fits this slipper will be the one I marry!". The next day, the prince and his servants took the glass slipper and went to all the houses in the kingdom. They wanted to find the lady whose feet would fit in the slipper. All the women in the kingdom tried the slipper but it would not fit any of them. Cinderella's stepsisters also tried on the little glass slipper. They tried to squeeze their feet and push hard into the slipper, but the servant was afraid the slipper would break. Cinderella's stepmother would not let her try the slipper on, but the prince saw her and said, "Let her also try on the slipper!". The slipper fit her perfectly. The prince recognized her from the ball. He married Cinderella and together they lived happily ever after.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Once upon a time, there was a beautiful girl named Cinderella. She lived with her wicked stepmother and two stepsisters. They treated Cinderella very badly.
+One day, they were invited for a grand ball in the king's palace. But Cinderella's stepmother would not let her go. Cinderella was made to sew new party gowns for her stepmother and stepsisters, and curl their hair. They then went to the ball, leaving Cinderella alone at home.
+Cinderella felt very sad and began to cry. Suddenly, a fairy godmother appeared and said, "Don't cry, Cinderella! I will send you to the ball!". But Cinderella was sad. She said, "I don't have a gown to wear for the ball!". The fairy godmother waved her magic wand and changed Cinderella's old clothes into a beautiful new gown! The fairy godmother then touched Cinderella's feet with the magic wand. And lo! She had beautiful glass slippers! "How will I go to the grand ball?", asked Cinderella. The fairy godmother found six mice playing near a pumpkin, in the kitchen. She touched them with her magic wand and the mice became four shiny black horses and two coachmen and the pumpkin turned into a golden coach. Cinderella was overjoyed and set off for the ball in the coach drawn by the six black horses. Before leaving, the fairy godmother said, "Cinderella, this magic will only last until midnight! You must reach home by then!".
+When Cinderella entered the palace, everybody was struck by her beauty. Nobody, not even Cinderella's stepmother or stepsisters, knew who she really was in her pretty clothes and shoes. The handsome prince also saw her and fell in love with Cinderella. He went to her and asked, "Do you want to dance?" And Cinderella said, "Yes!". The prince danced with her all night and nobody recognized the beautiful dancer. Cinderella was so happy dancing with the prince that she almost forgot what the fairy godmother had said. At the last moment, Cinderella remembered her fairy godmother's words and she rushed to go home. "Oh! I must go!", she cried and ran out of the palace. One of her glass slippers came off but Cinderella did not turn back for it. She reached home just as the clock struck twelve. Her coach turned back into a pumpkin, the horses into mice and her fine ball gown into rags. Her stepmother and stepsisters reached home shortly after that. They were talking about the beautiful lady who had been dancing with the prince.
+The prince had fallen in love with Cinderella and wanted to find out who the beautiful girl was, but he did not even know her name. He found the glass slipper that had come off Cinderella's foot as she ran home. The prince said, "I will find her. The lady whose foot fits this slipper will be the one I marry!". The next day, the prince and his servants took the glass slipper and went to all the houses in the kingdom. They wanted to find the lady whose feet would fit in the slipper. All the women in the kingdom tried the slipper but it would not fit any of them. Cinderella's stepsisters also tried on the little glass slipper. They tried to squeeze their feet and push hard into the slipper, but the servant was afraid the slipper would break. Cinderella's stepmother would not let her try the slipper on, but the prince saw her and said, "Let her also try on the slipper!". The slipper fit her perfectly. The prince recognized her from the ball. He married Cinderella and together they lived happily ever after.
 </code></pre></div></div>
 
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs=""></div>
@@ -2419,42 +2426,23 @@ print("list(d1.items()) = ", list(d1.items()))</div>
 text = text.split()
 text = [word.strip('.,"!?;:').lower() for word in text]
 
-frequency = {}
+frequency1 = {}
 for word in text:
-    if word in frequency:
-        frequency[word] += 1
+    if word in frequency1:
+        frequency1[word] += 1
     else:
-        frequency[word] = 1
+        frequency1[word] = 1
+#print(frequency1)
+for word in frequency1:
+    print(word, ":",frequency1[word])
 
-#print(frequency)
-for word in frequency:
-    print(word, ":",frequency[word])</div>
-
-Another solution
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">words = input("Insert text: ").split()
-
-words = [w.strip('.,?!;:"').rstrip("'s").lower() for w in words]
-
-unique_words = set(words)
-
-word_frequency1 = {}
+print("================================================")
+unique_words = set(text)
+frequency2 = {}
 for w in unique_words:
-    word_frequency1[w] = words.count(w)
-
-for key in word_frequency1:
-    print(key, ":", word_frequency1[key])
-
-print("=================================")
-word_frequency2 = {}
-for w in words:
-    if w not in word_frequency2:
-        word_frequency2[w] = 1
-    else:
-        word_frequency2[w] += 1
-for key in word_frequency2:
-    print(key, ":", word_frequency2[key])
-
-print(word_frequency1 == word_frequency2)</div>
+    frequency2[w] = text.count(w)
+for key in frequency2:
+    print(key, ":", frequency2[key])</div>
 </details>
 
 
@@ -2702,12 +2690,12 @@ print(word_frequency1 == word_frequency2)</div>
   },
   "file": {
     "path": "_chapters/003-Loops and Collections/005-sets.md",
-    "mtime": "2024-02-01 09:04:01 +0000",
+    "mtime": "2024-03-19 14:59:44 +0000",
     "type": "markdown"
   },
   "gitbook": {
     "version": "",
-    "time": "2024-02-01 09:04:01 +0000"
+    "time": "2024-03-19 14:59:44 +0000"
   },
   "basePath": "",
   "book": {
