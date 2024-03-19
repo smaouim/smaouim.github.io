@@ -1,7 +1,7 @@
 ---
 title: Nested loops, multidimentional lists
 slug: nedted-loops
-abstract:
+abstract: Example of problem requiring nested loops and multidimentional lists
 ---
 
 ## Floyd triangle
