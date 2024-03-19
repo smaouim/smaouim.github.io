@@ -105,7 +105,7 @@ for i in range(1, n+1): # when n = 4, i = 1, 2, 3, 4
         term += 1
     print(line)
 {% endJDoodle %}
-(% Solution %}
+{% Solution %}
 {% JDoodle %}
 n = 6
 
