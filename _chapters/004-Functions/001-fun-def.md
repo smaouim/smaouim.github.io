@@ -1,7 +1,7 @@
 ---
 title: Defining functions
 slug: fun-def
-abstract:
+abstract: Code organization using functions
 ---
 
 ## Functions in mathematics
@@ -10,7 +10,7 @@ abstract:
 
 $$
 \begin{aligned}
-g: \mathbb{R} \to \mathbb{R} \ ;\\
+& g: \mathbb{R} \to \mathbb{R} \ ;\\
 & x \mapsto x^2 + 4x - 3
 \end{aligned}
 $$
@@ -22,7 +22,7 @@ $$
   
 $$
 \begin{aligned}
-h: \mathbb{N} \to \mathbb{N} ;\\ 
+& h: \mathbb{N} \to \mathbb{N} ;\\ 
 & n \mapsto \left\{\begin{matrix} \frac{n}{2} & if\ n\ is\ even\\ n-1 & if\ n\ is\ odd \\\end{matrix}\right.
 \end{aligned}
 $$
