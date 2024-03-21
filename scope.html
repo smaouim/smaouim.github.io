@@ -2157,6 +2157,10 @@
 <section class="normal markdown-section">
 
   
+    <div class="chapter-abstract color-callout-dark">
+      Variable and parameter definition and access patterns
+    </div>
+  
 
   
     
@@ -2284,22 +2288,7 @@ print(s)   # the value of the argument s remains the same after calling the func
   </ul>
 </blockquote>
 
-<div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def foo():
-    count = 34
-    print(f"in the function {count =}")
-    len = 67
-    print(f"in the function {len =}")
-    #print(len("Hello"))
-    
-
-
-count = 25
-print(f"before the call to foo {count =}")
-foo()
-print(f"after the call to foo {count =}")
-print(len("Hello"))</div>
-
-<h4 id="enclosing-example">Enclosing example</h4>
+<h4 id="enclosing-scope-example">Enclosing scope example</h4>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s):
     rev = ""
     for c in s:
@@ -2323,7 +2312,7 @@ while inputString != "quit":
 print(f"These are all reversed strings: {reversedInputs}")
 print(f"We reversed {count} strings.")</div>
 
-<h4 id="global-example">Global example</h4>
+<h4 id="global-scope-example">Global scope example</h4>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s):
     rev = ""
     for c in s:
@@ -2345,7 +2334,7 @@ while inputString != "quit":
 print(f"These are all reversed strings: {reversedInputs}")
 print(f"We reversed {count} strings.")</div>
 
-<h4 id="proper-practice">Proper Practice</h4>
+<h4 id="proper-practice-function-arguments-and-return-objects">Proper Practice: function arguments and return objects</h4>
 <div data-pym-src="https://www.jdoodle.com/plugin" data-language="python3" data-version-index="3.11.5" data-libs="">def strReverse(s, countOfReversed, reversedStrings):
     rev = ""
     for c in s:
@@ -2808,12 +2797,12 @@ print(L2)</div>
   },
   "file": {
     "path": "_chapters/004-Functions/002-scope.md",
-    "mtime": "2024-03-20 08:55:33 +0000",
+    "mtime": "2024-03-21 09:12:49 +0000",
     "type": "markdown"
   },
   "gitbook": {
     "version": "",
-    "time": "2024-03-20 08:55:33 +0000"
+    "time": "2024-03-21 09:12:49 +0000"
   },
   "basePath": "",
   "book": {
