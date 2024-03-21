@@ -1,7 +1,7 @@
 ---
 title: Variables scopes, Arguments mutability
 slug: scope
-abstract:
+abstract: Variable and parameter definition and access patterns
 ---
 
 ## Base example: function reversing a string
@@ -96,24 +96,7 @@ print(s)   # the value of the argument s remains the same after calling the func
 > * If a function is supposed to modify the value of some variable/object defined outside, the object should be provided as function argument and eventually returned.
 {: .block-danger }
 
-{% JDoodle %}
-def foo():
-    count = 34
-    print(f"in the function {count =}")
-    len = 67
-    print(f"in the function {len =}")
-    #print(len("Hello"))
-    
-
-
-count = 25
-print(f"before the call to foo {count =}")
-foo()
-print(f"after the call to foo {count =}")
-print(len("Hello"))
-{% endJDoodle %}
-
-#### Enclosing example
+#### Enclosing scope example
 {% JDoodle %}
 def strReverse(s):
     rev = ""
@@ -140,7 +123,7 @@ print(f"We reversed {count} strings.")
 
 {% endJDoodle %}
 
-#### Global example
+#### Global scope example
 {% JDoodle %}
 def strReverse(s):
     rev = ""
@@ -165,7 +148,7 @@ print(f"We reversed {count} strings.")
 
 {% endJDoodle %}
 
-#### Proper Practice
+#### Proper Practice: function arguments and return objects
 {% JDoodle %}
 def strReverse(s, countOfReversed, reversedStrings):
     rev = ""
@@ -211,9 +194,9 @@ print(length(myList))
 
 * When passing an **immutable** object as argument to a function, its **value** is copied into the formal parameter => modifying the value of the formal parameter within the function does not affect the object passed as argument
 * When passing a **mutable** object as argument to a function, a **reference** to the object is passed to the formal parameter => the function is able to alter the object passed as argument by altering its formal parameter
-* The common practice in programming is that functions DO NOT (intentionally) mutate their arguments
-* To prevent from **accidentally** altering a mutable argument, start the function with a copy of the argument, and work only with the copy
-* Additionally, any alteration attempted with an assignment results in creating a local variable with the same name as the formal parameter, thus won't be reflected on the argument.
+ * The common practice in programming is that functions DO NOT (intentionally) mutate their arguments
+ * To prevent from **accidentally** altering a mutable argument, start the function with a copy of the argument, and work only with the copy
+ * Additionally, any alteration attempted with an assignment results in creating a local variable with the same name as the formal parameter, thus won't be reflected on the argument.
 
 #### Immutable
 {% JDoodle %}
