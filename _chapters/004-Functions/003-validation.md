@@ -1,7 +1,7 @@
 ---
 title: Validating, importing, documenting 
 slug: validation
-abstract:
+abstract: Organizing code into modules and documenting it
 ---
 
 ## Validating function arguments types and values
@@ -33,7 +33,7 @@ abstract:
 
 * The `typing` module offers support for type hints
 * These are hints and are not enforced and have no effect on runtime
-  * used by third party tools such as type checkers, IDEs, linters, etc.
+  * used by third party tools such as type checkers, IDEs, linkers, etc.
 
 ##### Example:
 
@@ -41,11 +41,11 @@ Note below that even though the hint specifies that the argument should be of ty
 
 {% JDoodle %}
 def strReverse(s : str) -> str:
-    return i #s[::-1]
+    return s[::-1]
 
 print(strReverse("Hello world"))
 print(strReverse([1, 2, 3]))
-print(strReverse("10"))
+print(strReverse(10))
 {% endJDoodle %}
 
 
